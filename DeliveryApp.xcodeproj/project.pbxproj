@@ -12,7 +12,10 @@
 		A6431BCB29CBF45F004FD906 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431BCA29CBF45F004FD906 /* ViewController.swift */; };
 		A6431BD029CBF460004FD906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6431BCF29CBF460004FD906 /* Assets.xcassets */; };
 		A6431BD329CBF460004FD906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6431BD129CBF460004FD906 /* LaunchScreen.storyboard */; };
-		A6431BDF29CBF786004FD906 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BDE29CBF786004FD906 /* Core */; };
+		A6431BE629CBF991004FD906 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE529CBF991004FD906 /* Core */; };
+		A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE729CBF994004FD906 /* DesignSystem */; };
+		A6431BEA29CBF998004FD906 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE929CBF998004FD906 /* Home */; };
+		A6431BEC29CBF99C004FD906 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BEB29CBF99C004FD906 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +26,11 @@
 		A6431BCF29CBF460004FD906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6431BD229CBF460004FD906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6431BD429CBF460004FD906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6431BDA29CBF687004FD906 /* Core */ = {isa = PBXFileReference; lastKnownFileType = text; path = Core; sourceTree = SOURCE_ROOT; };
+		A6431BE029CBF859004FD906 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
+		A6431BE129CBF898004FD906 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		A6431BE229CBF8C9004FD906 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
+		A6431BE329CBF900004FD906 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		A6431BE429CBF921004FD906 /* TestUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestUtils; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +38,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6431BDF29CBF786004FD906 /* Core in Frameworks */,
+				A6431BE629CBF991004FD906 /* Core in Frameworks */,
+				A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */,
+				A6431BEC29CBF99C004FD906 /* Networking in Frameworks */,
+				A6431BEA29CBF998004FD906 /* Home in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +51,11 @@
 		A6431BBA29CBF45F004FD906 = {
 			isa = PBXGroup;
 			children = (
+				A6431BE429CBF921004FD906 /* TestUtils */,
+				A6431BE329CBF900004FD906 /* Networking */,
+				A6431BE229CBF8C9004FD906 /* Home */,
+				A6431BE129CBF898004FD906 /* Core */,
+				A6431BE029CBF859004FD906 /* DesignSystem */,
 				A6431BC529CBF45F004FD906 /* DeliveryApp */,
 				A6431BC429CBF45F004FD906 /* Products */,
 				A6431BDD29CBF786004FD906 /* Frameworks */,
@@ -58,7 +73,6 @@
 		A6431BC529CBF45F004FD906 /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
-				A6431BDA29CBF687004FD906 /* Core */,
 				A6431BDC29CBF6A9004FD906 /* Application */,
 				A6431BCA29CBF45F004FD906 /* ViewController.swift */,
 				A6431BDB29CBF6A0004FD906 /* Resources */,
@@ -109,7 +123,10 @@
 			);
 			name = DeliveryApp;
 			packageProductDependencies = (
-				A6431BDE29CBF786004FD906 /* Core */,
+				A6431BE529CBF991004FD906 /* Core */,
+				A6431BE729CBF994004FD906 /* DesignSystem */,
+				A6431BE929CBF998004FD906 /* Home */,
+				A6431BEB29CBF99C004FD906 /* Networking */,
 			);
 			productName = DeliveryApp;
 			productReference = A6431BC329CBF45F004FD906 /* DeliveryApp.app */;
@@ -385,9 +402,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A6431BDE29CBF786004FD906 /* Core */ = {
+		A6431BE529CBF991004FD906 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;
+		};
+		A6431BE729CBF994004FD906 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		A6431BE929CBF998004FD906 /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
+		A6431BEB29CBF99C004FD906 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

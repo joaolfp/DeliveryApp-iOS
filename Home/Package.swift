@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "Home",
-            targets: ["Home"]),
+            targets: ["Home"])
     ],
     dependencies: [
         .package(path: "./Core"),
@@ -29,6 +29,6 @@ let package = Package(
                 "SketchKit"]),
         .testTarget(
             name: "HomeTests",
-            dependencies: ["Home"]),
+            dependencies: ["Home"])
     ]
 )

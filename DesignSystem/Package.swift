@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "DesignSystem",
-            targets: ["DesignSystem"]),
+            targets: ["DesignSystem"])
     ],
     dependencies: [
         .package(path: "./Core"),
@@ -23,6 +23,6 @@ let package = Package(
             dependencies: ["Core", "SketchKit"]),
         .testTarget(
             name: "DesignSystemTests",
-            dependencies: ["DesignSystem"]),
+            dependencies: ["DesignSystem"])
     ]
 )

@@ -8,13 +8,37 @@
 import Core
 import UIKit
 import SketchKit
+import DesignSystem
 
 final class RestaurantsCell: UITableViewCell, Identifiable {
+    
+    private let logoImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIAssets.Home.restaurantLogo
+        imageView.layer.cornerRadius = 50/2
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
     
     let nameLabel: UILabel = {
         var label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        var label = UILabel()
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
         return label
     }()
@@ -32,12 +56,23 @@ final class RestaurantsCell: UITableViewCell, Identifiable {
 
 extension RestaurantsCell: ViewCode {
     func buildViewHierarchy() {
-        contentView.addSubview(nameLabel)
+        contentView.addSubview(logoImage)
+        contentView.addSubview(stackView)
+        
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(descriptionLabel)
     }
     
     func setupConstraints() {
-        nameLabel.layout.applyConstraint { view in
+        logoImage.layout.applyConstraint { view in
             view.leadingAnchor(equalTo: contentView.leadingAnchor, constant: 16)
+            view.centerYAnchor(equalTo: contentView.centerYAnchor)
+            view.widthAnchor(equalToConstant: 50)
+            view.heightAnchor(equalToConstant: 50)
+        }
+        
+        stackView.layout.applyConstraint { view in
+            view.leadingAnchor(equalTo: logoImage.trailingAnchor, constant: 16)
             view.centerYAnchor(equalTo: contentView.centerYAnchor)
         }
     }

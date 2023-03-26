@@ -7,18 +7,44 @@
 
 import UIKit
 
-final public class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
+    private let service: HomeServiceProtocol
     
-    public override func loadView() {
+    var coordinator: HomeCoordinator?
+    
+    init(service: HomeServiceProtocol = HomeService()) {
+        self.service = service
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
         self.view = homeView
     }
 
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Delivery"
+        
+        fetchRestaurantsList()
+    }
+    
+    private func fetchRestaurantsList() {
+        service.getRestaurantsList { result in
+            switch result {
+            case .success(let restaurants):
+                self.homeView.restaurantView.setup(data: restaurants)
+            case .failure(let error):
+                debugPrint("Error - \(error)")
+            }
+        }
     }
 
 }

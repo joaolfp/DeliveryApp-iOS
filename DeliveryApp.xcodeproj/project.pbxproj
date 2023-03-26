@@ -16,6 +16,7 @@
 		A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE729CBF994004FD906 /* DesignSystem */; };
 		A6431BEA29CBF998004FD906 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE929CBF998004FD906 /* Home */; };
 		A6431BEC29CBF99C004FD906 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BEB29CBF99C004FD906 /* Networking */; };
+		A67814D229D0BBB300EA4716 /* TestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = A67814D129D0BBB300EA4716 /* TestUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 				A6431BE629CBF991004FD906 /* Core in Frameworks */,
 				A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */,
 				A6431BEC29CBF99C004FD906 /* Networking in Frameworks */,
+				A67814D229D0BBB300EA4716 /* TestUtils in Frameworks */,
 				A6431BEA29CBF998004FD906 /* Home in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +130,7 @@
 				A6431BE729CBF994004FD906 /* DesignSystem */,
 				A6431BE929CBF998004FD906 /* Home */,
 				A6431BEB29CBF99C004FD906 /* Networking */,
+				A67814D129D0BBB300EA4716 /* TestUtils */,
 			);
 			productName = DeliveryApp;
 			productReference = A6431BC329CBF45F004FD906 /* DeliveryApp.app */;
@@ -439,6 +442,10 @@
 		A6431BEB29CBF99C004FD906 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		A67814D129D0BBB300EA4716 /* TestUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TestUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

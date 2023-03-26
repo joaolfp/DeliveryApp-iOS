@@ -13,12 +13,12 @@ let package = Package(
             name: "TestUtils",
             targets: ["TestUtils"])
     ],
+    dependencies: [
+        .package(path: "./Networking")
+    ],
     targets: [
         .target(
             name: "TestUtils",
-            dependencies: []),
-        .testTarget(
-            name: "TestUtilsTests",
-            dependencies: ["TestUtils"])
+            dependencies: ["Networking"])
     ]
 )

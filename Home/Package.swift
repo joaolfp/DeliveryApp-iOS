@@ -17,6 +17,10 @@ let package = Package(
         .package(path: "./Core"),
         .package(path: "./DesignSystem"),
         .package(path: "./Networking"),
+        .package(path: "./TestUtils"),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
         .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0"))
     ],
     targets: [
@@ -26,9 +30,18 @@ let package = Package(
                 "Core",
                 "DesignSystem",
                 "Networking",
-                "SketchKit"]),
+                "SketchKit"
+            ]),
         .testTarget(
             name: "HomeTests",
-            dependencies: ["Home"])
+            dependencies: [
+                "Home",
+                "TestUtils",
+                "Quick",
+                "Nimble",
+                "Nimble-Snapshots"
+            ],
+            resources: [.copy("JSON")]
+        )
     ]
 )

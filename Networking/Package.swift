@@ -13,12 +13,22 @@ let package = Package(
             name: "Networking",
             targets: ["Networking"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0")
+    ],
     targets: [
         .target(
             name: "Networking",
             dependencies: []),
         .testTarget(
             name: "NetworkingTests",
-            dependencies: ["Networking"])
+            dependencies: [
+                "Networking",
+                "Quick",
+                "Nimble",
+                "Nimble-Snapshots"
+            ])
     ]
 )

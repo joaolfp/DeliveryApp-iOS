@@ -19,6 +19,7 @@ final public class HomeCoordinator: Coordinator {
     @discardableResult
     public func start(with navigationType: NavigationTypes) -> UIViewController {
         let controller = HomeViewController()
+        controller.title = Localizable.deliveryApp.string()
         controller.coordinator = self
         show(controller, with: navigationType)
         return navigationController

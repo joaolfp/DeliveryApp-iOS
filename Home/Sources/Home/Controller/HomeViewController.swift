@@ -31,13 +31,12 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Delivery"
-        
         fetchRestaurantsList()
     }
     
     private func fetchRestaurantsList() {
-        service.getRestaurantsList { result in
+        service.getRestaurantsList { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let restaurants):
                 self.homeView.restaurantView.setup(data: restaurants)

@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import DesignSystem
 
 final class RestaurantsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     

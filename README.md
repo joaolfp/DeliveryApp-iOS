@@ -31,3 +31,6 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Core:</b> All settings and code reusable
 * <b>Design System:</b> All layout like colors, views and images
 * <b>TestUtils:</b> Mocks and codes to help with unit tests
+
+## License
+DeliveryApp-iOS is released under the MIT license. See [LICENSE](https://github.com/joaolfp/DeliveryApp-iOS/blob/main/LICENSE) for details.

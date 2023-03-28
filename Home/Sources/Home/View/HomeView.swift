@@ -13,7 +13,7 @@ import SketchKit
 final class HomeView: UIView {
     
     private let scrollStackView: ScrollStackView = {
-        let view = ScrollStackView(topInset: 0, botInset: 4)
+        let view = ScrollStackView(topInset: 0, bottomInset: 4)
         view.scrollView.backgroundColor = .lightGray
         return view
     }()

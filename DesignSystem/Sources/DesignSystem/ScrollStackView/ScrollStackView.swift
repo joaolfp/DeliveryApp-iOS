@@ -12,7 +12,7 @@ import SketchKit
 open class ScrollStackView: UIView {
     
     private let topInset: CGFloat
-    private let botInset: CGFloat
+    private let bottomInset: CGFloat
     
     public let scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
@@ -29,9 +29,9 @@ open class ScrollStackView: UIView {
         return stackView
     }()
     
-    public init(topInset: CGFloat = 0, botInset: CGFloat = 0) {
+    public init(topInset: CGFloat = 0, bottomInset: CGFloat = 0) {
         self.topInset = topInset
-        self.botInset = botInset
+        self.bottomInset = bottomInset
         super.init(frame: .zero)
         setupBaseView()
     }
@@ -61,7 +61,7 @@ extension ScrollStackView: ViewCode {
             view.topAnchor(equalTo: scrollView.topAnchor, constant: topInset)
             view.leadingAnchor(equalTo: scrollView.leadingAnchor)
             view.trailingAnchor(equalTo: scrollView.trailingAnchor)
-            view.bottomAnchor(equalTo: scrollView.bottomAnchor, constant: -botInset)
+            view.bottomAnchor(equalTo: scrollView.bottomAnchor, constant: -bottomInset)
             view.widthAnchor(equalToConstant: UIScreen.main.bounds.width)
         }
     }

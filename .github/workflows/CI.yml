@@ -12,6 +12,9 @@ jobs:
     - uses: maxim-lobanov/setup-xcode@v1.5.1
       with:
         xcode-version: 14.2
+        
+    - name: Bundle install
+      run: bundle install
 
     - name: Build and Tests
-      run: set -o pipefail && xcodebuild test -scheme "DeliveryApp" -destination "platform=iOS Simulator,name=IPhone 8" clean test | xcpretty
+      run: bundle exec fastlane tests

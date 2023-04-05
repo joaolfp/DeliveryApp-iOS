@@ -23,7 +23,7 @@ platform :ios do
 
   desc "Run unit test"
   lane :tests do
-  run_tests(project: "DeliveryApp.xcodeproj",
+  run_tests(workspace: "DeliveryApp.xcodeproj",
             devices: "iPhone 8",
             scheme: "DeliveryApp",
             code_coverage: true)

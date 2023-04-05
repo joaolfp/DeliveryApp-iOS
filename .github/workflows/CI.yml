@@ -14,4 +14,4 @@ jobs:
         xcode-version: 14.2
 
     - name: Build and Tests
-      run: set -o pipefail && xcodebuild test -scheme "DeliveryApp" -destination "platform=iOS Simulator,name=IPhone 8" clean test | xcpretty
+      run: bundle exec fastlane tests

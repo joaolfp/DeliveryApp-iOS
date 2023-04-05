@@ -11,7 +11,7 @@ import SketchKit
 
 final class OptionsView: UIView {
     
-    private let dataSource = OptionsDataSource()
+    private var dataSource: OptionsDataSource?
     
     private let cardView: UIView = {
         let view = UIView()
@@ -40,7 +40,7 @@ final class OptionsView: UIView {
     }
     
     func setup(data: [RestaurantsDTO]) {
-        dataSource.data = data
+        dataSource = OptionsDataSource(data: data)
         
         collectionsView.dataSource = dataSource
         collectionsView.delegate = dataSource

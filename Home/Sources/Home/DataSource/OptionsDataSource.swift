@@ -10,15 +10,19 @@ import Core
 
 final class OptionsDataSource: NSObject, UICollectionViewDataSource {
     
-    var data: [RestaurantsDTO]?
+    var data: [RestaurantsDTO]
+    
+    init(data: [RestaurantsDTO]) {
+        self.data = data
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data?.count ?? 0
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.addCell(for: indexPath, cellType: OptionsCell.self)
-        cell.setup(text: data?[indexPath.row].category ?? "")
+        cell.setup(text: data[indexPath.row].category)
         return cell
     }
 }

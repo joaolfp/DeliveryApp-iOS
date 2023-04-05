@@ -11,7 +11,7 @@ import SketchKit
 
 final class RestaurantView: UIView {
     
-    private let dataSource = RestaurantsDataSource()
+    private var dataSource: RestaurantsDataSource?
     
     private lazy var heightTableView = self.getHeightTableView()
     
@@ -41,7 +41,7 @@ final class RestaurantView: UIView {
     }
     
     func setup(data: [RestaurantsDTO]) {
-        dataSource.data = data
+        dataSource = RestaurantsDataSource(data: data)
         
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
@@ -54,7 +54,7 @@ final class RestaurantView: UIView {
 extension RestaurantView {
     
     private func getHeightTableView() -> CGFloat {
-        let count = (80 * CGFloat(dataSource.data?.count ?? 0))
+        let count = (80 * CGFloat(dataSource?.data.count ?? 0))
         return (tableView.frame.height / 100) + count
     }
 }

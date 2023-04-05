@@ -11,19 +11,23 @@ import DesignSystem
 
 final class RestaurantsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    var data: [RestaurantsDTO]?
+    var data: [RestaurantsDTO]
+    
+    init(data: [RestaurantsDTO]) {
+        self.data = data
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.count ?? 0
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.addCell(for: indexPath, cellType: RestaurantsCell.self)
         
-        cell.nameLabel.text = data?[indexPath.row].name
+        cell.nameLabel.text = data[indexPath.row].name
         
-        let min = data?[indexPath.row].deliveryTime.min ?? 0
-        let max = data?[indexPath.row].deliveryTime.max ?? 0
+        let min = data[indexPath.row].deliveryTime.min
+        let max = data[indexPath.row].deliveryTime.max
         cell.descriptionLabel.text = "Padaria . \(min)-\(max) min"
         return cell
     }

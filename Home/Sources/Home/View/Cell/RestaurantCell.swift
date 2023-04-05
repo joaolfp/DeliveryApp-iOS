@@ -14,7 +14,7 @@ final class RestaurantsCell: UITableViewCell, Identifiable {
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIAssets.Home.restaurantLogo
+        imageView.image = UIAssets.Home.restaurant.image
         imageView.layer.cornerRadius = 50/2
         imageView.clipsToBounds = true
         return imageView

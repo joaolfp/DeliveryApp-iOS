@@ -11,10 +11,22 @@ import SketchKit
 
 final class OptionsView: UIView {
     
+    private let dataSource = OptionsDataSource()
+    
     private let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
+    }()
+    
+    private let collectionsView: UICollectionView = {
+        let flowLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collection.backgroundColor = .white
+        collection.registerCell(cellType: OptionsCell.self)
+        return collection
     }()
     
     override init(frame: CGRect = .zero) {
@@ -26,11 +38,20 @@ final class OptionsView: UIView {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setup(data: [RestaurantsDTO]) {
+        dataSource.data = data
+        
+        collectionsView.dataSource = dataSource
+        collectionsView.delegate = dataSource
+        collectionsView.reloadData()
+    }
 }
 
 extension OptionsView: ViewCode {
     func buildViewHierarchy() {
         addSubview(cardView)
+        cardView.addSubview(collectionsView)
     }
     
     func setupConstraints() {
@@ -40,6 +61,13 @@ extension OptionsView: ViewCode {
             view.trailingAnchor(equalTo: trailingAnchor)
             view.bottomAnchor(equalTo: bottomAnchor)
             view.heightAnchor(equalToConstant: 100)
+        }
+        
+        collectionsView.layout.applyConstraint { view in
+            view.topAnchor(equalTo: cardView.topAnchor)
+            view.leadingAnchor(equalTo: cardView.leadingAnchor)
+            view.trailingAnchor(equalTo: cardView.trailingAnchor)
+            view.bottomAnchor(equalTo: cardView.bottomAnchor)
         }
     }
 }

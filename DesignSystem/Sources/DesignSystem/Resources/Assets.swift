@@ -10,6 +10,7 @@ import UIKit
 public enum UIAssets {
     public enum Home {
         public static let restaurant = ImageAsset(name: "Home/restaurant-logo")
+        public static let pizza = ImageAsset(name: "Home/pizza")
     }
 }
 

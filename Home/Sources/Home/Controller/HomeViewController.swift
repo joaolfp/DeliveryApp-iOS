@@ -39,6 +39,7 @@ final class HomeViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let restaurants):
+                self.homeView.optionsView.setup(data: restaurants)
                 self.homeView.restaurantView.setup(data: restaurants)
             case .failure(let error):
                 debugPrint("Error - \(error)")

@@ -15,6 +15,7 @@ final class HomeView: UIView {
     private let scrollStackView: ScrollStackView = {
         let view = ScrollStackView(topInset: 0, bottomInset: 4)
         view.scrollView.backgroundColor = .lightGray
+        view.scrollView.bounces = false
         return view
     }()
     
@@ -63,5 +64,13 @@ extension HomeView: ViewCode {
     
     func configureViews() {
         backgroundColor = .white
+    }
+}
+
+extension UIScrollView  {
+    
+    func stopDecelerating() {
+        let contentOffset = self.contentOffset
+        self.setContentOffset(contentOffset, animated: false)
     }
 }

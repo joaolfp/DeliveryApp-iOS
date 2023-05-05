@@ -66,11 +66,3 @@ extension HomeView: ViewCode {
         backgroundColor = .white
     }
 }
-
-extension UIScrollView  {
-    
-    func stopDecelerating() {
-        let contentOffset = self.contentOffset
-        self.setContentOffset(contentOffset, animated: false)
-    }
-}

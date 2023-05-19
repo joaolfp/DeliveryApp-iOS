@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Docs/img/logo.png">
-</p>
+# DeliveryApp
 
 [![CI](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml/badge.svg)](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml)
 

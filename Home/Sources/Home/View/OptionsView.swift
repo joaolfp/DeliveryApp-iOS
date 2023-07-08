@@ -7,7 +7,6 @@
 
 import UIKit
 import Core
-import SketchKit
 
 final class OptionsView: UIView {
     
@@ -15,6 +14,7 @@ final class OptionsView: UIView {
     
     private let cardView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
@@ -24,6 +24,7 @@ final class OptionsView: UIView {
         flowLayout.scrollDirection = .horizontal
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .white
         collection.registerCell(cellType: OptionsCell.self)
         return collection
@@ -55,19 +56,17 @@ extension OptionsView: ViewCode {
     }
     
     func setupConstraints() {
-        cardView.layout.applyConstraint { view in
-            view.topAnchor(equalTo: topAnchor, constant: 2)
-            view.leadingAnchor(equalTo: leadingAnchor)
-            view.trailingAnchor(equalTo: trailingAnchor)
-            view.bottomAnchor(equalTo: bottomAnchor)
-            view.heightAnchor(equalToConstant: 100)
-        }
-        
-        collectionsView.layout.applyConstraint { view in
-            view.topAnchor(equalTo: cardView.topAnchor)
-            view.leadingAnchor(equalTo: cardView.leadingAnchor)
-            view.trailingAnchor(equalTo: cardView.trailingAnchor)
-            view.bottomAnchor(equalTo: cardView.bottomAnchor)
-        }
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: topAnchor, constant: 2),
+            cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 100),
+            
+            collectionsView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            collectionsView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            collectionsView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            collectionsView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
+        ])
     }
 }

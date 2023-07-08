@@ -21,7 +21,6 @@ let package = Package(
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
         .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0")),
         .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
-        .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0"))
     ],
     targets: [
         .target(
@@ -29,8 +28,7 @@ let package = Package(
             dependencies: [
                 "Core",
                 "DesignSystem",
-                "Networking",
-                "SketchKit"
+                "Networking"
             ]),
         .testTarget(
             name: "HomeTests",

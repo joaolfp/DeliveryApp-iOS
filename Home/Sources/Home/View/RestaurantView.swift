@@ -7,7 +7,6 @@
 
 import UIKit
 import Core
-import SketchKit
 
 final class RestaurantView: UIView {
     
@@ -17,12 +16,14 @@ final class RestaurantView: UIView {
     
     private let cardView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
     let tableView: UITableView = {
         var tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         tableView.isScrollEnabled = false
         tableView.separatorStyle = .none
@@ -47,7 +48,7 @@ final class RestaurantView: UIView {
         tableView.delegate = dataSource
         tableView.reloadData()
         
-        cardView.heightAnchor(equalToConstant: self.heightTableView)
+        cardView.heightAnchor.constraint(equalToConstant: self.heightTableView).isActive = true
     }
 }
 
@@ -66,18 +67,16 @@ extension RestaurantView: ViewCode {
     }
     
     func setupConstraints() {
-        cardView.layout.applyConstraint { view in
-            view.topAnchor(equalTo: topAnchor, constant: 2)
-            view.leadingAnchor(equalTo: leadingAnchor)
-            view.trailingAnchor(equalTo: trailingAnchor)
-            view.bottomAnchor(equalTo: bottomAnchor)
-        }
-        
-        tableView.layout.applyConstraint { view in
-            view.topAnchor(equalTo: cardView.topAnchor)
-            view.leadingAnchor(equalTo: cardView.leadingAnchor)
-            view.trailingAnchor(equalTo: cardView.trailingAnchor)
-            view.bottomAnchor(equalTo: cardView.bottomAnchor)
-        }
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: topAnchor, constant: 2),
+            cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
+        ])
     }
 }

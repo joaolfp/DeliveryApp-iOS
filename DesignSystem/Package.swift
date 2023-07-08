@@ -14,13 +14,12 @@ let package = Package(
             targets: ["DesignSystem"])
     ],
     dependencies: [
-        .package(path: "./Core"),
-        .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0"))
+        .package(path: "./Core")
     ],
     targets: [
         .target(
             name: "DesignSystem",
-            dependencies: ["Core", "SketchKit"]),
+            dependencies: ["Core"]),
         .testTarget(
             name: "DesignSystemTests",
             dependencies: ["DesignSystem"])

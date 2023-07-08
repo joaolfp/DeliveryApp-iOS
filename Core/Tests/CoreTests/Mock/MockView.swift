@@ -2,7 +2,7 @@
 //  MockView.swift
 //  
 //
-//  Created by joao.lucas.f.pereira on 05/05/23.
+//  Created by João Lucas on 05/05/23.
 //
 
 import UIKit

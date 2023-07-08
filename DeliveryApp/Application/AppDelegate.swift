@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DeliveryApp
 //
-//  Created by joao.lucas.f.pereira on 22/03/23.
+//  Created by João Lucas on 22/03/23.
 //
 
 import UIKit

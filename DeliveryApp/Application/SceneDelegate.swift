@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let navigationController = UINavigationController()
-        HomeCoordinator(navigationController: navigationController).start(with: .push)
+        let coordinator = HomeCoordinator(parentViewController: navigationController)
+        coordinator.start { }
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

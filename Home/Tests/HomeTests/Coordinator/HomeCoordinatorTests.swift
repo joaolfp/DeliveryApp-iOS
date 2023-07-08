@@ -20,11 +20,11 @@ final class HomeCoordinatorTests: QuickSpec {
             
             beforeEach {
                 spy = NavigationControllerSpy()
-                coordinator = HomeCoordinator(navigationController: spy)
+                coordinator = HomeCoordinator(parentViewController: spy)
             }
             
             it("verify if the home screen appears") {
-                coordinator.start(with: .push)
+                coordinator.start { }
                 expect(spy.isPushViewControllerCalled).to(beTrue())
             }
         }

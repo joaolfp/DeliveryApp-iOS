@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Core
 
 final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
     private let service: HomeServiceProtocol
     
-    var coordinator: HomeCoordinator?
+    var coordinator: CoordinatorProtocol?
     
     init(service: HomeServiceProtocol = HomeService()) {
         self.service = service

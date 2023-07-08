@@ -8,20 +8,17 @@
 import UIKit
 import Core
 
-final public class HomeCoordinator: Coordinator {
-    public var currentViewController: UIViewController?
-    public var navigationController: UINavigationController
+final public class HomeCoordinator: BaseCoordinator {
     
-    public init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private weak var parentViewController: UINavigationController?
+    
+    public init(parentViewController: UINavigationController?) {
+        self.parentViewController = parentViewController
     }
     
-    @discardableResult
-    public func start(with navigationType: NavigationTypes) -> UIViewController {
+    public override func start(_ completion: @escaping () -> Void) {
         let controller = HomeViewController()
-        controller.title = Localizable.deliveryApp.string()
         controller.coordinator = self
-        show(controller, with: navigationType)
-        return navigationController
+        parentViewController?.pushViewController(controller, animated: true)
     }
 }

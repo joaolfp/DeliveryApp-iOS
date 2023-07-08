@@ -15,29 +15,24 @@ import TestUtils
 final class HomeViewControllerTests: QuickSpec {
     override func spec() {
         describe("HomeViewController") {
-            
+
             var sut: HomeViewController!
-            var service: HomeService!
-            var mock: APIClientMock!
+            var mock: HomeViewModelMock!
             let window = UIWindow.framed()
-            
+
             beforeEach {
-                mock = APIClientMock()
-                service = HomeService(client: mock)
+                mock = HomeViewModelMock(stateMock: .success)
             }
-            
+
             afterEach {
                 window.cleanTestWindow()
             }
-            
+
             it("should validate layout with success") {
-                mock.fileJson = "RestaurantList"
-                mock.module = "Home"
-                
-                sut = HomeViewController(service: service)
+                sut = HomeViewController(viewModel: mock)
                 let navigation = UINavigationController(rootViewController: sut)
                 window.showTestWindow(controller: navigation)
-                
+
                 expect(navigation) == snapshot()
             }
         }

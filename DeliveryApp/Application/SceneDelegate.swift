@@ -8,6 +8,7 @@
 import UIKit
 import Home
 
+// swiftlint:disable final_class
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

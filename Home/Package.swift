@@ -20,7 +20,7 @@ let package = Package(
         .package(path: "./TestUtils"),
         .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
         .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0")),
-        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0"),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0")
     ],
     targets: [
         .target(

@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 public protocol Identifiable: AnyObject {
     static var reuseIdentifier: String { get }
 }

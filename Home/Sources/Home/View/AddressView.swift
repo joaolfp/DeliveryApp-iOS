@@ -52,7 +52,7 @@ extension AddressView: ViewCode {
             
             addressLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
             addressLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            addressLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16),
+            addressLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16)
         ])
     }
 }

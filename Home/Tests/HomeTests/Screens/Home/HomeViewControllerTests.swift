@@ -35,6 +35,13 @@ final class HomeViewControllerTests: QuickSpec {
 
                 expect(navigation) == snapshot()
             }
+            
+            it("should validate layout with failure") {
+                sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure))
+                window.showTestWindow(controller: sut)
+                
+                expect(sut) == snapshot()
+            }
         }
     }
 }

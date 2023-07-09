@@ -14,7 +14,11 @@ let package = Package(
             targets: ["DesignSystem"])
     ],
     dependencies: [
-        .package(path: "./Core")
+        .package(path: "./Core"),
+        .package(path: "./TestUtils"),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0")),
+        .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", from: "9.4.0")
     ],
     targets: [
         .target(
@@ -22,6 +26,14 @@ let package = Package(
             dependencies: ["Core"]),
         .testTarget(
             name: "DesignSystemTests",
-            dependencies: ["DesignSystem"])
+            dependencies: [
+                "DesignSystem",
+                "TestUtils",
+                "Core",
+                "Quick",
+                "Nimble",
+                "Nimble-Snapshots"
+            ]
+        )
     ]
 )

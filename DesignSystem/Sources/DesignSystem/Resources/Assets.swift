@@ -12,6 +12,10 @@ public enum UIAssets {
         public static let restaurant = ImageAsset(name: "Home/restaurant-logo")
         public static let pizza = ImageAsset(name: "Home/pizza")
     }
+    
+    public enum Error {
+        public static let error = ImageAsset(name: "Error/error")
+    }
 }
 
 public struct ImageAsset {

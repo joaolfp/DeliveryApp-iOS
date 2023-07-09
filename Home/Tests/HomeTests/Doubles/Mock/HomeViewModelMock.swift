@@ -31,7 +31,6 @@ final class HomeViewModelMock: HomeViewModelProtocol {
             switch self.stateMock {
             case .success:
                 let restaurants: [RestaurantsDTO] = JSONHelper.loadJSON(withFile: "RestaurantList", inBundleWithName: "Home", path: "JSON")!
-                
                 self.viewState.success(data: restaurants)
             case .failure:
                 self.viewState.error(error: APIError.jsonParsingFailure)

@@ -8,6 +8,7 @@
 import UIKit
 import Core
 import Networking
+import DesignSystem
 
 final class HomeViewController: UIViewController {
     
@@ -55,6 +56,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func onFailure(error: APIError) {
-        debugPrint(error)
+        let errorView = ErrorView(message: Localizable.messageError.rawValue)
+        view = errorView
     }
 }

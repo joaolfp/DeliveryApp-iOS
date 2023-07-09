@@ -33,6 +33,10 @@ extension APIClient {
             switch httpResponse.statusCode {
             case 200...399:
                 self.validationData(data: data, decodingType: decodingType, completion: completion)
+                
+                guard let data = data else { return }
+                let logger = Logger()
+                logger.buildLogger(data: data, response: response)
             default:
                 completion(nil, .responseUnsuccessful)
             }

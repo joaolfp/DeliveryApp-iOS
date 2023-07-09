@@ -7,16 +7,17 @@
 
 import UIKit
 import Core
+import Networking
 
 final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
-    private let service: HomeServiceProtocol
+    private let viewModel: HomeViewModelProtocol
     
     var coordinator: CoordinatorProtocol?
     
-    init(service: HomeServiceProtocol = HomeService()) {
-        self.service = service
+    init(viewModel: HomeViewModelProtocol = HomeViewModel()) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,15 +37,22 @@ final class HomeViewController: UIViewController {
     }
     
     private func fetchRestaurantsList() {
-        service.getRestaurantsList { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let restaurants):
-                self.homeView.optionsView.setup(data: restaurants)
-                self.homeView.restaurantView.setup(data: restaurants)
-            case .failure(let error):
-                debugPrint("Error - \(error)")
-            }
-        }
+        viewModel.fetchRestaurants()
+            .loadingObserver(onLoading)
+            .successObserver(onSuccess)
+            .errorObserver(onFailure)
+    }
+    
+    private func onLoading() {
+        debugPrint("loading")
+    }
+    
+    private func onSuccess(restaurants: [RestaurantsDTO]) {
+        homeView.optionsView.setup(data: restaurants)
+        homeView.restaurantView.setup(data: restaurants)
+    }
+    
+    private func onFailure(error: APIError) {
+        debugPrint(error)
     }
 }

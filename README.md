@@ -11,7 +11,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Language:</b> Swift
 * <b>Modules: Mult modules project with SPM</b>
 * <b>Dependencies:</b> SPM
-* <b>Architecture:</b> MVC
+* <b>Architecture:</b> MVVM
 * <b>Network:</b> URLSession
 * <b>Layout:</b> View Code (without Storyboard)
 * <b>UnitTest:</b> Quick & Nimble

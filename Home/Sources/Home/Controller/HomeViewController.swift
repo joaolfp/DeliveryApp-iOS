@@ -33,8 +33,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Localizable.deliveryApp.rawValue
-        
         fetchRestaurantsList()
     }
     

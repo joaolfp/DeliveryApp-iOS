@@ -24,7 +24,7 @@ platform :ios do
   desc "Run unit test"
   lane :tests do
   run_tests(project: "DeliveryApp.xcodeproj",
-            devices: "iPhone 8",
+            devices: "iPhone 14",
             scheme: "DeliveryApp",
             code_coverage: true)
   end

@@ -30,9 +30,10 @@ final class HomeViewControllerTests: QuickSpec {
 
             it("should validate layout with success") {
                 sut = HomeViewController(viewModel: mock)
-                window.showTestWindow(controller: sut)
+                let navigation = UINavigationController(rootViewController: sut)
+                window.showTestWindow(controller: navigation)
 
-                expect(sut) == snapshot()
+                expect(navigation) == snapshot()
             }
         }
     }

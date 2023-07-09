@@ -9,8 +9,4 @@ import Foundation
 
 enum Localizable: String {
     case deliveryApp = "Delivery App"
-    
-    func string() -> String {
-        return self.rawValue
-    }
 }

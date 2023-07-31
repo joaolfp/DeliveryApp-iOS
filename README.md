@@ -24,7 +24,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 <img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Docs/img/Modules.png" height="450">
 
 * <b>DeliveryApp:</b> Main module
-* <b>Home:</b> Main screen of the app
+* <b>Home:</b> Main screen
 * <b>Networking:</b> Network configuration of the whole app
 * <b>Core:</b> All settings and code reusable
 * <b>Design System:</b> All layout like colors, views and images

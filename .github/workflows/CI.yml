@@ -13,8 +13,11 @@ jobs:
       with:
         xcode-version: 14.2
         
-    - name: Bundle install
-      run: bundle install
+    - name: Set up Ruby 3.1.2
+      uses: ruby/setup-ruby@v1.84.0
+      with:
+         ruby-version: 3.1.2
+         bundler-cache: true
 
     - name: Build and Tests
       run: bundle exec fastlane tests

@@ -30,5 +30,15 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Design System:</b> All layout like colors, views and images
 * <b>TestUtils:</b> Mocks and codes to help with unit tests
 
+## How to build the app
+
+Open <b>DeliveryApp.xcodeproj</b>
+
+To run the tests locally you can use fastlane
+
+```sh
+bundle exec fastlane tests
+```
+
 ## License
 DeliveryApp-iOS is released under the MIT license. See [LICENSE](https://github.com/joaolfp/DeliveryApp-iOS/blob/main/LICENSE) for details.

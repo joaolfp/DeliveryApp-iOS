@@ -16,6 +16,7 @@ jobs:
     - name: Install Ruby
       run: |
          brew install rbenv
+         export PATH=$PATH:$HOME/.rbenv/shims
          eval "$(rbenv init -)"
          rbenv install -s `cat .ruby-version`
          bundle install

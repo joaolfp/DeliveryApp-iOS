@@ -47,10 +47,11 @@ final class HomeViewController: UIViewController {
     }
     
     private func onLoading() {
-        debugPrint("loading")
+        homeView.isLoading(true)
     }
     
     private func onSuccess(restaurants: [RestaurantsDTO]) {
+        homeView.isLoading(false)
         homeView.optionsView.setup(data: restaurants)
         homeView.restaurantView.setup(data: restaurants)
     }

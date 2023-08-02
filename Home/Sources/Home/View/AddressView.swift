@@ -20,7 +20,7 @@ final class AddressView: UIView {
     private let addressLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "R. Guirantiga, 500"
+        label.text = Localizable.setupAddress.rawValue
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)
         return label

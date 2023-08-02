@@ -10,7 +10,7 @@ import Core
 import Networking
 import DesignSystem
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController  {
     
     private let homeView = HomeView()
     private let viewModel: HomeViewModelProtocol

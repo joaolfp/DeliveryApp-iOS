@@ -14,12 +14,7 @@ jobs:
         xcode-version: 14.2
         
     - name: Install Ruby
-      run: |
-         brew install rbenv
-         export PATH=$PATH:$HOME/.rbenv/shims
-         eval "$(rbenv init -)"
-         rbenv install -s `cat .ruby-version`
-         bundle install
+      run: bundle install
 
     - name: Build and Tests
       run: bundle exec fastlane tests

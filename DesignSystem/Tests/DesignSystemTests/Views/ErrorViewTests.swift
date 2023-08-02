@@ -18,7 +18,7 @@ final class ErrorViewTests: QuickSpec {
             it("should validate layout") {
                 let cgRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 let view = ErrorView(frame: cgRect, message: "Erro de conexão")
-                expect(view).to(haveValidSnapshot(tolerance: 0.02))
+                expect(view).to(haveValidSnapshot())
             }
         }
     }

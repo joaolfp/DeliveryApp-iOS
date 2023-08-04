@@ -36,7 +36,7 @@ Open <b>DeliveryApp.xcodeproj</b>
 
 To run the tests locally you can use fastlane
 
-```sh
+```
 bundle exec fastlane tests
 ```
 

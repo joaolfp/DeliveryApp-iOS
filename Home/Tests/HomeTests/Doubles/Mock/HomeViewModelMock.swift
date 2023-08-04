@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Core
+import ViewState
 import Networking
 import TestUtils
 @testable import Home
@@ -26,7 +26,7 @@ final class HomeViewModelMock: HomeViewModelProtocol {
         self.stateMock = stateMock
     }
     
-    func fetchRestaurants() -> Core.ViewState<[Home.RestaurantsDTO], Networking.APIError> {
+    func fetchRestaurants() -> ViewState<[Home.RestaurantsDTO], Networking.APIError> {
         viewState.fetchSource {
             switch self.stateMock {
             case .success:

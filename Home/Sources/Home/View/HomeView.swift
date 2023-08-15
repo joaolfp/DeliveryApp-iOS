@@ -8,6 +8,7 @@
 import UIKit
 import Core
 import DesignSystem
+import SketchKit
 
 final class HomeView: UIView {
     
@@ -15,7 +16,6 @@ final class HomeView: UIView {
         let view = ScrollStackView(topInset: 0, bottomInset: 4)
         view.scrollView.backgroundColor = .lightGray
         view.scrollView.bounces = false
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -36,7 +36,6 @@ final class HomeView: UIView {
     
     private let activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.color = .gray
         return view
     }()
@@ -74,15 +73,17 @@ extension HomeView: ViewCode {
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            scrollStackView.topAnchor.constraint(equalTo: topAnchor),
-            scrollStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            activityIndicator.centerXAnchor.constraint(equalTo: scrollStackView.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: scrollStackView.centerYAnchor)
-        ])
+        scrollStackView.layout.applyConstraint { view in
+            view.topAnchor(equalTo: topAnchor)
+            view.leadingAnchor(equalTo: leadingAnchor)
+            view.trailingAnchor(equalTo: trailingAnchor)
+            view.bottomAnchor(equalTo: bottomAnchor)
+        }
+        
+        activityIndicator.layout.applyConstraint { view in
+            view.centerXAnchor(equalTo: scrollStackView.centerXAnchor)
+            view.centerYAnchor(equalTo: scrollStackView.centerYAnchor)
+        }
     }
     
     func configureViews() {

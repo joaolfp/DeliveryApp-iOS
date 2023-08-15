@@ -7,19 +7,18 @@
 
 import UIKit
 import Core
+import SketchKit
 
 final class AddressView: UIView {
     
     private let cardView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
     private let addressLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Localizable.setupAddress.rawValue
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)
@@ -44,15 +43,17 @@ extension AddressView: ViewCode {
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            cardView.topAnchor.constraint(equalTo: topAnchor, constant: 2),
-            cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cardView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            addressLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
-            addressLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            addressLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16)
-        ])
+        cardView.layout.applyConstraint { view in
+            view.topAnchor(equalTo: topAnchor, constant: 2)
+            view.leadingAnchor(equalTo: leadingAnchor)
+            view.trailingAnchor(equalTo: trailingAnchor)
+            view.bottomAnchor(equalTo: bottomAnchor)
+        }
+        
+        addressLabel.layout.applyConstraint { view in
+            view.topAnchor(equalTo: cardView.topAnchor, constant: 16)
+            view.leadingAnchor(equalTo: cardView.leadingAnchor, constant: 16)
+            view.bottomAnchor(equalTo: cardView.bottomAnchor, constant: -16)
+        }
     }
 }

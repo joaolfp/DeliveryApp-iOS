@@ -7,19 +7,18 @@
 
 import UIKit
 import Core
+import SketchKit
 
 final public class ErrorView: UIView {
     
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIAssets.Error.error.image
         return imageView
     }()
     
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
@@ -45,15 +44,17 @@ extension ErrorView: ViewCode {
     }
     
     public func setupConstraints() {
-        NSLayoutConstraint.activate([
-            iconImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            iconImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            iconImage.widthAnchor.constraint(equalToConstant: 200),
-            iconImage.heightAnchor.constraint(equalToConstant: 200),
-            
-            messageLabel.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 16),
-            messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
+        iconImage.layout.applyConstraint { view in
+            view.centerXAnchor(equalTo: centerXAnchor)
+            view.centerYAnchor(equalTo: centerYAnchor)
+            view.widthAnchor(equalToConstant: 200)
+            view.heightAnchor(equalToConstant: 200)
+        }
+        
+        messageLabel.layout.applyConstraint { view in
+            view.topAnchor(equalTo: iconImage.bottomAnchor, constant: 16)
+            view.centerXAnchor(equalTo: centerXAnchor)
+        }
     }
     
     public func configureViews() {

@@ -55,6 +55,15 @@
       }
     },
     {
+      "identity" : "sketchkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dogo/SketchKit",
+      "state" : {
+        "revision" : "edbe488e7272aefc52d3f878a71f6e61e4bda6d1",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "viewstate",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/joaolfp/ViewState.git",

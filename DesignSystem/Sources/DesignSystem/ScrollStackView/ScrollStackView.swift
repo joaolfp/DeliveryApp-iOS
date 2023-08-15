@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import SketchKit
 
 open class ScrollStackView: UIView {
     
@@ -15,7 +16,6 @@ open class ScrollStackView: UIView {
     
     public let scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.isDirectionalLockEnabled = true
         scrollView.backgroundColor = .clear
         return scrollView
@@ -23,7 +23,6 @@ open class ScrollStackView: UIView {
     
     public let stackView: UIStackView = {
         let stackView = UIStackView(frame: .zero)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.axis = .vertical
@@ -51,19 +50,21 @@ extension ScrollStackView: ViewCode {
     }
     
     public func setupConstraints() {
+        scrollView.layout.applyConstraint { view in
+            view.topAnchor(equalTo: safeAreaLayoutGuide.topAnchor)
+            view.leadingAnchor(equalTo: leadingAnchor)
+            view.trailingAnchor(equalTo: trailingAnchor)
+            view.bottomAnchor(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        }
         
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: topInset),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -bottomInset),
-            stackView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
-        ])
+        stackView.layout.applyConstraint { view in
+            view.topAnchor(equalTo: scrollView.topAnchor, constant: topInset)
+            view.leadingAnchor(equalTo: scrollView.leadingAnchor)
+            view.trailingAnchor(equalTo: scrollView.trailingAnchor)
+            view.bottomAnchor(equalTo: scrollView.bottomAnchor, constant: -bottomInset)
+            view.widthAnchor(equalToConstant: UIScreen.main.bounds.width)
+        }
+
     }
     
     public func configureView() {

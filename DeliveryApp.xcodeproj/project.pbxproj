@@ -51,11 +51,10 @@
 		A6431BBA29CBF45F004FD906 = {
 			isa = PBXGroup;
 			children = (
-				A6431BE429CBF921004FD906 /* TestUtils */,
-				A6431BE329CBF900004FD906 /* Networking */,
-				A6431BE229CBF8C9004FD906 /* Home */,
-				A6431BE129CBF898004FD906 /* Core */,
-				A6431BE029CBF859004FD906 /* DesignSystem */,
+				C5934D6D2AA3593C0019C3BC /* Styleguide */,
+				C5934D6C2AA359280019C3BC /* Core */,
+				C5934D6A2AA359110019C3BC /* Infra */,
+				C5934D692AA359080019C3BC /* Feature */,
 				A6431BC529CBF45F004FD906 /* DeliveryApp */,
 				A6431BC429CBF45F004FD906 /* Products */,
 				A6431BDD29CBF786004FD906 /* Frameworks */,
@@ -103,6 +102,39 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5934D692AA359080019C3BC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A6431BE229CBF8C9004FD906 /* Home */,
+			);
+			name = Feature;
+			sourceTree = "<group>";
+		};
+		C5934D6A2AA359110019C3BC /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				A6431BE329CBF900004FD906 /* Networking */,
+			);
+			name = Infra;
+			sourceTree = "<group>";
+		};
+		C5934D6C2AA359280019C3BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A6431BE429CBF921004FD906 /* TestUtils */,
+				A6431BE129CBF898004FD906 /* Core */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C5934D6D2AA3593C0019C3BC /* Styleguide */ = {
+			isa = PBXGroup;
+			children = (
+				A6431BE029CBF859004FD906 /* DesignSystem */,
+			);
+			name = Styleguide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

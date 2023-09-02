@@ -9,12 +9,12 @@ import UIKit
 import Core
 import DesignSystem
 import SketchKit
+import MagicImages
 
 final class OptionsCell: UICollectionViewCell, Identifiable {
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIAssets.Home.pizza.image
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         return imageView
@@ -30,6 +30,8 @@ final class OptionsCell: UICollectionViewCell, Identifiable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBaseView()
+        
+        MagicImages(image: logoImage).start(uiImage: UIAssets.Home.pizza.image)
     }
     
     @available(*, unavailable)

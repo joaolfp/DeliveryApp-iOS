@@ -22,7 +22,8 @@ let package = Package(
         .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "12.2.0")),
         .package(url: "https://github.com/ashfurrow/Nimble-Snapshots", branch: "master"),
         .package(url: "https://github.com/joaolfp/ViewState.git", .upToNextMajor(from: "1.3.2")),
-        .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0"))
+        .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
         .target(
@@ -32,7 +33,8 @@ let package = Package(
                 "DesignSystem",
                 "Networking",
                 "ViewState",
-                "SketchKit"
+                "SketchKit",
+                "MagicImages"
             ]),
         .testTarget(
             name: "HomeTests",

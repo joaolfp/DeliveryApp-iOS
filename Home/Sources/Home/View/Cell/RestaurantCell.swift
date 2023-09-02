@@ -9,13 +9,12 @@ import Core
 import UIKit
 import DesignSystem
 import SketchKit
+import MagicImages
 
 final class RestaurantsCell: UITableViewCell, Identifiable {
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIAssets.Home.restaurant.image
-        imageView.layer.cornerRadius = 50/2
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -46,6 +45,10 @@ final class RestaurantsCell: UITableViewCell, Identifiable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupBaseView()
+        
+        MagicImages(image: logoImage)
+            .start(uiImage: UIAssets.Home.restaurant.image)
+            .isCircle(measure: 50)
     }
     
     @available(*, unavailable)
@@ -67,8 +70,6 @@ extension RestaurantsCell: ViewCode {
         logoImage.layout.applyConstraint { view in
             view.leadingAnchor(equalTo: contentView.leadingAnchor, constant: 16)
             view.centerYAnchor(equalTo: contentView.centerYAnchor)
-            view.widthAnchor(equalToConstant: 50)
-            view.heightAnchor(equalToConstant: 50)
         }
         
         stackView.layout.applyConstraint { view in

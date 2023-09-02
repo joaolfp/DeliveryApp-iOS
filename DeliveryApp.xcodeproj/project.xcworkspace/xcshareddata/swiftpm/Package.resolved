@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "magicimages",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/heroesofcode/MagicImages",
+      "state" : {
+        "revision" : "c33e1c6bef2adecf5780d00be06ee05a151f4ef6",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "nimble",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Quick/Nimble.git",

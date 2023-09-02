@@ -8,12 +8,12 @@
 import UIKit
 import Core
 import SketchKit
+import MagicImages
 
 final public class ErrorView: UIView {
     
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIAssets.Error.error.image
         return imageView
     }()
     
@@ -29,6 +29,8 @@ final public class ErrorView: UIView {
         super.init(frame: frame)
         
         setupBaseView()
+        
+        MagicImages(image: iconImage).start(uiImage: UIAssets.Error.error.image)
     }
     
     @available(*, unavailable)

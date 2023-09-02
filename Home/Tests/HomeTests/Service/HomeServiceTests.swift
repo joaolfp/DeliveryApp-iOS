@@ -13,7 +13,7 @@ import Networking
 @testable import Home
 
 final class HomeServiceTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("HomeService") {
             
             var sut: HomeService!

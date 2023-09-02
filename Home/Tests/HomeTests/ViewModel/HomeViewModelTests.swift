@@ -14,7 +14,7 @@ import TestUtils
 @testable import Home
 
 final class HomeViewModelTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("HomeViewModel") {
             
             var sut: HomeViewModel!

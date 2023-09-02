@@ -11,7 +11,7 @@ import Nimble
 @testable import Core
 
 final class ViewCodeTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         
         it("when setupBaseView with success") {
             let mockView = MockView()

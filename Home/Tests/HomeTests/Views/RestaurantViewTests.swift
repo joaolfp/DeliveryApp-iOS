@@ -12,7 +12,7 @@ import Nimble_Snapshots
 @testable import Home
 
 final class RestaurantViewTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("RestaurantView") {
             
             it("should validate layout") {

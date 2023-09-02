@@ -8,7 +8,7 @@ struct Breed: Codable {
 }
 
 final class NetworkingTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("Networking") {
             
             var sut: APIClient!

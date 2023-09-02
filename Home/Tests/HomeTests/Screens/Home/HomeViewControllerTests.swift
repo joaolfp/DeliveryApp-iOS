@@ -13,7 +13,7 @@ import TestUtils
 @testable import Home
 
 final class HomeViewControllerTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("HomeViewController") {
 
             var sut: HomeViewController!

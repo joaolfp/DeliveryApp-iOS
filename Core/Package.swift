@@ -14,8 +14,8 @@ let package = Package(
             targets: ["Core"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "5.0.1")),
-        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "10.0.0"))
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "7.2.0")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "12.2.0"))
     ],
     targets: [
         .target(

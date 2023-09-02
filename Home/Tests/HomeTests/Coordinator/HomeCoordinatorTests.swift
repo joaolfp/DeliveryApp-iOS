@@ -12,7 +12,7 @@ import TestUtils
 @testable import Home
 
 final class HomeCoordinatorTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("HomeCoordinator") {
             
             var spy: NavigationControllerSpy!

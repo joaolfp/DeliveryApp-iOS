@@ -12,7 +12,7 @@ import Nimble_Snapshots
 @testable import DesignSystem
 
 final class ErrorViewTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("ErrorView") {
             
             it("should validate layout") {

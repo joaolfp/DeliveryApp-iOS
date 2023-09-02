@@ -12,7 +12,7 @@ import Nimble_Snapshots
 @testable import Home
 
 final class OptionsViewTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("OptionsView") {
             
             it("should validate layout") {

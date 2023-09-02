@@ -12,7 +12,7 @@ import Nimble_Snapshots
 @testable import Home
 
 final class AddressViewTests: QuickSpec {
-    override func spec() {
+    override class func spec() {
         describe("AddressView") {
             
             it("should validate layout") {

@@ -80,5 +80,6 @@ extension RestaurantsCell: ViewCode {
     
     func configureViews() {
         accessoryType = .disclosureIndicator
+        backgroundColor = .white
     }
 }

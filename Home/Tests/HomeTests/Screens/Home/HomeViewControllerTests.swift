@@ -33,7 +33,7 @@ final class HomeViewControllerTests: QuickSpec {
                 let navigation = UINavigationController(rootViewController: sut)
                 window.showTestWindow(controller: navigation)
 
-                expect(navigation).to(haveValidSnapshot(tolerance: 0.02))
+                expect(navigation) == snapshot()
             }
             
             it("should validate layout with failure") {
@@ -41,7 +41,7 @@ final class HomeViewControllerTests: QuickSpec {
                 let navigation = UINavigationController(rootViewController: sut)
                 window.showTestWindow(controller: navigation)
                 
-                expect(navigation).to(haveValidSnapshot(tolerance: 0.02))
+                expect(navigation) == snapshot()
             }
         }
     }

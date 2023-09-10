@@ -36,6 +36,9 @@ final class HomeViewController: UIViewController {
         
         title = Localizable.deliveryApp.rawValue
         
+        self.navigationController?.navigationBar.barTintColor = .lightGray
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
         fetchRestaurantsList()
     }
     

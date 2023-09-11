@@ -48,10 +48,10 @@
     {
       "identity" : "nimble-snapshots",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/joaolfp/Nimble-Snapshots",
+      "location" : "https://github.com/ashfurrow/Nimble-Snapshots",
       "state" : {
-        "branch" : "1.0.0",
-        "revision" : "e2b8439f64c6750f80f533b19e59b6f9e6611b59"
+        "branch" : "master",
+        "revision" : "9e4ab0a00b3d0f1d6d2d358e5886532f87503d10"
       }
     },
     {

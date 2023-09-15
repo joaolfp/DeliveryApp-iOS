@@ -5,20 +5,28 @@
 //  Created by João Lucas on 05/05/23.
 //
 
-import Foundation
-import Quick
-import Nimble
+import XCTest
 @testable import Core
 
-final class ViewCodeTests: QuickSpec {
-    override class func spec() {
+final class ViewCodeTests: XCTestCase {
+    
+    var mockView: MockView!
+    
+    override func setUp() {
+        super.setUp()
         
-        it("when setupBaseView with success") {
-            let mockView = MockView()
-            expect(mockView.buildViewHierarchyCalled).to(beTrue())
-            expect(mockView.setupConstraintsCalled).to(beTrue())
-            expect(mockView.configureViewCalled).to(beFalse())
-        }
+        mockView = MockView()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
         
+        mockView = nil
+    }
+    
+    func testWhenSetupBaseViewWithSuccess() {
+        XCTAssertTrue(mockView.buildViewHierarchyCalled)
+        XCTAssertTrue(mockView.setupConstraintsCalled)
+        XCTAssertFalse(mockView.configureViewCalled)
     }
 }

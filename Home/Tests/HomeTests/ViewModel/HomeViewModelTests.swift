@@ -5,53 +5,58 @@
 //  Created by João Lucas on 08/07/23.
 //
 
-import Foundation
+import XCTest
 import Core
 import Networking
-import Quick
-import Nimble
 import TestUtils
 @testable import Home
 
-final class HomeViewModelTests: QuickSpec {
-    override class func spec() {
-        describe("HomeViewModel") {
-            
-            var sut: HomeViewModel!
-            var service: HomeService!
-            var mock: APIClientMock!
-            
-            beforeEach {
-                mock = APIClientMock()
-                service = HomeService(client: mock)
-                sut = HomeViewModel(service: service)
-            }
-            
-            it("verify restaurant list with success") {
-                mock.fileJson = "RestaurantList"
-                mock.module = "Home"
-                
-                let states = HomeViewModelStates()
-                
-                sut.fetchRestaurants()
-                    .loadingObserver(states.onLoading)
-                    .successObserver(states.onSuccess)
-                    .errorObserver(states.onFailure)
-            }
-            
-            it("verify restaurant list with failure") {
-                mock.failure = true
-                mock.module = "Home"
-                
-                let states = HomeViewModelStates()
-                
-                sut.fetchRestaurants()
-                    .loadingObserver(states.onLoading)
-                    .successObserver(states.onSuccess)
-                    .errorObserver(states.onFailure)
-            }
-        }
+final class HomeViewModelTests: XCTestCase {
+    
+    var sut: HomeViewModel!
+    var service: HomeService!
+    var mock: APIClientMock!
+    
+    override func setUp() {
+        super.setUp()
+        
+        mock = APIClientMock()
+        service = HomeService(client: mock)
+        sut = HomeViewModel(service: service)
     }
+    
+    override func tearDown() {
+        super.tearDown()
+        
+        mock = nil
+        service = nil
+        sut = nil
+    }
+    
+    func testVerifyRestaurantListWithSuccess() {
+        mock.fileJson = "RestaurantList"
+        mock.module = "Home"
+        
+        let states = HomeViewModelStates()
+        
+        sut.fetchRestaurants()
+            .loadingObserver(states.onLoading)
+            .successObserver(states.onSuccess)
+            .errorObserver(states.onFailure)
+    }
+    
+    func verifyRestaurantListWithFailure() {
+        mock.failure = true
+        mock.module = "Home"
+        
+        let states = HomeViewModelStates()
+        
+        sut.fetchRestaurants()
+            .loadingObserver(states.onLoading)
+            .successObserver(states.onSuccess)
+            .errorObserver(states.onFailure)
+    }
+
 }
 
 final class HomeViewModelStates {
@@ -59,13 +64,13 @@ final class HomeViewModelStates {
     func onLoading() { }
     
     func onSuccess(restaurants: [RestaurantsDTO]) {
-        expect(restaurants[0].name).to(equal("Benjamin a Padaria"))
-        expect(restaurants[0].category).to(equal("Padaria"))
-        expect(restaurants[0].deliveryTime.max).to(equal(33))
-        expect(restaurants[0].deliveryTime.min).to(equal(23))
+        XCTAssertEqual(restaurants[0].name, "Benjamin a Padaria")
+        XCTAssertEqual(restaurants[0].category, "Padaria")
+        XCTAssertEqual(restaurants[0].deliveryTime.max, 33)
+        XCTAssertEqual(restaurants[0].deliveryTime.min, 23)
     }
     
     func onFailure(error: APIError) {
-        expect(error.localizedDescription).to(equal("JSON parsing failure"))
+        XCTAssertEqual(error.localizedDescription, "JSON parsing failure")
     }
 }

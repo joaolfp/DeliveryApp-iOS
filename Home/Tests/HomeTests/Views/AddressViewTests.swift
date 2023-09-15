@@ -5,20 +5,15 @@
 //  Created by João Lucas on 26/03/23.
 //
 
+import SnapshotTesting
+import XCTest
 import UIKit
-import Quick
-import Nimble
-import Nimble_Snapshots
 @testable import Home
 
-final class AddressViewTests: QuickSpec {
-    override class func spec() {
-        describe("AddressView") {
-            
-            it("should validate layout") {
-                let view = AddressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-                expect(view) == snapshot()
-            }
-        }
+final class AddressViewTests: XCTestCase {
+    
+    func testShouldValidateLayout() {
+        let view = AddressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        assertSnapshot(of: view, as: .image)
     }
 }

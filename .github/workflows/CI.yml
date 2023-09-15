@@ -17,7 +17,11 @@ jobs:
       run: bundle install
 
     - name: Build and Tests
-      run: bundle exec fastlane tests
+      run: xcodebuild -projet DeliveryApp.xcodeproj \
+            -scheme DeliveryApp \
+            -destination platform=iOS\ Simulator,OS=16.4,name=iPhone\ 14 \
+            -enableCodeCoverage YES \
+            clean test | xcpretty
 
     - name: Danger action
       uses: MeilCli/danger-action@v5.6.21

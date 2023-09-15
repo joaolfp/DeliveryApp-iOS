@@ -1,10 +1,11 @@
 # DeliveryApp
 
 [![CI](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml/badge.svg)](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml)
+[![codecov](https://codecov.io/gh/joaolfp/DeliveryApp-iOS/graph/badge.svg?token=RYTP12HMY7)](https://codecov.io/gh/joaolfp/DeliveryApp-iOS)
 
 Delivery App is a simple app that shows a list of available categories and restaurants and we will be evolving over time :rocket:
 
-<img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Home/Tests/ReferenceImages/HomeViewControllerTests/HomeViewController__should_validate_layout_with_success%403x.png" width="310" height="640" />
+<img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Home/Tests/HomeTests/Screens/Home/__Snapshots__/HomeViewControllerTests/testShouldValidateLayoutWithSuccess.1.png?raw=true" width="310" height="640" />
 
 ## Knowledge Stack
 

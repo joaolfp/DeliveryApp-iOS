@@ -15,7 +15,6 @@ final class HomeViewControllerTests: XCTestCase {
     
     var sut: HomeViewController!
     var mock: HomeViewModelMock!
-    let window = UIWindow.framed()
     
     override func setUp() {
         super.setUp()
@@ -27,13 +26,11 @@ final class HomeViewControllerTests: XCTestCase {
         super.tearDown()
         
         mock = nil
-        window.cleanTestWindow()
     }
     
     func testShouldValidateLayoutWithSuccess() {
         sut = HomeViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)
-        window.showTestWindow(controller: navigation)
         
         assertSnapshot(of: navigation, as: .image)
     }
@@ -41,7 +38,6 @@ final class HomeViewControllerTests: XCTestCase {
     func testValidateLayoutWithFailure() {
         sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure))
         let navigation = UINavigationController(rootViewController: sut)
-        window.showTestWindow(controller: navigation)
         
         assertSnapshot(of: navigation, as: .image)
     }

@@ -39,7 +39,7 @@ final class HomeViewControllerTests: XCTestCase {
         sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure))
         let navigation = UINavigationController(rootViewController: sut)
         
-        assertSnapshot(of: navigation, as: .image(on: .iPhone13), record: true)
+        assertSnapshot(of: navigation, as: .image(on: .iPhone13))
     }
     
 }

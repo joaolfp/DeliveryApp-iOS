@@ -30,12 +30,16 @@ final class HomeViewControllerTests: XCTestCase {
     
     func testShouldValidateLayoutWithSuccess() {
         sut = HomeViewController(viewModel: mock)
-        assertSnapshot(of: sut, as: .image(on: .iPhone13))
+        let navigation = UINavigationController(rootViewController: sut)
+        
+        assertSnapshot(of: navigation, as: .image(on: .iPhone13))
     }
     
     func testValidateLayoutWithFailure() {
         sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure))
-        assertSnapshot(of: sut, as: .image(on: .iPhone13))
+        let navigation = UINavigationController(rootViewController: sut)
+        
+        assertSnapshot(of: navigation, as: .image(on: .iPhone13), record: true)
     }
     
 }

@@ -17,7 +17,7 @@ jobs:
       run: bundle install
 
     - name: Build and Tests
-      run: xcodebuild -project DeliveryApp.xcodeproj -scheme DeliveryApp -destination platform=iOS Simulator,OS=16.4,name=iPhone 14 -enableCodeCoverage YES build test
+      run: xcodebuild -project DeliveryApp.xcodeproj -scheme DeliveryApp -destination "platform=iOS Simulator,name=IPhone 14" -enableCodeCoverage YES build test
 
     - name: Danger action
       uses: MeilCli/danger-action@v5.6.21

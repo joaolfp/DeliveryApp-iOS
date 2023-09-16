@@ -20,7 +20,7 @@ jobs:
       run: xcodebuild -project DeliveryApp.xcodeproj -scheme DeliveryApp -destination "platform=iOS Simulator,name=IPhone 14" -enableCodeCoverage YES clean test | xcpretty
 
     - name: Danger action
-      uses: MeilCli/danger-action@v5.6.21
+      uses: MeilCli/danger-action@v5.6.22
       if: github.event_name == 'pull_request'
       with:
         plugins_file: 'Gemfile'

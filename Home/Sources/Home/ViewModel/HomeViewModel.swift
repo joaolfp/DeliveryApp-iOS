@@ -28,7 +28,8 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     private func stateRestaurants() {
-        self.service.getRestaurantsList { result in
+        self.service.getRestaurantsList { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let restaurants):
                 self.viewState.success(data: restaurants)

@@ -9,14 +9,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_15.app
+    - uses: maxim-lobanov/setup-xcode@v1.5.1
+      with:
+        xcode-version: 14.3.1
         
     - name: Install Ruby
       run: bundle install
 
     - name: Build and Tests
-      run: xcodebuild -project DeliveryApp.xcodeproj -scheme DeliveryApp -destination "platform=iOS Simulator,name=IPhone 15" -enableCodeCoverage YES clean test | xcpretty
+      run: xcodebuild -project DeliveryApp.xcodeproj -scheme DeliveryApp -destination "platform=iOS Simulator,name=IPhone 14" -enableCodeCoverage YES clean test | xcpretty
 
     - name: Danger action
       uses: MeilCli/danger-action@v5.6.22

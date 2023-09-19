@@ -43,6 +43,11 @@ final class HomeViewModelTests: XCTestCase {
             .loadingObserver(states.onLoading)
             .successObserver(states.onSuccess)
             .errorObserver(states.onFailure)
+        
+        XCTAssertEqual(states.restaurants?[0].name, "Benjamin a Padaria")
+        XCTAssertEqual(states.restaurants?[0].category, "Padaria")
+        XCTAssertEqual(states.restaurants?[0].deliveryTime.max, 33)
+        XCTAssertEqual(states.restaurants?[0].deliveryTime.min, 23)
     }
     
     func verifyRestaurantListWithFailure() {
@@ -55,22 +60,24 @@ final class HomeViewModelTests: XCTestCase {
             .loadingObserver(states.onLoading)
             .successObserver(states.onSuccess)
             .errorObserver(states.onFailure)
+        
+        XCTAssertEqual(states.error?.localizedDescription, "JSON parsing failure")
     }
 
 }
 
 final class HomeViewModelStates {
     
+    var restaurants: [RestaurantsDTO]?
+    var error: APIError?
+    
     func onLoading() { }
     
     func onSuccess(restaurants: [RestaurantsDTO]) {
-        XCTAssertEqual(restaurants[0].name, "Benjamin a Padaria")
-        XCTAssertEqual(restaurants[0].category, "Padaria")
-        XCTAssertEqual(restaurants[0].deliveryTime.max, 33)
-        XCTAssertEqual(restaurants[0].deliveryTime.min, 23)
+        self.restaurants = restaurants
     }
     
     func onFailure(error: APIError) {
-        XCTAssertEqual(error.localizedDescription, "JSON parsing failure")
+        self.error = error
     }
 }

@@ -13,68 +13,62 @@ import TestUtils
 
 final class HomeViewModelTests: XCTestCase {
     
-    var sut: HomeViewModel!
-    var service: HomeService!
-    var mock: APIClientMock!
-    
-    override func setUp() {
-        super.setUp()
+    func testVerifyLoadingWithSuccess() {
+        let sut = HomeViewModel()
+        let state = HomeViewModelStates()
         
-        mock = APIClientMock()
-        service = HomeService(client: mock)
-        sut = HomeViewModel(service: service)
-    }
-    
-    override func tearDown() {
-        super.tearDown()
+        sut.fetchRestaurants()
+            .loadingObserver(state.onLoading)
+            .successObserver(state.onSuccess)
+            .errorObserver(state.onFailure)
         
-        mock = nil
-        service = nil
-        sut = nil
+        XCTAssertTrue(state.isLoading)
     }
     
     func testVerifyRestaurantListWithSuccess() {
-        mock.fileJson = "RestaurantList"
-        mock.module = "Home"
-        
-        let states = HomeViewModelStates()
+        let mock = HomeServiceMock(stateMock: .success)
+        let sut = HomeViewModel(service: mock)
+        let state = HomeViewModelStates()
         
         sut.fetchRestaurants()
-            .loadingObserver(states.onLoading)
-            .successObserver(states.onSuccess)
-            .errorObserver(states.onFailure)
+            .loadingObserver(state.onLoading)
+            .successObserver(state.onSuccess)
+            .errorObserver(state.onFailure)
         
-        XCTAssertEqual(states.restaurants?[0].name, "Benjamin a Padaria")
-        XCTAssertEqual(states.restaurants?[0].category, "Padaria")
-        XCTAssertEqual(states.restaurants?[0].deliveryTime.max, 33)
-        XCTAssertEqual(states.restaurants?[0].deliveryTime.min, 23)
+        XCTAssertEqual(state.restaurants?[0].name, "Benjamin a Padaria")
+        XCTAssertEqual(state.restaurants?[0].category, "Padaria")
+        XCTAssertEqual(state.restaurants?[0].deliveryTime.max, 33)
+        XCTAssertEqual(state.restaurants?[0].deliveryTime.min, 23)
     }
     
-    func verifyRestaurantListWithFailure() {
-        mock.failure = true
-        mock.module = "Home"
-        
-        let states = HomeViewModelStates()
+    func testVerifyRestaurantListWithFailure() {
+        let mock = HomeServiceMock(stateMock: .failure)
+        let sut = HomeViewModel(service: mock)
+        let state = HomeViewModelStates()
         
         sut.fetchRestaurants()
-            .loadingObserver(states.onLoading)
-            .successObserver(states.onSuccess)
-            .errorObserver(states.onFailure)
+            .loadingObserver(state.onLoading)
+            .successObserver(state.onSuccess)
+            .errorObserver(state.onFailure)
         
-        XCTAssertEqual(states.error?.localizedDescription, "JSON parsing failure")
+        XCTAssertEqual(state.error?.localizedDescription, "JSON parsing failure")
     }
 
 }
 
 final class HomeViewModelStates {
     
+    var isLoading: Bool = false
     var restaurants: [RestaurantsDTO]?
     var error: APIError?
     
-    func onLoading() { }
+    func onLoading() {
+        self.isLoading = true
+    }
     
     func onSuccess(restaurants: [RestaurantsDTO]) {
         self.restaurants = restaurants
+        self.isLoading = false
     }
     
     func onFailure(error: APIError) {

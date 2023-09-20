@@ -11,14 +11,14 @@ import Networking
 import TestUtils
 @testable import Home
 
-enum StateMock {
-    case success
-    case failure
-}
-
 final class HomeViewModelMock: HomeViewModelProtocol {
     
     private var viewState = ViewState<[RestaurantsDTO], APIError>()
+    
+    enum StateMock {
+        case success
+        case failure
+    }
     
     private let stateMock: StateMock
     

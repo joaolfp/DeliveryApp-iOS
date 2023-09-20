@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml/badge.svg)](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml)
 [![codecov](https://codecov.io/gh/joaolfp/DeliveryApp-iOS/graph/badge.svg?token=RYTP12HMY7)](https://codecov.io/gh/joaolfp/DeliveryApp-iOS)
+[![License](https://img.shields.io/github/license/joaolfp/DeliveryApp-iOS.svg)]([https://github.com/joaolfp/ViewState/blob/master/LICENSE](https://github.com/joaolfp/DeliveryApp-iOS/blob/main/LICENSE))
 
 Delivery App is a simple app that shows a list of available categories and restaurants and we will be evolving over time :rocket:
 

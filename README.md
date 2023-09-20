@@ -5,7 +5,7 @@
 
 Delivery App is a simple app that shows a list of available categories and restaurants and we will be evolving over time :rocket:
 
-<img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Home/Tests/HomeTests/Screens/Home/__Snapshots__/HomeViewControllerTests/testShouldValidateLayoutWithSuccess.1.png?raw=true" width="310" height="640" />
+<img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Home/Tests/HomeTests/Screens/Home/__Snapshots__/HomeViewControllerTests/testShouldValidateLayoutWithSuccess.1.png?raw=true" width="310" height="680" />
 
 ## Knowledge Stack
 

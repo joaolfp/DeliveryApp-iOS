@@ -16,7 +16,10 @@ jobs:
     - name: Install Ruby
       run: bundle install
 
-    - name: Build and Tests
+    - name: Build
+      run: make build
+
+    - name: Run tests
       run: make test
 
     - name: Danger action

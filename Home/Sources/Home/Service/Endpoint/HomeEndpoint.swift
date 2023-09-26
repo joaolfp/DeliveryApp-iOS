@@ -24,7 +24,7 @@ extension HomeEndpoint: EndpointProtocol {
     var path: String {
         switch self {
         case .getRestaurantList:
-            return "/devpass-tech/challenge-delivery-app/main/api/home_restaurant_list.json"
+            return "/joaolfp/DeliveryApp-iOS/main/api/home_restaurant_list.json"
         }
     }
     

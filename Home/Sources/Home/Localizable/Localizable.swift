@@ -11,4 +11,5 @@ enum Localizable: String {
     case deliveryApp = "Delivery App"
     case messageError = "Erro de conexão"
     case setupAddress = "R. Guirantiga, 500"
+    case edit = "Editar"
 }

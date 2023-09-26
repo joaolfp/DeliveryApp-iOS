@@ -25,6 +25,18 @@ final class AddressView: UIView {
         return label
     }()
     
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitle(Localizable.edit.rawValue, for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.backgroundColor = .white
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemBlue.cgColor
+        button.layer.cornerRadius = 8
+        return button
+    }()
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupBaseView()
@@ -40,6 +52,7 @@ extension AddressView: ViewCode {
     func buildViewHierarchy() {
         addSubview(cardView)
         cardView.addSubview(addressLabel)
+        cardView.addSubview(editButton)
     }
     
     func setupConstraints() {
@@ -53,6 +66,13 @@ extension AddressView: ViewCode {
         addressLabel.layout.applyConstraint { view in
             view.topAnchor(equalTo: cardView.topAnchor, constant: 16)
             view.leadingAnchor(equalTo: cardView.leadingAnchor, constant: 16)
+            view.bottomAnchor(equalTo: cardView.bottomAnchor, constant: -16)
+        }
+        
+        editButton.layout.applyConstraint { view in
+            view.topAnchor(equalTo: cardView.topAnchor, constant: 16)
+            view.leadingAnchor(equalTo: addressLabel.trailingAnchor, constant: 16)
+            view.widthAnchor(equalToConstant: 80)
             view.bottomAnchor(equalTo: cardView.bottomAnchor, constant: -16)
         }
     }

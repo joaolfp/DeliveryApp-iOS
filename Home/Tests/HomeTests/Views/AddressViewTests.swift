@@ -13,7 +13,7 @@ import UIKit
 final class AddressViewTests: XCTestCase {
     
     func testShouldValidateLayout() {
-        let view = AddressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        let view = AddressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
         assertSnapshot(of: view, as: .image)
     }
 }

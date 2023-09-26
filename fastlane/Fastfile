@@ -22,5 +22,15 @@ platform :ios do
               devices: "iPhone 15",
               scheme: "DeliveryApp",
               code_coverage: true)
+
+    slather(
+      html: true,
+      use_bundle_exec: true,
+      scheme: "DeliveryApp",
+      output_directory: "CoverageReport",
+      proj: "DeliveryApp.xcodeproj",
+      ignore: [ "R.generated.swift", "Pods/*"],
+      verbose: true,
+      show: true)
   end
 end

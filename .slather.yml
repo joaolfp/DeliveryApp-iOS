@@ -1,0 +1,14 @@
+xcodeproj: DeliveryApp.xcodeproj
+scheme: DeliveryApp
+coverage_service: html
+source_directory: "DeliveryApp"
+output_directory: coverage_report
+ignore:
+  - ../**/*/Xcode*
+  - ../core/*
+  - Pods/*
+  - Home/Tests/*
+  - Core/Tests/*
+  - Networking/Tests/*
+  - TestUtils/*
+  - DesignSystem/Tests

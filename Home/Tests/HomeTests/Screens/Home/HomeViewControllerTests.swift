@@ -28,6 +28,13 @@ final class HomeViewControllerTests: XCTestCase {
         mock = nil
     }
     
+    func testShouldValidateLayoutWithLoading() {
+        sut = HomeViewController()
+        let navigation = UINavigationController(rootViewController: sut)
+        
+        assertSnapshot(of: navigation, as: .image)
+    }
+    
     func testShouldValidateLayoutWithSuccess() {
         sut = HomeViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)

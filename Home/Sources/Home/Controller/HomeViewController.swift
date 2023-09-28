@@ -13,6 +13,12 @@ import DesignSystem
 final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
+    
+    private lazy var containerView: LoadingContainerView = {
+        let view = LoadingContainerView(containerView: self.homeView)
+        return view
+    }()
+    
     private let viewModel: HomeViewModelProtocol
     
     var coordinator: CoordinatorProtocol?
@@ -28,7 +34,7 @@ final class HomeViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = homeView
+        self.view = containerView
     }
 
     override func viewDidLoad() {
@@ -53,11 +59,11 @@ final class HomeViewController: UIViewController {
     }
     
     private func onLoading() {
-        homeView.isLoading(true)
+        containerView.status = .loading
     }
     
     private func onSuccess(restaurants: [RestaurantsDTO]) {
-        homeView.isLoading(false)
+        containerView.status = .showView
         homeView.optionsView.setup(data: restaurants)
         homeView.restaurantView.setup(data: restaurants)
     }

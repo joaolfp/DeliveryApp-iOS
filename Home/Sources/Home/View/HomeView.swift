@@ -33,12 +33,6 @@ final class HomeView: UIView {
         let view = RestaurantView()
         return view
     }()
-    
-    private let activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .large)
-        view.color = .gray
-        return view
-    }()
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -51,21 +45,9 @@ final class HomeView: UIView {
     }
 }
 
-extension HomeView {
-    func isLoading(_ isBool: Bool) {
-        if isBool == true {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
-    }
-
-}
-
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
         addSubview(scrollStackView)
-        scrollStackView.addSubview(activityIndicator)
         
         scrollStackView.stackView.addArrangedSubview(addressView)
         scrollStackView.stackView.addArrangedSubview(optionsView)
@@ -78,11 +60,6 @@ extension HomeView: ViewCode {
             view.leadingAnchor(equalTo: leadingAnchor)
             view.trailingAnchor(equalTo: trailingAnchor)
             view.bottomAnchor(equalTo: bottomAnchor)
-        }
-        
-        activityIndicator.layout.applyConstraint { view in
-            view.centerXAnchor(equalTo: scrollStackView.centerXAnchor)
-            view.centerYAnchor(equalTo: scrollStackView.centerYAnchor)
         }
     }
     

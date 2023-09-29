@@ -17,7 +17,7 @@ let package = Package(
         .package(path: "./Core"),
         .package(path: "./TestUtils"),
         .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.1.0")),
+        .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.2.0")),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.13.0")
     ],
     targets: [

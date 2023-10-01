@@ -10,12 +10,19 @@ import Core
 
 final class AddressViewController: UIViewController {
     
+    private let addressView = AddressView()
+    
     var coordinator: CoordinatorProtocol?
+    
+    override func loadView() {
+        view = addressView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        title = "Endereço"
+        view.backgroundColor = .white
 
     }
 }

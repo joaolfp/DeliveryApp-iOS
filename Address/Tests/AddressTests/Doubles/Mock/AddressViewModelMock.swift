@@ -1,19 +1,18 @@
 //
-//  HomeViewModelMock.swift
-//  
+//  AddressViewModelMock.swift
 //
-//  Created by João Lucas on 08/07/23.
+//
+//  Created by João Lucas on 01/10/23.
 //
 
 import Foundation
 import ViewState
 import Networking
 import TestUtils
-@testable import Home
+@testable import Address
 
-final class HomeViewModelMock: HomeViewModelProtocol {
-    
-    private var viewState = ViewState<[RestaurantsDTO], APIError>()
+final class AddressViewModelMock: AddressViewModelProtocol {
+    var viewState = ViewState<[AddressDTO], APIError>()
     
     enum StateMock {
         case success
@@ -26,12 +25,12 @@ final class HomeViewModelMock: HomeViewModelProtocol {
         self.stateMock = stateMock
     }
     
-    func fetchRestaurants() -> ViewState<[RestaurantsDTO], APIError> {
+    func fetchAddress() -> ViewState<[AddressDTO], APIError> {
         viewState.fetchSource {
             switch self.stateMock {
             case .success:
-                let restaurants: [RestaurantsDTO] = JSONHelper.loadJSON(withFile: "RestaurantList", inBundleWithName: "Home", path: "JSON")!
-                self.viewState.success(data: restaurants)
+                let address: [AddressDTO] = JSONHelper.loadJSON(withFile: "AddressList", inBundleWithName: "Address", path: "JSON")!
+                self.viewState.success(data: address)
             case .failure:
                 self.viewState.error(error: APIError.jsonParsingFailure)
             }

@@ -8,15 +8,33 @@
 import UIKit
 import Core
 
+protocol AddressDataSourceDelegate: AnyObject {
+    func getAddressItem(item: AddressDTO)
+}
+
 final class AddressDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    weak var delegate: AddressDataSourceDelegate?
+    
+    private var data: [AddressDTO]
+    
+    init(data: [AddressDTO]) {
+        self.data = data
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.addCell(for: indexPath, cellType: AddressCell.self)
-        cell.setup(street: "Rua Benedito, 40", neighborhood: "Consoloção")
+        
+        let item = data[indexPath.row]
+        
+        cell.setup(street: "\(item.street), \(item.number)", neighborhood: item.neighborhood) {
+            self.delegate?.getAddressItem(item: item)
+        }
+        
         return cell
     }
     

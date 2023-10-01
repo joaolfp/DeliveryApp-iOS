@@ -23,7 +23,7 @@ final class HomeServiceMock: HomeServiceProtocol {
         self.stateMock = stateMock
     }
     
-    func getRestaurantsList(completion: @escaping (Result<[Home.RestaurantsDTO], APIError>) -> Void) {
+    func getRestaurantsList(completion: @escaping (Result<[RestaurantsDTO], APIError>) -> Void) {
         switch stateMock {
         case .success:
             let restaurants: [RestaurantsDTO] = JSONHelper.loadJSON(withFile: "RestaurantList", inBundleWithName: "Home", path: "JSON")!

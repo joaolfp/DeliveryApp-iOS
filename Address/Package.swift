@@ -41,7 +41,8 @@ let package = Package(
                 "TestUtils",
                 "ViewState",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
-            ]
+            ],
+            resources: [.copy("JSON")]
         )
     ]
 )

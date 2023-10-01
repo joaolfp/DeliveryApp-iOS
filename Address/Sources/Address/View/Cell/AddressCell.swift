@@ -11,25 +11,26 @@ import SketchKit
 
 final class AddressCell: UITableViewCell, Identifiable {
     
+    private var tapView: (() -> Void)?
+    
     private let streetLabel: UILabel = {
         let label = UILabel()
-        label.text = "Rua benedito, 300"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let neighborhoodLabel: UILabel = {
         let label = UILabel()
-        label.text = "Consoloção"
         label.textColor = .systemGray
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupBaseView()
+        setupGesture()
     }
     
     @available(*, unavailable)
@@ -37,9 +38,21 @@ final class AddressCell: UITableViewCell, Identifiable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(street: String, neighborhood: String) {
+    func setup(street: String, neighborhood: String, action: (() -> Void)?) {
         streetLabel.text = street
         neighborhoodLabel.text = neighborhood
+        
+        self.tapView = action
+    }
+    
+    private func setupGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc 
+    func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        tapView?()
     }
 }
 

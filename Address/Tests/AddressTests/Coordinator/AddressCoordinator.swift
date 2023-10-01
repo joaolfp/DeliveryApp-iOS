@@ -1,25 +1,25 @@
 //
-//  HomeCoordinatorTests.swift
-//  
+//  AddressCoordinator.swift
 //
-//  Created by João Lucas on 05/04/23.
+//
+//  Created by João Lucas on 01/10/23.
 //
 
 import XCTest
 import UIKit
 import TestUtils
-@testable import Home
+@testable import Address
 
-final class HomeCoordinatorTests: XCTestCase {
+final class AddressCoordinatorTests: XCTestCase {
     
     var spy: NavigationControllerSpy!
-    var coordinator: HomeCoordinator!
+    var coordinator: AddressCoordinator!
     
     override func setUp() {
         super.setUp()
         
         spy = NavigationControllerSpy()
-        coordinator = HomeCoordinator(parentCoordinator: nil, parentViewController: spy)
+        coordinator = AddressCoordinator(parentCoordinator: nil, parentViewController: spy)
     }
     
     override func tearDown() {

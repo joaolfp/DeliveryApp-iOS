@@ -9,13 +9,20 @@ import UIKit
 import Core
 import SketchKit
 
+protocol AddressViewDelegate: AnyObject {
+    func getAddressSelected(item: AddressDTO)
+}
+
 final class AddressView: UIView {
+    
+    weak var delegate: AddressViewDelegate?
     
     private var dataSource: AddressDataSource?
     
     private let listTableView: UITableView = {
         let tableView = UITableView()
         tableView.registerCell(cellType: AddressCell.self)
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -29,12 +36,19 @@ final class AddressView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-        dataSource = AddressDataSource()
+    func setup(data: [AddressDTO]) {
+        dataSource = AddressDataSource(data: data)
+        dataSource?.delegate = self
         
         listTableView.dataSource = dataSource
         listTableView.delegate = dataSource
         listTableView.reloadData()
+    }
+}
+
+extension AddressView: AddressDataSourceDelegate {
+    func getAddressItem(item: AddressDTO) {
+        delegate?.getAddressSelected(item: item)
     }
 }
 

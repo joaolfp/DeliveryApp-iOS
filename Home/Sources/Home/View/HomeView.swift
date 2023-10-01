@@ -10,7 +10,13 @@ import Core
 import DesignSystem
 import SketchKit
 
+protocol HomeViewDelegate: AnyObject {
+    func goToAddress()
+}
+
 final class HomeView: UIView {
+    
+    weak var delegate: HomeViewDelegate?
     
     private let scrollStackView: ScrollStackView = {
         let view = ScrollStackView(topInset: 0, bottomInset: 4)
@@ -19,8 +25,9 @@ final class HomeView: UIView {
         return view
     }()
     
-    let addressView: AddressView = {
+    lazy var addressView: AddressView = {
         let view = AddressView()
+        view.delegate = self
         return view
     }()
     
@@ -42,6 +49,12 @@ final class HomeView: UIView {
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension HomeView: AddressViewDelegate {
+    func addressTap() {
+        delegate?.goToAddress()
     }
 }
 

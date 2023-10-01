@@ -12,13 +12,30 @@ final public class HomeCoordinator: BaseCoordinator {
     
     private weak var parentViewController: UINavigationController?
     
-    public init(parentViewController: UINavigationController?) {
+    public init(parentCoordinator: CoordinatorProtocol?,
+                parentViewController: UINavigationController?) {
         self.parentViewController = parentViewController
+        super.init(parentCoordinator: parentCoordinator)
     }
     
     public override func start(_ completion: @escaping () -> Void) {
         let controller = HomeViewController()
         controller.coordinator = self
         parentViewController?.pushViewController(controller, animated: true)
+    }
+    
+    override public func handle(event: CoordinatorEvent) {
+        if let homeEvent = event as? HomeCoordinatorEvent {
+            handle(homeEvent)
+        }
+    }
+}
+
+private extension HomeCoordinator {
+    func handle(_ event: HomeCoordinatorEvent) {
+        switch event {
+        case .goToAddress:
+            parentCoordinator?.handle(event: HomeExternalCoordinatorEvent.goToAddress)
+        }
     }
 }

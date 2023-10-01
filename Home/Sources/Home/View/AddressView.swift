@@ -9,7 +9,13 @@ import UIKit
 import Core
 import SketchKit
 
+protocol AddressViewDelegate: AnyObject {
+    func addressTap()
+}
+
 final class AddressView: UIView {
+    
+    weak var delegate: AddressViewDelegate?
     
     private let cardView: UIView = {
         let view = UIView()
@@ -34,6 +40,7 @@ final class AddressView: UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.systemBlue.cgColor
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(addressTap), for: .touchUpInside)
         return button
     }()
     
@@ -45,6 +52,14 @@ final class AddressView: UIView {
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AddressView {
+    
+    @objc
+    func addressTap() {
+        delegate?.addressTap()
     }
 }
 

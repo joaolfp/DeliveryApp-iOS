@@ -12,7 +12,11 @@ import DesignSystem
 
 final class HomeViewController: UIViewController {
     
-    private let homeView = HomeView()
+    private lazy var homeView: HomeView = {
+        let view = HomeView()
+        view.delegate = self
+        return view
+    }()
     
     private lazy var containerView: LoadingContainerView = {
         let view = LoadingContainerView(containerView: self.homeView)
@@ -71,5 +75,12 @@ final class HomeViewController: UIViewController {
     private func onFailure(error: APIError) {
         let errorView = ErrorView(message: Localizable.messageError.rawValue)
         view = errorView
+    }
+}
+
+extension HomeViewController: HomeViewDelegate {
+    
+    func goToAddress() {
+        coordinator?.handle(event: HomeCoordinatorEvent.goToAddress)
     }
 }

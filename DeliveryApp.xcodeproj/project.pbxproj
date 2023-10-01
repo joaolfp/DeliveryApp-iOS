@@ -16,6 +16,7 @@
 		A6431BEA29CBF998004FD906 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE929CBF998004FD906 /* Home */; };
 		A6431BEC29CBF99C004FD906 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BEB29CBF99C004FD906 /* Networking */; };
 		A67814D229D0BBB300EA4716 /* TestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = A67814D129D0BBB300EA4716 /* TestUtils */; };
+		C596C0F22AC9856400B8F7CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */; };
 		C5C0606A2AC38A0300AADB21 /* Address in Frameworks */ = {isa = PBXBuildFile; productRef = C5C060692AC38A0300AADB21 /* Address */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		A6431BE229CBF8C9004FD906 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
 		A6431BE329CBF900004FD906 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		A6431BE429CBF921004FD906 /* TestUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestUtils; sourceTree = "<group>"; };
+		C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C5C060672AC389D700AADB21 /* Address */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Address; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		A6431BC529CBF45F004FD906 /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				C596C0F02AC9855100B8F7CF /* Coordinator */,
 				A6431BDC29CBF6A9004FD906 /* Application */,
 				A6431BDB29CBF6A0004FD906 /* Resources */,
 				A6431BD429CBF460004FD906 /* Info.plist */,
@@ -139,6 +142,14 @@
 				A6431BE029CBF859004FD906 /* DesignSystem */,
 			);
 			name = Styleguide;
+			sourceTree = "<group>";
+		};
+		C596C0F02AC9855100B8F7CF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C596C0F22AC9856400B8F7CF /* AppCoordinator.swift in Sources */,
 				A6431BC729CBF45F004FD906 /* AppDelegate.swift in Sources */,
 				A6431BC929CBF45F004FD906 /* SceneDelegate.swift in Sources */,
 			);

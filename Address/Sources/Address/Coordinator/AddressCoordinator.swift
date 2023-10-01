@@ -12,8 +12,10 @@ final public class AddressCoordinator: BaseCoordinator {
     
     private weak var parentViewController: UINavigationController?
     
-    public init(parentViewController: UINavigationController?) {
+    public init(parentCoordinator: CoordinatorProtocol?,
+                parentViewController: UINavigationController?) {
         self.parentViewController = parentViewController
+        super.init(parentCoordinator: parentCoordinator)
     }
     
     public override func start(_ completion: @escaping () -> Void) {

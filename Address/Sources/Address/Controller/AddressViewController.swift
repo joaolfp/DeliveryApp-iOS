@@ -22,7 +22,7 @@ final class AddressViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Endereço"
-        view.backgroundColor = .white
-
+        
+        addressView.setup()
     }
 }

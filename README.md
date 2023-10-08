@@ -1,4 +1,6 @@
-# DeliveryApp
+<p align="center">
+    <img src="https://github.com/joaolfp/DeliveryApp-iOS/blob/main/Docs/img/logo.png">
+</p>
 
 [![CI](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml/badge.svg)](https://github.com/joaolfp/DeliveryApp-iOS/actions/workflows/CI.yml)
 [![codecov](https://codecov.io/gh/joaolfp/DeliveryApp-iOS/graph/badge.svg?token=RYTP12HMY7)](https://codecov.io/gh/joaolfp/DeliveryApp-iOS)

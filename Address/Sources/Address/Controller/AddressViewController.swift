@@ -17,9 +17,11 @@ final class AddressViewController: UIViewController {
         view.delegate = self
         return view
     }()
-    
+
     private lazy var containerView: LoadingContainerView = {
-        let view = LoadingContainerView(containerView: self.addressView)
+        let view = LoadingContainerView(
+            containerView: self.addressView,
+            errorView: ErrorView(message: Localizable.messageError.rawValue))
         return view
     }()
     
@@ -68,8 +70,7 @@ extension AddressViewController {
     }
     
     func onFailure(error: APIError) {
-        let errorView = ErrorView(message: Localizable.messageError.rawValue)
-        view = errorView
+        containerView.status = .showError
     }
 }
 

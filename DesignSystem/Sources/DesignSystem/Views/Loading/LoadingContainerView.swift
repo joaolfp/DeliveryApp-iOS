@@ -14,6 +14,7 @@ final public class LoadingContainerView: UIView {
     public enum Status {
         case loading
         case showView
+        case showError
     }
     
     private let loadingView: UIView = {
@@ -30,6 +31,7 @@ final public class LoadingContainerView: UIView {
     }()
 
     private let containerView: UIView
+    private let errorView: UIView
     
     public var status: Status = .loading {
         didSet {
@@ -37,8 +39,9 @@ final public class LoadingContainerView: UIView {
         }
     }
     
-    public init(containerView: UIView) {
+    public init(containerView: UIView, errorView: UIView) {
         self.containerView = containerView
+        self.errorView = errorView
         super.init(frame: .zero)
         setupBaseView()
     }
@@ -55,6 +58,8 @@ final public class LoadingContainerView: UIView {
             targetView = self.loadingView
         case .showView:
             targetView = self.containerView
+        case .showError:
+            targetView = self.errorView
         }
         
         self.addSubview(targetView)

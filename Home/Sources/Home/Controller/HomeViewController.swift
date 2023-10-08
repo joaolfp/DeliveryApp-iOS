@@ -19,7 +19,9 @@ final class HomeViewController: UIViewController {
     }()
     
     private lazy var containerView: LoadingContainerView = {
-        let view = LoadingContainerView(containerView: self.homeView)
+        let view = LoadingContainerView(
+            containerView: self.homeView,
+            errorView: ErrorView(message: Localizable.messageError.rawValue))
         return view
     }()
     
@@ -73,8 +75,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func onFailure(error: APIError) {
-        let errorView = ErrorView(message: Localizable.messageError.rawValue)
-        view = errorView
+        containerView.status = .showError
     }
 }
 

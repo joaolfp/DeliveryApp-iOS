@@ -24,7 +24,7 @@ extension AddressEndpoint: EndpointProtocol {
     var path: String {
         switch self {
         case .getAddressList:
-            return "/devpass-tech/challenge-delivery-app/main/api/address_search_results.json"
+            return "/joaolfp/DeliveryApp-iOS/main/api/address.json"
         }
     }
     

@@ -71,7 +71,6 @@ extension AddressCell: ViewCode {
         neighborhoodLabel.layout.applyConstraint { view in
             view.topAnchor(equalTo: streetLabel.bottomAnchor, constant: 8)
             view.leadingAnchor(equalTo: contentView.leadingAnchor, constant: 16)
-            view.bottomAnchor(equalTo: contentView.bottomAnchor, constant: -16)
         }
     }
 }

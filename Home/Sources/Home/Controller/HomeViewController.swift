@@ -9,6 +9,7 @@ import UIKit
 import Core
 import Networking
 import DesignSystem
+import Persistence
 
 final class HomeViewController: UIViewController {
     
@@ -25,12 +26,15 @@ final class HomeViewController: UIViewController {
         return view
     }()
     
-    private let viewModel: HomeViewModelProtocol
+    private var viewModel: HomeViewModelProtocol
+    private let keychain: KeychainProtocol
     
     var coordinator: CoordinatorProtocol?
     
-    init(viewModel: HomeViewModelProtocol = HomeViewModel()) {
+    init(viewModel: HomeViewModelProtocol = HomeViewModel(),
+         keychain: KeychainProtocol = Keychain()) {
         self.viewModel = viewModel
+        self.keychain = keychain
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,13 +54,33 @@ final class HomeViewController: UIViewController {
         
         setupThemeNavigationBar()
         fetchRestaurantsList()
+        setupAddress()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        setupAddress()
     }
     
     private func setupThemeNavigationBar() {
         self.navigationController?.navigationBar.barTintColor = .lightGray
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
+}
+
+extension HomeViewController {
     
+    private func setupAddress() {
+        viewModel.didSetAddress = { [weak self] address in
+            self?.homeView.addressView.setup(address: address)
+        }
+        
+        viewModel.fetchAddress(keychain: keychain)
+    }
+}
+
+extension HomeViewController {
     private func fetchRestaurantsList() {
         viewModel.fetchRestaurants()
             .loadingObserver(onLoading)

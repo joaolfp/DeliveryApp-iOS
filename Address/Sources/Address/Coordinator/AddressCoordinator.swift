@@ -23,4 +23,26 @@ final public class AddressCoordinator: BaseCoordinator {
         controller.coordinator = self
         parentViewController?.pushViewController(controller, animated: true)
     }
+    
+    override public func handle(event: CoordinatorEvent) {
+        if let addressEvent = event as? AddressCoordinatorEvent {
+            handle(addressEvent)
+        }
+    }
+}
+
+extension AddressCoordinator {
+    
+    private func popViewController(animated: Bool) {
+        parentViewController?.popViewController(animated: animated)
+    }
+}
+
+private extension AddressCoordinator {
+    func handle(_ event: AddressCoordinatorEvent) {
+        switch event {
+        case .popViewController(let animated):
+            popViewController(animated: animated)
+        }
+    }
 }

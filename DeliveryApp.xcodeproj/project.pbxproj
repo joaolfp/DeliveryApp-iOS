@@ -17,6 +17,7 @@
 		A6431BEC29CBF99C004FD906 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BEB29CBF99C004FD906 /* Networking */; };
 		A67814D229D0BBB300EA4716 /* TestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = A67814D129D0BBB300EA4716 /* TestUtils */; };
 		C596C0F22AC9856400B8F7CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */; };
+		C59C03422B07F68700F63582 /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = C59C03412B07F68700F63582 /* Persistence */; };
 		C5C0606A2AC38A0300AADB21 /* Address in Frameworks */ = {isa = PBXBuildFile; productRef = C5C060692AC38A0300AADB21 /* Address */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		A6431BE329CBF900004FD906 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		A6431BE429CBF921004FD906 /* TestUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestUtils; sourceTree = "<group>"; };
 		C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C59C033F2B07F65900F63582 /* Persistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Persistence; sourceTree = "<group>"; };
 		C5C060672AC389D700AADB21 /* Address */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Address; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +45,7 @@
 			files = (
 				A6431BE629CBF991004FD906 /* Core in Frameworks */,
 				A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */,
+				C59C03422B07F68700F63582 /* Persistence in Frameworks */,
 				A6431BEC29CBF99C004FD906 /* Networking in Frameworks */,
 				C5C0606A2AC38A0300AADB21 /* Address in Frameworks */,
 				A67814D229D0BBB300EA4716 /* TestUtils in Frameworks */,
@@ -122,6 +125,7 @@
 		C5934D6A2AA359110019C3BC /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				C59C033F2B07F65900F63582 /* Persistence */,
 				A6431BE329CBF900004FD906 /* Networking */,
 			);
 			name = Infra;
@@ -176,6 +180,7 @@
 				A6431BEB29CBF99C004FD906 /* Networking */,
 				A67814D129D0BBB300EA4716 /* TestUtils */,
 				C5C060692AC38A0300AADB21 /* Address */,
+				C59C03412B07F68700F63582 /* Persistence */,
 			);
 			productName = DeliveryApp;
 			productReference = A6431BC329CBF45F004FD906 /* DeliveryApp.app */;
@@ -491,6 +496,10 @@
 		A67814D129D0BBB300EA4716 /* TestUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TestUtils;
+		};
+		C59C03412B07F68700F63582 /* Persistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Persistence;
 		};
 		C5C060692AC38A0300AADB21 /* Address */ = {
 			isa = XCSwiftPackageProductDependency;

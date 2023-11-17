@@ -9,6 +9,7 @@ import UIKit
 import Core
 import DesignSystem
 import Networking
+import Persistence
 
 final class AddressViewController: UIViewController {
     
@@ -77,6 +78,9 @@ extension AddressViewController {
 extension AddressViewController: AddressViewDelegate {
     
     func getAddressSelected(item: AddressDTO) {
-        // TODO: Guardar este dado local
+        let address = "\(item.street), \(item.number)"
+        Keychain().setValue(value: address, forKey: .address)
+        
+        coordinator?.handle(event: AddressCoordinatorEvent.popViewController(animated: true))
     }
 }

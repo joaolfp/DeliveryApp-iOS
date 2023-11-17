@@ -25,7 +25,6 @@ final class AddressView: UIView {
     
     private let addressLabel: UILabel = {
         let label = UILabel()
-        label.text = Localizable.setupAddress.rawValue
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)
         return label
@@ -52,6 +51,10 @@ final class AddressView: UIView {
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(address: String) {
+        addressLabel.text = address
     }
 }
 

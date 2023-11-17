@@ -19,7 +19,7 @@ final class HomeViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        mock = HomeViewModelMock(stateMock: .success)
+        mock = HomeViewModelMock(stateMock: .success, statePersistence: .withValue)
     }
     
     override func tearDown() {
@@ -43,7 +43,15 @@ final class HomeViewControllerTests: XCTestCase {
     }
     
     func testValidateLayoutWithFailure() {
-        sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure))
+        sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure, statePersistence: .withValue))
+        let navigation = UINavigationController(rootViewController: sut)
+        
+        assertSnapshot(of: navigation, as: .image)
+    }
+    
+    func testShouldValidateLayoutWithoutAddress() {
+        let mock = HomeViewModelMock(stateMock: .success, statePersistence: .withoutValue)
+        sut = HomeViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)
         
         assertSnapshot(of: navigation, as: .image)

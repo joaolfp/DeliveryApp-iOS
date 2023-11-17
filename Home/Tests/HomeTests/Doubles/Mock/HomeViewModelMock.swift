@@ -9,9 +9,11 @@ import Foundation
 import ViewState
 import Networking
 import TestUtils
+import Persistence
 @testable import Home
 
 final class HomeViewModelMock: HomeViewModelProtocol {
+    var didSetAddress: ((String) -> Void)?
     
     private var viewState = ViewState<[RestaurantsDTO], APIError>()
     
@@ -20,10 +22,17 @@ final class HomeViewModelMock: HomeViewModelProtocol {
         case failure
     }
     
-    private let stateMock: StateMock
+    enum StatePersistence {
+        case withValue
+        case withoutValue
+    }
     
-    init(stateMock: StateMock) {
+    private let stateMock: StateMock
+    private let statePersistence: StatePersistence
+    
+    init(stateMock: StateMock, statePersistence: StatePersistence) {
         self.stateMock = stateMock
+        self.statePersistence = statePersistence
     }
     
     func fetchRestaurants() -> ViewState<[RestaurantsDTO], APIError> {
@@ -38,5 +47,14 @@ final class HomeViewModelMock: HomeViewModelProtocol {
         }
         
         return viewState
+    }
+    
+    func fetchAddress(keychain: KeychainProtocol) {
+        switch statePersistence {
+        case .withValue:
+            didSetAddress?("R. Guirantiga, 500")
+        case .withoutValue:
+            didSetAddress?("Endereço não encontrado")
+        }
     }
 }

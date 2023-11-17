@@ -18,6 +18,7 @@ let package = Package(
         .package(path: "./DesignSystem"),
         .package(path: "./Networking"),
         .package(path: "./TestUtils"),
+        .package(path: "./Persistence"),
         .package(url: "https://github.com/joaolfp/ViewState.git", .upToNextMajor(from: "1.5.0")),
         .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0")),
         .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.3.0")),
@@ -32,7 +33,8 @@ let package = Package(
                 "Networking",
                 "ViewState",
                 "SketchKit",
-                "MagicImages"
+                "MagicImages",
+                "Persistence"
             ]),
         .testTarget(
             name: "AddressTests",
@@ -40,6 +42,7 @@ let package = Package(
                 "Address",
                 "TestUtils",
                 "ViewState",
+                "Persistence",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
             ],
             resources: [.copy("JSON")]

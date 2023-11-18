@@ -53,6 +53,21 @@ final class HomeViewModelTests: XCTestCase {
         
         XCTAssertEqual(state.error?.localizedDescription, "JSON parsing failure")
     }
+    
+    func testVerifyFetchAddressWithValue() {
+        let sut = HomeViewModel()
+        
+        let keychain = KeychainSpy()
+        keychain.setValue(value: "endereço", forKey: .address)
+        
+        sut.didSetAddress = { address in
+            XCTAssertEqual(address, "endereço")
+        }
+        
+        sut.fetchAddress(keychain: keychain)
+        
+        XCTAssertEqual(keychain.value, "endereço")
+    }
 
 }
 

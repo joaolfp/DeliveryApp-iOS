@@ -12,6 +12,7 @@ disabled_rules:
   - file_length
   - self_in_property_initialization
   - blanket_disable_command
+  - void_function_in_ternary
   
 vertical_whitespace:
     severity: error

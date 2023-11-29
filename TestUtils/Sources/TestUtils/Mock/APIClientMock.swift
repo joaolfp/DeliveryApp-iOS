@@ -8,7 +8,7 @@
 import Foundation
 import Networking
 
-final public class APIClientMock: APIClientProtocol {
+public final class APIClientMock: APIClientProtocol {
    
     public var fileJson = String()
     public var module = String()

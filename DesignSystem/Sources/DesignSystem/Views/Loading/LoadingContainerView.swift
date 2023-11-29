@@ -9,7 +9,7 @@ import UIKit
 import Core
 import SketchKit
 
-final public class LoadingContainerView: UIView {
+public final class LoadingContainerView: UIView {
     
     public enum Status {
         case loading

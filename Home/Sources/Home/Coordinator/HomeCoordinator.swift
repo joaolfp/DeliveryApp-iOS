@@ -8,7 +8,7 @@
 import UIKit
 import Core
 
-final public class HomeCoordinator: BaseCoordinator {
+public final class HomeCoordinator: BaseCoordinator {
     
     private weak var parentViewController: UINavigationController?
     

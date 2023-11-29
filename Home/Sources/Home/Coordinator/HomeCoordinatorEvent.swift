@@ -5,7 +5,7 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-import Core
+import Coordinator
 
 public enum HomeExternalCoordinatorEvent: CoordinatorEvent {
     case goToAddress

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Coordinator
 import Core
 import DesignSystem
 import Networking

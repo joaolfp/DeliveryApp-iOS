@@ -14,6 +14,7 @@ let package = Package(
             targets: ["Address"])
     ],
     dependencies: [
+        .package(path: "./Coordinator"),
         .package(path: "./Core"),
         .package(path: "./DesignSystem"),
         .package(path: "./Networking"),
@@ -28,6 +29,7 @@ let package = Package(
         .target(
             name: "Address",
             dependencies: [
+                "Coordinator",
                 "Core",
                 "DesignSystem",
                 "Networking",

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Core
+import Coordinator
 import Home
 import Address
 

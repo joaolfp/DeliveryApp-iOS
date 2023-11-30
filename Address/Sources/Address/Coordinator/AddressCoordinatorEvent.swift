@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Core
+import Coordinator
 
 enum AddressCoordinatorEvent: CoordinatorEvent {
     case popViewController(animated: Bool)

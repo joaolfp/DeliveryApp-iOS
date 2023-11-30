@@ -10,7 +10,7 @@ import Core
 import SketchKit
 import MagicImages
 
-final public class ErrorView: UIView {
+public final class ErrorView: UIView {
     
     private let iconImage: UIImageView = {
         let imageView = UIImageView()

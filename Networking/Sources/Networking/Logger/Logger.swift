@@ -31,10 +31,6 @@ final class Logger {
     }
     
     private func validateStatusCode(response: HTTPURLResponse) {
-        if response.statusCode == 200 {
-            print("✅ status code: 200")
-        } else {
-            print("⚠️ status code: \(response.statusCode)")
-        }
+        response.statusCode == 200 ? print("✅ status code: 200") : print("⚠️ status code: \(response.statusCode)")
     }
 }

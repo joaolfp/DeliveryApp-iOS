@@ -7,7 +7,7 @@
 
 import UIKit
 
-final public class NavigationControllerSpy: UINavigationController {
+public final class NavigationControllerSpy: UINavigationController {
 
     public var isPresentCalled: Bool
 

@@ -17,7 +17,7 @@ public protocol KeychainProtocol {
     func removeValue(forKey: Keys)
 }
 
-final public class Keychain: KeychainProtocol {
+public final class Keychain: KeychainProtocol {
     
     public init() { }
     

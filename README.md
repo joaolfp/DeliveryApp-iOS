@@ -26,8 +26,10 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>DeliveryApp:</b> Main module
 * <b>Home:</b> Main screen
 * <b>Address:</b> For the user to select the address
+* <b>Persistence:</b> Save local information
 * <b>Networking:</b> Network configuration of the whole app
 * <b>Core:</b> All settings and code reusable
+* <b>Coordinator:</b> Navigation structure
 * <b>Design System:</b> All layout like colors, views and images
 * <b>TestUtils:</b> Mocks and codes to help with unit tests
 

@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "DesignSystem",
-            targets: ["DesignSystem"])
+            targets: ["DesignSystem"]
+        )
     ],
     dependencies: [
         .package(path: "./Core"),

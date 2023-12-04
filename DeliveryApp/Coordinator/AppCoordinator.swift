@@ -5,25 +5,25 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-import UIKit
+import Address
 import Coordinator
 import Home
-import Address
+import UIKit
 
 public class AppCoordinator: BaseCoordinator {
-    
+
     private weak var parentViewController: UINavigationController?
-    
+
     public init(parentViewController: UINavigationController?) {
         self.parentViewController = parentViewController
     }
-    
-    public override func start(_ completion: @escaping () -> Void) {
+
+    override public func start(_ completion: @escaping () -> Void) {
         guard let navigationController = parentViewController else { return }
         startHomeCoordinator(navigationController: navigationController)
         completion()
     }
-    
+
     override public func handle(event: CoordinatorEvent) {
         if let homeEvent = event as? HomeExternalCoordinatorEvent {
             handle(homeEvent)
@@ -32,20 +32,22 @@ public class AppCoordinator: BaseCoordinator {
 }
 
 private extension AppCoordinator {
-    
+
     func startHomeCoordinator(navigationController: UINavigationController) {
         let coordinator = HomeCoordinator(
             parentCoordinator: self,
-            parentViewController: navigationController)
-        
+            parentViewController: navigationController
+        )
+
         coordinator.start {}
     }
-    
+
     func startAddressCoordinator(navigationController: UINavigationController) {
         let coordinator = AddressCoordinator(
             parentCoordinator: self,
-            parentViewController: navigationController)
-        
+            parentViewController: navigationController
+        )
+
         coordinator.start {}
     }
 }

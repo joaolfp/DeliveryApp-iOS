@@ -1,6 +1,6 @@
 //
 //  APIMethod.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -15,6 +15,6 @@ public enum APIMethod: String {
     case delete = "DELETE"
 
     public func toString() -> String {
-        return self.rawValue
+        return rawValue
     }
 }

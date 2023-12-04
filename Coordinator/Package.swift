@@ -8,13 +8,15 @@ let package = Package(
     products: [
         .library(
             name: "Coordinator",
-            targets: ["Coordinator"])
+            targets: ["Coordinator"]
+        )
     ],
     targets: [
         .target(
             name: "Coordinator"),
         .testTarget(
             name: "CoordinatorTests",
-            dependencies: ["Coordinator"])
+            dependencies: ["Coordinator"]
+        )
     ]
 )

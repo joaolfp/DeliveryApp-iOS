@@ -5,32 +5,32 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-import XCTest
-import UIKit
-import TestUtils
 @testable import Address
+import TestUtils
+import UIKit
+import XCTest
 
 final class AddressCoordinatorTests: XCTestCase {
-    
+
     var spy: NavigationControllerSpy!
     var coordinator: AddressCoordinator!
-    
+
     override func setUp() {
         super.setUp()
-        
+
         spy = NavigationControllerSpy()
         coordinator = AddressCoordinator(parentCoordinator: nil, parentViewController: spy)
     }
-    
+
     override func tearDown() {
         super.tearDown()
-        
+
         spy = nil
         coordinator = nil
     }
-    
+
     func testVerifyIfTheHomeScreenAppears() {
-        coordinator.start { }
+        coordinator.start {}
         XCTAssertTrue(spy.isPushViewControllerCalled)
     }
 }

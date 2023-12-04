@@ -1,6 +1,6 @@
 //
 //  ViewCode.swift
-//  
+//
 //
 //  Created by João Lucas on 23/03/23.
 //
@@ -20,6 +20,5 @@ public extension ViewCode {
         configureViews()
     }
 
-    func configureViews() {
-    }
+    func configureViews() {}
 }

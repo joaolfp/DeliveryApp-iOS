@@ -16,33 +16,33 @@ extension AddressEndpoint: EndpointProtocol {
     var scheme: APIScheme {
         return .https
     }
-    
+
     var host: String {
         return "raw.githubusercontent.com"
     }
-    
+
     var path: String {
         switch self {
         case .getAddressList:
             return "/joaolfp/DeliveryApp-iOS/main/api/address.json"
         }
     }
-    
+
     var parameters: APIParameters? {
         return nil
     }
-    
+
     var body: APIBody? {
         return nil
     }
-    
+
     var method: APIMethod {
         switch self {
         case .getAddressList:
             return .get
         }
     }
-    
+
     var headers: HTTPHeaders? {
         return ["Content-type": "application/json"]
     }

@@ -1,6 +1,6 @@
 //
 //  APIScheme.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -12,6 +12,6 @@ public enum APIScheme: String {
     case https
 
     public func toString() -> String {
-        return self.rawValue
+        return rawValue
     }
 }

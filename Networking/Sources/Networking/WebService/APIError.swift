@@ -1,6 +1,6 @@
 //
 //  APIError.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -14,10 +14,10 @@ public enum APIError: Error {
     case invalidData
     case jsonParsingFailure
     case requestCancelled
-    
+
     public var localizedDescription: String {
         switch self {
-        case .requestFailed(let reason):
+        case let .requestFailed(reason):
             return "Request Failed: \(reason ?? "unknown")"
         case .jsonParsingFailure:
             return "JSON parsing failure"

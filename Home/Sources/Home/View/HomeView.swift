@@ -1,41 +1,41 @@
 //
 //  HomeView.swift
-//  
+//
 //
 //  Created by João Lucas on 23/03/23.
 //
 
-import UIKit
 import Core
 import DesignSystem
 import SketchKit
+import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func goToAddress()
 }
 
 final class HomeView: UIView {
-    
+
     weak var delegate: HomeViewDelegate?
-    
+
     private let scrollStackView: ScrollStackView = {
         let view = ScrollStackView(topInset: 0, bottomInset: 4)
         view.scrollView.backgroundColor = .lightGray
         view.scrollView.bounces = false
         return view
     }()
-    
+
     lazy var addressView: AddressView = {
         let view = AddressView()
         view.delegate = self
         return view
     }()
-    
+
     let optionsView: OptionsView = {
         let view = OptionsView()
         return view
     }()
-    
+
     let restaurantView: RestaurantView = {
         let view = RestaurantView()
         return view
@@ -45,7 +45,7 @@ final class HomeView: UIView {
         super.init(frame: frame)
         setupBaseView()
     }
-    
+
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -61,12 +61,12 @@ extension HomeView: AddressViewDelegate {
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
         addSubview(scrollStackView)
-        
+
         scrollStackView.stackView.addArrangedSubview(addressView)
         scrollStackView.stackView.addArrangedSubview(optionsView)
         scrollStackView.stackView.addArrangedSubview(restaurantView)
     }
-    
+
     func setupConstraints() {
         scrollStackView.layout.applyConstraint { view in
             view.topAnchor(equalTo: topAnchor)
@@ -75,7 +75,7 @@ extension HomeView: ViewCode {
             view.bottomAnchor(equalTo: bottomAnchor)
         }
     }
-    
+
     func configureViews() {
         backgroundColor = .white
     }

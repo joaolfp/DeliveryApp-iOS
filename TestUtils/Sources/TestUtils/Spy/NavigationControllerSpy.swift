@@ -1,6 +1,6 @@
 //
 //  NavigationControllerSpy.swift
-//  
+//
 //
 //  Created by João Lucas on 26/03/23.
 //
@@ -51,8 +51,8 @@ public final class NavigationControllerSpy: UINavigationController {
         isPopToViewControllerCalled = false
         super.init(nibName: nil, bundle: nil)
     }
-    
-    convenience override init(rootViewController: UIViewController) {
+
+    override convenience init(rootViewController: UIViewController) {
         self.init()
         super.setViewControllers([rootViewController], animated: false)
     }

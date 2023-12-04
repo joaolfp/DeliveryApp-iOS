@@ -5,24 +5,24 @@
 //  Created by João Lucas on 28/09/23.
 //
 
-import UIKit
 import Core
 import SketchKit
+import UIKit
 
 public final class LoadingContainerView: UIView {
-    
+
     public enum Status {
         case loading
         case showView
         case showError
     }
-    
+
     private let loadingView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
-    
+
     private let activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
         view.color = .gray
@@ -32,38 +32,38 @@ public final class LoadingContainerView: UIView {
 
     private let containerView: UIView
     private let errorView: UIView
-    
+
     public var status: Status = .loading {
         didSet {
-            self.updateView(from: self.status)
+            updateView(from: status)
         }
     }
-    
+
     public init(containerView: UIView, errorView: UIView) {
         self.containerView = containerView
         self.errorView = errorView
         super.init(frame: .zero)
         setupBaseView()
     }
-    
+
     @available(*, unavailable)
-    required public init?(coder _: NSCoder) {
+    public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func updateView(from status: Status) {
         let targetView: UIView
         switch status {
         case .loading:
-            targetView = self.loadingView
+            targetView = loadingView
         case .showView:
-            targetView = self.containerView
+            targetView = containerView
         case .showError:
-            targetView = self.errorView
+            targetView = errorView
         }
-        
-        self.addSubview(targetView)
-        
+
+        addSubview(targetView)
+
         targetView.layout.applyConstraint { view in
             view.topAnchor(equalTo: topAnchor)
             view.leadingAnchor(equalTo: leadingAnchor)
@@ -78,7 +78,7 @@ extension LoadingContainerView: ViewCode {
         addSubview(loadingView)
         loadingView.addSubview(activityIndicator)
     }
-    
+
     public func setupConstraints() {
         loadingView.layout.applyConstraint { view in
             view.topAnchor(equalTo: topAnchor)
@@ -86,7 +86,7 @@ extension LoadingContainerView: ViewCode {
             view.trailingAnchor(equalTo: trailingAnchor)
             view.bottomAnchor(equalTo: bottomAnchor)
         }
-        
+
         activityIndicator.layout.applyConstraint { view in
             view.centerXAnchor(equalTo: loadingView.centerXAnchor)
             view.centerYAnchor(equalTo: loadingView.centerYAnchor)

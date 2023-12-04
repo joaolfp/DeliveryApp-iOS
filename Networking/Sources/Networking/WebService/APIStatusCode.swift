@@ -1,6 +1,6 @@
 //
 //  APIStatusCode.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -20,12 +20,12 @@ public enum APIStatusCode: Int {
     public init(fromRawValue: Int) {
         self = APIStatusCode(rawValue: fromRawValue) ?? .unknown
     }
-    
+
     /* ---- 1 Informational ---- */
-    
+
     // 100 Continue
     case `continue` = 100
-    
+
     // 101 Switching Protocols
     case switchingProtocols = 101
 
@@ -74,7 +74,7 @@ public enum APIStatusCode: Int {
 
     // 300 Multiple Choices
     case multipleChoices = 300
-    
+
     // 301 Moved Permanently
     case movedPermanently = 301
 
@@ -103,7 +103,7 @@ public enum APIStatusCode: Int {
 
     // 400 Bad Request
     case badRequest = 400
-    
+
     // 401 Unauthorized
     case unauthorized = 401
 
@@ -185,8 +185,8 @@ public enum APIStatusCode: Int {
     // 451 Unavailable For Legal Reasons (RFC 7725)
     case unavailableForLegalReasons = 451
 
-     /* ---- 5 Server Errors ---- */
- 
+    /* ---- 5 Server Errors ---- */
+
     // 500 Internal Server Error
     case internalServerError = 500
 

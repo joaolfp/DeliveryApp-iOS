@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "Home",
-            targets: ["Home"])
+            targets: ["Home"]
+        )
     ],
     dependencies: [
         .package(path: "./Coordinator"),
@@ -37,7 +38,8 @@ let package = Package(
                 "SketchKit",
                 "MagicImages",
                 "Persistence"
-            ]),
+            ]
+        ),
         .testTarget(
             name: "HomeTests",
             dependencies: [

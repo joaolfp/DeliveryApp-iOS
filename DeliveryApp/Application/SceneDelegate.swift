@@ -5,8 +5,8 @@
 //  Created by João Lucas on 22/03/23.
 //
 
-import UIKit
 import Home
+import UIKit
 
 // swiftlint:disable final_class
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -16,11 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        
+
         let navigationController = UINavigationController()
         let coordinator = AppCoordinator(parentViewController: navigationController)
-        coordinator.start { }
-        
+        coordinator.start {}
+
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

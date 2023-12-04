@@ -1,6 +1,6 @@
 //
 //  APIEndpointProtocol.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -21,8 +21,8 @@ public protocol EndpointProtocol {
     var headers: HTTPHeaders? { get }
 }
 
-extension EndpointProtocol {
-    public var urlComponents: URLComponents {
+public extension EndpointProtocol {
+    var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = scheme.toString()
         components.host = host
@@ -32,7 +32,7 @@ extension EndpointProtocol {
     }
 
     @available(iOS 11.0, *)
-    public var request: URLRequest {
+    var request: URLRequest {
         var request = URLRequest(with: urlComponents.url)
         request.httpMethod = method.toString()
         request.httpBody = body?.dataEncoded

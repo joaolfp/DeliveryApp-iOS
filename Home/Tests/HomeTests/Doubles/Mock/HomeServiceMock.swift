@@ -6,23 +6,23 @@
 //
 
 import Foundation
+@testable import Home
 import Networking
 import TestUtils
-@testable import Home
 
 final class HomeServiceMock: HomeServiceProtocol {
-    
+
     enum StateMock {
         case success
         case failure
     }
-    
+
     private let stateMock: StateMock
-    
+
     init(stateMock: StateMock) {
         self.stateMock = stateMock
     }
-    
+
     func getRestaurantsList(completion: @escaping (Result<[RestaurantsDTO], APIError>) -> Void) {
         switch stateMock {
         case .success:

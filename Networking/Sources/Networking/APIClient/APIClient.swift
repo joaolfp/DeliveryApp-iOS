@@ -1,6 +1,6 @@
 //
 //  APIClient.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -24,16 +24,16 @@ extension APIClient {
                                             decodingType: T.Type,
                                             completionHandler completion: @escaping (T?, APIError?) -> Void) -> URLSessionDataTask {
 
-        let task = self.session.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse else {
                 self.errorHandling(response: response, error: error, completion: completion)
                 return
             }
             switch httpResponse.statusCode {
-            case 200...399:
+            case 200 ... 399:
                 self.validationData(data: data, decodingType: decodingType, completion: completion)
-                
+
                 guard let data = data else { return }
                 let logger = Logger()
                 logger.buildLogger(data: data, response: response)
@@ -46,7 +46,7 @@ extension APIClient {
 
     public func request<T: Decodable>(_ request: URLRequest, decode: ((T) -> T)?, completion: @escaping (Result<T, APIError>) -> Void) {
 
-        let task = self.decodingTask(with: request, decodingType: T.self) { json, error in
+        let task = decodingTask(with: request, decodingType: T.self) { json, error in
 
             DispatchQueue.main.async {
                 if let error = error {
@@ -64,15 +64,15 @@ extension APIClient {
         }
         task.resume()
     }
-    
+
     private func errorHandling<T: Decodable>(response: URLResponse?, error: Error?, completion: @escaping (T?, APIError?) -> Void) {
-        if let error = error as NSError?, error.domain == NSURLErrorDomain && error.code == NSURLErrorCancelled {
+        if let error = error as NSError?, error.domain == NSURLErrorDomain, error.code == NSURLErrorCancelled {
             completion(nil, .requestCancelled)
         } else {
             completion(nil, .requestFailed(reason: error?.localizedDescription))
         }
     }
-    
+
     private func validationData<T: Decodable>(data: Data?, decodingType: T.Type, completion: @escaping (T?, APIError?) -> Void) {
         if let data = data {
             jsonDecoder(completion: completion, decodingType: decodingType, data: data)
@@ -80,7 +80,7 @@ extension APIClient {
             completion(nil, .invalidData)
         }
     }
-    
+
     private func jsonDecoder<T: Decodable>(completion: @escaping (T?, APIError?) -> Void, decodingType: T.Type, data: Data) {
         do {
             let model = try JSONDecoder().decode(decodingType, from: data)
@@ -91,7 +91,7 @@ extension APIClient {
     }
 
     public func cancelRequests() {
-        self.session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
+        session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
             dataTasks.forEach { $0.cancel() }
             uploadTasks.forEach { $0.cancel() }
             downloadTasks.forEach { $0.cancel() }

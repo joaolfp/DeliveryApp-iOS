@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import ViewState
 import Networking
+import ViewState
 
 protocol AddressViewModelProtocol {
     var viewState: ViewState<[AddressDTO], APIError> { get }
@@ -15,26 +15,26 @@ protocol AddressViewModelProtocol {
 }
 
 final class AddressViewModel: AddressViewModelProtocol {
-    
+
     var viewState = ViewState<[AddressDTO], APIError>()
     private let service: AddressServiceProtocol
-    
+
     init(service: AddressServiceProtocol = AddressService()) {
         self.service = service
     }
-    
+
     func fetchAddress() -> ViewState<[AddressDTO], APIError> {
         viewState.fetchSource { self.stateAddress() }
         return viewState
     }
-    
+
     private func stateAddress() {
-        self.service.getAddressList { [weak self] result in
+        service.getAddressList { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let address):
+            case let .success(address):
                 self.viewState.success(data: address)
-            case .failure(let error):
+            case let .failure(error):
                 self.viewState.error(error: error)
             }
         }

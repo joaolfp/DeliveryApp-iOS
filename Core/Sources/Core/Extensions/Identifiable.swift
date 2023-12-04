@@ -1,6 +1,6 @@
 //
-//  Indentifiable.swift
-//  
+//  Identifiable.swift
+//
 //
 //  Created by João Lucas on 24/03/23.
 //

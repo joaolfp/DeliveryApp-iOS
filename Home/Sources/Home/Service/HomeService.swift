@@ -1,6 +1,6 @@
 //
 //  HomeService.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -13,17 +13,17 @@ protocol HomeServiceProtocol {
 }
 
 final class HomeService: HomeServiceProtocol {
-    
+
     private let client: APIClientProtocol
-    
+
     init(client: APIClientProtocol = APIClient()) {
         self.client = client
     }
-    
+
     func getRestaurantsList(completion: @escaping (Result<[RestaurantsDTO], APIError>) -> Void) {
         let endpoint: HomeEndpoint = .getRestaurantList
         let request = endpoint.request
-        
+
         client.request(request, completion: completion)
     }
 }

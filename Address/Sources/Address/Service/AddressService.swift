@@ -13,17 +13,17 @@ protocol AddressServiceProtocol {
 }
 
 final class AddressService: AddressServiceProtocol {
-    
+
     private let client: APIClientProtocol
-    
+
     init(client: APIClientProtocol = APIClient()) {
         self.client = client
     }
-    
+
     func getAddressList(completion: @escaping (Result<[AddressDTO], APIError>) -> Void) {
         let endpoint: AddressEndpoint = .getAddressList
         let request = endpoint.request
-        
+
         client.request(request, completion: completion)
     }
 }

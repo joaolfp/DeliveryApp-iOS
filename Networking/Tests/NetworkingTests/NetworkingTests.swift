@@ -1,36 +1,36 @@
-import XCTest
 @testable import Networking
+import XCTest
 
 struct Breed: Codable {
     var bool: Bool
 }
 
 final class NetworkingTests: XCTestCase {
-    
+
     var sut: APIClient!
     var mock: URLSessionMock!
     var request: URLRequest!
-    
+
     override func setUp() {
         super.setUp()
-        
+
         mock = URLSessionMock()
         sut = APIClient(session: mock)
         request = URLRequest(url: URL(string: "http://breeds.com")!)
         request.httpMethod = APIMethod.get.toString()
     }
-    
+
     override func tearDown() {
         super.tearDown()
-        
+
         mock = nil
         sut = nil
         request = nil
     }
-    
+
     func testVerifyRequestWithSuccess() {
         mock.data = "{\"bool\": true}".data(using: .utf8)
-        
+
         sut.request(request, decode: { breed -> Breed in
             var value = breed
             value.bool = breed.bool
@@ -43,10 +43,10 @@ final class NetworkingTests: XCTestCase {
             }
         })
     }
-    
+
     func testVerifyRequestWithFailure() {
         mock.data = "{\"value\": 123}".data(using: .utf8)
-        
+
         sut.request(request, decode: { json -> Bool in
             json
         }, completion: { result in
@@ -57,10 +57,9 @@ final class NetworkingTests: XCTestCase {
             }
         })
     }
-    
+
     func testVerifyCancellAllRequests() {
         sut.cancelRequests()
         XCTAssertEqual(mock.tasksCancelled, true)
     }
-        
 }

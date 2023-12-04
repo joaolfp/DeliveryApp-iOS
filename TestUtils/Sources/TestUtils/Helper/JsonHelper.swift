@@ -1,6 +1,6 @@
 //
 //  JsonHelper.swift
-//  
+//
 //
 //  Created by João Lucas on 26/03/23.
 //
@@ -14,25 +14,26 @@ public enum JSONHelper {
     public static func loadJSON<Element: Decodable>(
         withFile fileName: String,
         inBundleWithName bundle: String,
-        path: String) -> Element? {
-            
-            let bundle = Bundle.currentModule(name: bundle)
-            var jsonData: Element?
-            
-            if let url = bundle.url(forResource: fileName, withExtension: "json", subdirectory: path) {
-                do {
-                    let data = try Data(contentsOf: url)
-                    let decoder = JSONDecoder()
-                    jsonData = try decoder.decode(Element.self, from: data)
-                    return jsonData
-                } catch {
-                    debugPrint(error)
-                }
-            } else {
-                debugPrint("Could not find the json file: \(fileName) in bundle: \(bundle)")
+        path: String
+    ) -> Element? {
+
+        let bundle = Bundle.currentModule(name: bundle)
+        var jsonData: Element?
+
+        if let url = bundle.url(forResource: fileName, withExtension: "json", subdirectory: path) {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                jsonData = try decoder.decode(Element.self, from: data)
+                return jsonData
+            } catch {
+                debugPrint(error)
             }
-            return nil
+        } else {
+            debugPrint("Could not find the json file: \(fileName) in bundle: \(bundle)")
         }
+        return nil
+    }
 
     public static func loadData(withFile fileJson: String) -> Data? {
         var data: Data?

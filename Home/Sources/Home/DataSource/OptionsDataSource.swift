@@ -1,17 +1,17 @@
 //
 //  OptionsDataSource.swift
-//  
+//
 //
 //  Created by João Lucas on 05/04/23.
 //
 
-import UIKit
 import Core
+import UIKit
 
 final class OptionsDataSource: NSObject, UICollectionViewDataSource {
-    
+
     var data: [RestaurantsDTO]
-    
+
     init(data: [RestaurantsDTO]) {
         self.data = data
     }
@@ -19,7 +19,7 @@ final class OptionsDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.addCell(for: indexPath, cellType: OptionsCell.self)
         cell.setup(text: data[indexPath.row].category)

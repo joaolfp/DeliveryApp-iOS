@@ -1,6 +1,6 @@
 //
 //  APIClientProtocol.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //
@@ -12,9 +12,9 @@ public protocol APIClientProtocol {
     func cancelRequests()
 }
 
-extension APIClientProtocol {
+public extension APIClientProtocol {
 
-    public func request<T: Decodable>(_ request: URLRequest, decode: ((T) -> T)? = nil, completion: @escaping (Result<T, APIError>) -> Void) {
+    func request<T: Decodable>(_ request: URLRequest, decode: ((T) -> T)? = nil, completion: @escaping (Result<T, APIError>) -> Void) {
         self.request(request, decode: decode, completion: completion)
     }
 }

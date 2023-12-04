@@ -1,6 +1,6 @@
 //
 //  Localizable.swift
-//  
+//
 //
 //  Created by João Lucas on 25/03/23.
 //

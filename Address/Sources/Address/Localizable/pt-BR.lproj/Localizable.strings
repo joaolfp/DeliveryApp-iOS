@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  
+
+  Created by João Lucas on 10/12/23.
+  
+*/
+
+"address" = "Endereço";
+"messageError" = "Erro de conexão";

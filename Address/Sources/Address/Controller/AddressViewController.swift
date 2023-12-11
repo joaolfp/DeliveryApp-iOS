@@ -23,7 +23,7 @@ final class AddressViewController: UIViewController {
     private lazy var containerView: LoadingContainerView = {
         let view = LoadingContainerView(
             containerView: self.addressView,
-            errorView: ErrorView(message: Localizable.messageError.rawValue)
+            errorView: ErrorView(message: L10n.messageError)
         )
         return view
     }()
@@ -49,7 +49,7 @@ final class AddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = Localizable.address.rawValue
+        title = L10n.address
         fetchAddressList()
     }
 }

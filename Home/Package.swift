@@ -41,7 +41,7 @@ let package = Package(
                 "Persistence"
             ],
             resources: [
-                .process("Localizable"),
+                .process("Localizable")
             ]
         ),
         .testTarget(

@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Home",
+    defaultLocalization: "pt-BR",
     platforms: [
         .iOS(.v13)
     ],
@@ -38,6 +39,9 @@ let package = Package(
                 "SketchKit",
                 "MagicImages",
                 "Persistence"
+            ],
+            resources: [
+                .process("Localizable"),
             ]
         ),
         .testTarget(

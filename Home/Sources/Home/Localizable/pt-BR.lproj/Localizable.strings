@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  
+
+  Created by João Lucas on 10/12/23.
+  
+*/
+
+"deliveryApp" = "Delivery App";
+"messageError" = "Erro de conexão";
+"setupAddress" = "R. Guirantiga, 500";
+"addressNotFound" = "Endereço não encontrado";
+"edit" = "Editar";

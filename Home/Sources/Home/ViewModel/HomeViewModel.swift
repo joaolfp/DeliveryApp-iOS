@@ -35,7 +35,7 @@ final class HomeViewModel: HomeViewModelProtocol {
 
     func fetchAddress(keychain: KeychainProtocol) {
         let addressValue = keychain.getValue(forKey: .address)
-        didSetAddress?(addressValue ?? Localizable.addressNotFound.rawValue)
+        didSetAddress?(addressValue ?? L10n.addressNotFound)
     }
 
     private func stateRestaurants() {

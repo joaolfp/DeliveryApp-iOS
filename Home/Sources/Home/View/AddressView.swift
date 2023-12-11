@@ -33,7 +33,7 @@ final class AddressView: UIView {
     private lazy var editButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.setTitle(Localizable.edit.rawValue, for: .normal)
+        button.setTitle(L10n.edit, for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.backgroundColor = .white
         button.layer.borderWidth = 2

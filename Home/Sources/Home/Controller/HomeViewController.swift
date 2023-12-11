@@ -23,7 +23,7 @@ final class HomeViewController: UIViewController {
     private lazy var containerView: LoadingContainerView = {
         let view = LoadingContainerView(
             containerView: self.homeView,
-            errorView: ErrorView(message: Localizable.messageError.rawValue)
+            errorView: ErrorView(message: L10n.messageError)
         )
         return view
     }()
@@ -52,7 +52,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = Localizable.deliveryApp.rawValue
+        title = L10n.deliveryApp
 
         setupThemeNavigationBar()
         fetchRestaurantsList()

@@ -17,6 +17,10 @@ internal enum L10n {
   internal static let address = L10n.tr("Localizable", "address", fallback: "Endereço")
   /// Erro de conexão
   internal static let messageError = L10n.tr("Localizable", "messageError", fallback: "Erro de conexão")
+  /// %@, %@
+  internal static func street(_ p1: Any, _ p2: Any) -> String {
+    return L10n.tr("Localizable", "street", String(describing: p1), String(describing: p2), fallback: "%@, %@")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

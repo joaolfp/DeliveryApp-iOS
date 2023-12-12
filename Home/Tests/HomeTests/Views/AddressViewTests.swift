@@ -14,7 +14,7 @@ final class AddressViewTests: XCTestCase {
 
     func testShouldValidateLayout() {
         let view = AddressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
-        view.setup(address: Localizable.setupAddress.rawValue)
+        view.setup(address: L10n.setupAddress)
         assertSnapshot(of: view, as: .image)
     }
 }

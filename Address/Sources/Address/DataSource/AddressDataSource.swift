@@ -31,7 +31,7 @@ final class AddressDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
 
         let item = data[indexPath.row]
 
-        cell.setup(street: "\(item.street), \(item.number)", neighborhood: item.neighborhood) {
+        cell.setup(street: L10n.street(item.street, item.number), neighborhood: item.neighborhood) {
             self.delegate?.getAddressItem(item: item)
         }
 

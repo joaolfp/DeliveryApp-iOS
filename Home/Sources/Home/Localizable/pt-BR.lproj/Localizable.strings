@@ -11,3 +11,4 @@
 "setupAddress" = "R. Guirantiga, 500";
 "addressNotFound" = "Endereço não encontrado";
 "edit" = "Editar";
+"restaurantDescription" = "Padaria . %@-%@ min";

@@ -21,6 +21,10 @@ internal enum L10n {
   internal static let edit = L10n.tr("Localizable", "edit", fallback: "Editar")
   /// Erro de conexão
   internal static let messageError = L10n.tr("Localizable", "messageError", fallback: "Erro de conexão")
+  /// Padaria . %@-%@ min
+  internal static func restaurantDescription(_ p1: Any, _ p2: Any) -> String {
+    return L10n.tr("Localizable", "restaurantDescription", String(describing: p1), String(describing: p2), fallback: "Padaria . %@-%@ min")
+  }
   /// R. Guirantiga, 500
   internal static let setupAddress = L10n.tr("Localizable", "setupAddress", fallback: "R. Guirantiga, 500")
 }

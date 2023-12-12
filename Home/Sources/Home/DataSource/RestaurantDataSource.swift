@@ -23,12 +23,11 @@ final class RestaurantsDataSource: NSObject, UITableViewDataSource, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.addCell(for: indexPath, cellType: RestaurantsCell.self)
-
-        cell.nameLabel.text = data[indexPath.row].name
-
-        let min = data[indexPath.row].deliveryTime.min
-        let max = data[indexPath.row].deliveryTime.max
-        cell.descriptionLabel.text = "Padaria . \(min)-\(max) min"
+        
+        let value = data[indexPath.row]
+        cell.nameLabel.text = value.name
+        cell.descriptionLabel.text = L10n.restaurantDescription(value.deliveryTime.min, value.deliveryTime.max)
+        
         return cell
     }
 

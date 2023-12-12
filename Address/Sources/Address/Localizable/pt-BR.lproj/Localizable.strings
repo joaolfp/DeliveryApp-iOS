@@ -8,3 +8,4 @@
 
 "address" = "Endereço";
 "messageError" = "Erro de conexão";
+"street" = "%@, %@";

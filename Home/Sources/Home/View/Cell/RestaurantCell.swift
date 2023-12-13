@@ -47,7 +47,7 @@ final class RestaurantsCell: UITableViewCell, Identifiable {
         setupBaseView()
 
         MagicImages(image: logoImage)
-            .start(uiImage: UIAssets.Home.restaurant.image)
+            .start(uiImage: UIAssets.Home.restaurantLogo.image)
             .isCircle(measure: 50)
     }
 

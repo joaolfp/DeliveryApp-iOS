@@ -1,0 +1,6 @@
+xcassets:
+  inputs: Sources/DesignSystem/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Sources/DesignSystem/Generated/Assets.swift
+      params: { "enumName": "UIAssets", "publicAccess": true }

@@ -1,6 +1,7 @@
 # file options
 --exclude Home/Sources/Home/Generated
 --exclude Address/Sources/Address/Generated
+--exclude DesignSystem/Sources/DesignSystem/Generated
 
 # Rules
 --disable blankLinesAtStartOfScope

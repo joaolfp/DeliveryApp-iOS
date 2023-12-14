@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/joaolfp/ViewState.git",
       "state" : {
-        "revision" : "9d7303d7ad9b430573b4271776cbfc5f49965612",
-        "version" : "1.5.0"
+        "revision" : "11dc2686cb45828d6a471f39c751e4226fcba6d6",
+        "version" : "1.6.0"
       }
     }
   ],

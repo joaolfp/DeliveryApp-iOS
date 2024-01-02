@@ -22,6 +22,7 @@ let package = Package(
         .package(path: "./Networking"),
         .package(path: "./TestUtils"),
         .package(path: "./Persistence"),
+        .package(path: "./Analytics"),
         .package(url: "https://github.com/joaolfp/ViewState.git", .upToNextMajor(from: "1.6.0")),
         .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0")),
         .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.3.0")),
@@ -38,7 +39,8 @@ let package = Package(
                 "ViewState",
                 "SketchKit",
                 "MagicImages",
-                "Persistence"
+                "Persistence",
+                "Analytics"
             ],
             resources: [
                 .process("Localizable")

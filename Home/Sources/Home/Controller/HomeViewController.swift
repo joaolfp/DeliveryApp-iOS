@@ -11,6 +11,7 @@ import DesignSystem
 import Networking
 import Persistence
 import UIKit
+import Analytics
 
 final class HomeViewController: UIViewController {
 
@@ -57,6 +58,8 @@ final class HomeViewController: UIViewController {
         setupThemeNavigationBar()
         fetchRestaurantsList()
         setupAddress()
+        
+        SetEvents.event("home_view")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -109,5 +112,6 @@ extension HomeViewController: HomeViewDelegate {
 
     func goToAddress() {
         coordinator?.handle(event: HomeCoordinatorEvent.goToAddress)
+        SetEvents.event("go_address")
     }
 }

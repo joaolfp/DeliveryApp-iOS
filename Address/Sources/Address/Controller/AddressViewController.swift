@@ -11,6 +11,7 @@ import DesignSystem
 import Networking
 import Persistence
 import UIKit
+import Analytics
 
 final class AddressViewController: UIViewController {
 
@@ -51,6 +52,8 @@ final class AddressViewController: UIViewController {
 
         title = L10n.address
         fetchAddressList()
+        
+        SetEvents.event("address_view")
     }
 }
 
@@ -82,6 +85,8 @@ extension AddressViewController: AddressViewDelegate {
     func getAddressSelected(item: AddressDTO) {
         let address = "\(item.street), \(item.number)"
         Keychain().setValue(value: address, forKey: .address)
+        
+        SetEvents.event("address_selected", parameters: ["value": "\(item.street), \(item.number)"])
 
         coordinator?.handle(event: AddressCoordinatorEvent.popViewController(animated: true))
     }

@@ -15,7 +15,9 @@
 		A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE729CBF994004FD906 /* DesignSystem */; };
 		A6431BEA29CBF998004FD906 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BE929CBF998004FD906 /* Home */; };
 		A6431BEC29CBF99C004FD906 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A6431BEB29CBF99C004FD906 /* Networking */; };
+		C53A4B9F2B439AEF005FC728 /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = C53A4B9E2B439AEF005FC728 /* Analytics */; };
 		C53E44922B16CEBC003AC71F /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = C53E44912B16CEBC003AC71F /* Coordinator */; };
+		C5833A5E2B438D0800A4554F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5833A5D2B438D0800A4554F /* GoogleService-Info.plist */; };
 		C596C0F22AC9856400B8F7CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */; };
 		C59C03422B07F68700F63582 /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = C59C03412B07F68700F63582 /* Persistence */; };
 		C5C0606A2AC38A0300AADB21 /* Address in Frameworks */ = {isa = PBXBuildFile; productRef = C5C060692AC38A0300AADB21 /* Address */; };
@@ -34,6 +36,8 @@
 		A6431BE329CBF900004FD906 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		A6431BE429CBF921004FD906 /* TestUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestUtils; sourceTree = "<group>"; };
 		C53E44902B16CE6C003AC71F /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Coordinator; sourceTree = "<group>"; };
+		C5833A5D2B438D0800A4554F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C5833A6A2B4393E800A4554F /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
 		C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C59C033F2B07F65900F63582 /* Persistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Persistence; sourceTree = "<group>"; };
 		C5C060672AC389D700AADB21 /* Address */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Address; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6431BE629CBF991004FD906 /* Core in Frameworks */,
+				C53A4B9F2B439AEF005FC728 /* Analytics in Frameworks */,
 				A6431BE829CBF994004FD906 /* DesignSystem in Frameworks */,
 				C59C03422B07F68700F63582 /* Persistence in Frameworks */,
 				A6431BEC29CBF99C004FD906 /* Networking in Frameworks */,
@@ -60,6 +65,7 @@
 		A6431BBA29CBF45F004FD906 = {
 			isa = PBXGroup;
 			children = (
+				C5E636EA2B43A5D000C69268 /* Tracker */,
 				C5934D6D2AA3593C0019C3BC /* Styleguide */,
 				C5934D6C2AA359280019C3BC /* Core */,
 				C5934D6A2AA359110019C3BC /* Infra */,
@@ -85,6 +91,7 @@
 				A6431BDC29CBF6A9004FD906 /* Application */,
 				A6431BDB29CBF6A0004FD906 /* Resources */,
 				A6431BD429CBF460004FD906 /* Info.plist */,
+				C5833A5D2B438D0800A4554F /* GoogleService-Info.plist */,
 			);
 			path = DeliveryApp;
 			sourceTree = "<group>";
@@ -158,6 +165,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		C5E636EA2B43A5D000C69268 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				C5833A6A2B4393E800A4554F /* Analytics */,
+			);
+			name = Tracker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +198,7 @@
 				C5C060692AC38A0300AADB21 /* Address */,
 				C59C03412B07F68700F63582 /* Persistence */,
 				C53E44912B16CEBC003AC71F /* Coordinator */,
+				C53A4B9E2B439AEF005FC728 /* Analytics */,
 			);
 			productName = DeliveryApp;
 			productReference = A6431BC329CBF45F004FD906 /* DeliveryApp.app */;
@@ -212,6 +228,8 @@
 				Base,
 			);
 			mainGroup = A6431BBA29CBF45F004FD906;
+			packageReferences = (
+			);
 			productRefGroup = A6431BC429CBF45F004FD906 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,6 +246,7 @@
 			files = (
 				A6431BD329CBF460004FD906 /* LaunchScreen.storyboard in Resources */,
 				A6431BD029CBF460004FD906 /* Assets.xcassets in Resources */,
+				C5833A5E2B438D0800A4554F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +513,10 @@
 		A6431BEB29CBF99C004FD906 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		C53A4B9E2B439AEF005FC728 /* Analytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Analytics;
 		};
 		C53E44912B16CEBC003AC71F /* Coordinator */ = {
 			isa = XCSwiftPackageProductDependency;

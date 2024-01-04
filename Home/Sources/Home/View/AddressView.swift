@@ -17,13 +17,13 @@ final class AddressView: UIView {
 
     weak var delegate: AddressViewDelegate?
 
-    private let cardView: UIView = {
+    private lazy var cardView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
 
-    private let addressLabel: UILabel = {
+    private lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18)

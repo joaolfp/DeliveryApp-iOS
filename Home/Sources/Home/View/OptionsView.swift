@@ -13,13 +13,13 @@ final class OptionsView: UIView {
 
     private var dataSource: OptionsDataSource?
 
-    private let cardView: UIView = {
+    private lazy var cardView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
 
-    private let collectionsView: UICollectionView = {
+    private lazy var collectionsView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
 

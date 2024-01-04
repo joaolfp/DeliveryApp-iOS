@@ -17,13 +17,13 @@ public final class LoadingContainerView: UIView {
         case showError
     }
 
-    private let loadingView: UIView = {
+    private lazy var loadingView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
 
-    private let activityIndicator: UIActivityIndicatorView = {
+    private lazy var activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
         view.color = .gray
         view.startAnimating()

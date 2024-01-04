@@ -40,8 +40,6 @@ private extension AppCoordinator {
         )
 
         coordinator.start {}
-        
-        //Analytics.logEvent("evento_personalizado", parameters: nil)
     }
 
     func startAddressCoordinator(navigationController: UINavigationController) {

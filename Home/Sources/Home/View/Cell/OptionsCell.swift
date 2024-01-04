@@ -13,14 +13,14 @@ import UIKit
 
 final class OptionsCell: UICollectionViewCell, Identifiable {
 
-    private let logoImage: UIImageView = {
+    private lazy var logoImage: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         return imageView
     }()
 
-    private let textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         var label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14)

@@ -18,7 +18,7 @@ final class HomeView: UIView {
 
     weak var delegate: HomeViewDelegate?
 
-    private let scrollStackView: ScrollStackView = {
+    private lazy var scrollStackView: ScrollStackView = {
         let view = ScrollStackView(topInset: 0, bottomInset: 4)
         view.scrollView.backgroundColor = .lightGray
         view.scrollView.bounces = false
@@ -31,12 +31,12 @@ final class HomeView: UIView {
         return view
     }()
 
-    let optionsView: OptionsView = {
+    lazy var optionsView: OptionsView = {
         let view = OptionsView()
         return view
     }()
 
-    let restaurantView: RestaurantView = {
+    lazy var restaurantView: RestaurantView = {
         let view = RestaurantView()
         return view
     }()

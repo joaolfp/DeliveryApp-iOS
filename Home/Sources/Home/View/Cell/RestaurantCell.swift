@@ -13,20 +13,20 @@ import UIKit
 
 final class RestaurantsCell: UITableViewCell, Identifiable {
 
-    private let logoImage: UIImageView = {
+    private lazy var logoImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         return imageView
     }()
 
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         return stackView
     }()
 
-    let nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         var label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -34,7 +34,7 @@ final class RestaurantsCell: UITableViewCell, Identifiable {
         return label
     }()
 
-    let descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         var label = UILabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 14)

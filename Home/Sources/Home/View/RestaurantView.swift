@@ -15,13 +15,13 @@ final class RestaurantView: UIView {
 
     private lazy var heightTableView = self.getHeightTableView()
 
-    private let cardView: UIView = {
+    private lazy var cardView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
 
-    let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         var tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.isScrollEnabled = false

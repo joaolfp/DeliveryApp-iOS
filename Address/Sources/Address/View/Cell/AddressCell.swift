@@ -13,14 +13,14 @@ final class AddressCell: UITableViewCell, Identifiable {
 
     private var tapView: (() -> Void)?
 
-    private let streetLabel: UILabel = {
+    private lazy var streetLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
 
-    private let neighborhoodLabel: UILabel = {
+    private lazy var neighborhoodLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray
         label.font = UIFont.systemFont(ofSize: 14)

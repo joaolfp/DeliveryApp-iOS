@@ -12,12 +12,12 @@ import UIKit
 
 public final class ErrorView: UIView {
 
-    private let iconImage: UIImageView = {
+    private lazy var iconImage: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
 
-    private let messageLabel: UILabel = {
+    private lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -25,8 +25,9 @@ public final class ErrorView: UIView {
     }()
 
     public init(frame: CGRect = .zero, message: String) {
-        messageLabel.text = message
         super.init(frame: frame)
+        
+        messageLabel.text = message
 
         setupBaseView()
 

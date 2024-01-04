@@ -19,7 +19,7 @@ final class AddressView: UIView {
 
     private var dataSource: AddressDataSource?
 
-    private let listTableView: UITableView = {
+    private lazy var listTableView: UITableView = {
         let tableView = UITableView()
         tableView.registerCell(cellType: AddressCell.self)
         tableView.backgroundColor = .white

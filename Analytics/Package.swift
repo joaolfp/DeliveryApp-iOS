@@ -17,7 +17,8 @@ let package = Package(
         .target(
             name: "Analytics",
             dependencies: [
-                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk")
+                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk")
             ]
         ),
         .testTarget(

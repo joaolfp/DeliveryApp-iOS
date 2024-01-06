@@ -26,7 +26,7 @@ public final class ErrorView: UIView {
 
     public init(frame: CGRect = .zero, message: String) {
         super.init(frame: frame)
-        
+
         messageLabel.text = message
 
         setupBaseView()

@@ -5,13 +5,13 @@
 //  Created by João Lucas on 01/10/23.
 //
 
+import Analytics
 import Coordinator
 import Core
 import DesignSystem
 import Networking
 import Persistence
 import UIKit
-import Analytics
 
 final class AddressViewController: UIViewController {
 
@@ -52,7 +52,7 @@ final class AddressViewController: UIViewController {
 
         title = L10n.address
         fetchAddressList()
-        
+
         SetAnalyticsEvents.event("address_view")
     }
 }
@@ -85,7 +85,7 @@ extension AddressViewController: AddressViewDelegate {
     func getAddressSelected(item: AddressDTO) {
         let address = "\(item.street), \(item.number)"
         Keychain().setValue(value: address, forKey: .address)
-        
+
         SetAnalyticsEvents.event("address_selected", parameters: ["value": "\(item.street), \(item.number)"])
         SetCrashlyticsEvents.event("address_selected_\("\(item.street), \(item.number)")")
 

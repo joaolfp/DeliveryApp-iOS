@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .library(
             name: "Analytics",
-            targets: ["Analytics"])
+            targets: ["Analytics"]
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.19.0")
@@ -23,6 +24,7 @@ let package = Package(
         ),
         .testTarget(
             name: "AnalyticsTests",
-            dependencies: ["Analytics"])
+            dependencies: ["Analytics"]
+        )
     ]
 )

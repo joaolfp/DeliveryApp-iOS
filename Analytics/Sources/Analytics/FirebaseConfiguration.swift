@@ -5,11 +5,11 @@
 //  Created by João Lucas on 01/01/24.
 //
 
-import Foundation
 import FirebaseCore
+import Foundation
 
-public final class FirebaseConfiguration {
-    
+public enum FirebaseConfiguration {
+
     public static func start() {
         FirebaseApp.configure()
     }

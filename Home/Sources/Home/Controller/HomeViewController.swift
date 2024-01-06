@@ -5,13 +5,13 @@
 //  Created by João Lucas on 23/03/23.
 //
 
+import Analytics
 import Coordinator
 import Core
 import DesignSystem
 import Networking
 import Persistence
 import UIKit
-import Analytics
 
 final class HomeViewController: UIViewController {
 
@@ -58,7 +58,7 @@ final class HomeViewController: UIViewController {
         setupThemeNavigationBar()
         fetchRestaurantsList()
         setupAddress()
-        
+
         SetAnalyticsEvents.event("home_view")
     }
 

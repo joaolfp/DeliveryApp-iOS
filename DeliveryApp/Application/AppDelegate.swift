@@ -5,8 +5,8 @@
 //  Created by João Lucas on 22/03/23.
 //
 
-import UIKit
 import Analytics
+import UIKit
 
 // swiftlint:disable final_class
 @main

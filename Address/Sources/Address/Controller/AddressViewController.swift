@@ -53,7 +53,7 @@ final class AddressViewController: UIViewController {
         title = L10n.address
         fetchAddressList()
         
-        SetEvents.event("address_view")
+        SetAnalyticsEvents.event("address_view")
     }
 }
 
@@ -86,7 +86,8 @@ extension AddressViewController: AddressViewDelegate {
         let address = "\(item.street), \(item.number)"
         Keychain().setValue(value: address, forKey: .address)
         
-        SetEvents.event("address_selected", parameters: ["value": "\(item.street), \(item.number)"])
+        SetAnalyticsEvents.event("address_selected", parameters: ["value": "\(item.street), \(item.number)"])
+        SetCrashlyticsEvents.event("address_selected_\("\(item.street), \(item.number)")")
 
         coordinator?.handle(event: AddressCoordinatorEvent.popViewController(animated: true))
     }

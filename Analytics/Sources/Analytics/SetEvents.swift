@@ -9,15 +9,20 @@ import Foundation
 import FirebaseAnalytics
 import FirebaseCrashlytics
 
-public final class SetEvents {
+public final class SetAnalyticsEvents {
     
     public static func event(_ name: String) {
         Analytics.logEvent(name, parameters: nil)
-        Crashlytics.crashlytics().log(name)
     }
     
     public static func event(_ name: String, parameters: [String: Any]?) {
         Analytics.logEvent(name, parameters: parameters)
+    }
+}
+
+public final class SetCrashlyticsEvents {
+
+    public static func event(_ name: String) {
         Crashlytics.crashlytics().log(name)
     }
 }

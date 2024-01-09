@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/heroesofcode/MagicImages",
       "state" : {
-        "revision" : "d4ff168a0c1be1847174b01cea6940855416c929",
-        "version" : "1.3.0"
+        "revision" : "76a09fbbc73ac85f90f0b3c9dd77560bf6952be1",
+        "version" : "1.4.0"
       }
     },
     {

@@ -61,7 +61,7 @@ final class AddressView: UIView {
 extension AddressView {
 
     @objc
-    func addressTap() {
+    private func addressTap() {
         delegate?.addressTap()
     }
 }

@@ -51,7 +51,7 @@ final class AddressCell: UITableViewCell, Identifiable {
     }
 
     @objc
-    func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+    private func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         tapView?()
     }
 }

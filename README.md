@@ -34,6 +34,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Coordinator:</b> Navigation structure
 * <b>Design System:</b> All layout like colors, views and images
 * <b>TestUtils:</b> Mocks and codes to help with unit tests
+* <b>Analytics:</b> Help troubleshoot problems and monitor failure data with more granularity
 
 ## How to build the app
 

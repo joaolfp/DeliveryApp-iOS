@@ -22,6 +22,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Snapshot Test: </b> SnapshotTesting
 * <b>CI:</b> Github Action
 * <b>Linters:</b> SwiftLint
+* <b>Test coverage:</b> Codecov
 
 ## App structure
 

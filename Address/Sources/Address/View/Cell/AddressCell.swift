@@ -73,4 +73,8 @@ extension AddressCell: ViewCode {
             view.leadingAnchor(equalTo: contentView.leadingAnchor, constant: 16)
         }
     }
+    
+    func configureViews() {
+        backgroundColor = .white
+    }
 }

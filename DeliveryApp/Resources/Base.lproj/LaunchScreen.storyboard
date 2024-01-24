@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,17 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="i2f-ZN-ACQ">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="mXj-eg-dSo">
+                                <rect key="frame" x="76.666666666666686" y="374.66666666666669" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Tbu-ei-x2O"/>
+                                    <constraint firstAttribute="height" constant="128" id="Vf0-sZ-zsU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i2f-ZN-ACQ" secondAttribute="bottom" constant="328" id="SuE-mF-jDv"/>
-                            <constraint firstItem="i2f-ZN-ACQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="303" id="fcB-Sd-DWP"/>
-                            <constraint firstItem="i2f-ZN-ACQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="gEG-Rd-NcN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i2f-ZN-ACQ" secondAttribute="trailing" constant="77" id="sE6-o2-vnq"/>
+                            <constraint firstItem="mXj-eg-dSo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0dn-WV-nhC"/>
+                            <constraint firstItem="mXj-eg-dSo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="KNb-Nr-n5u"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,8 +39,5 @@
     </scenes>
     <resources>
         <image name="1024" width="1024" height="1024"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

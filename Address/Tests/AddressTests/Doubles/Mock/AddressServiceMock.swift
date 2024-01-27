@@ -5,10 +5,10 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-@testable import Address
 import Foundation
 import Networking
 import TestUtils
+@testable import Address
 
 final class AddressServiceMock: AddressServiceProtocol {
 

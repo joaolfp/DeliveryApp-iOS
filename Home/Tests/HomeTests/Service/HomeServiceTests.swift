@@ -5,10 +5,10 @@
 //  Created by João Lucas on 26/03/23.
 //
 
-@testable import Home
 import Networking
 import TestUtils
 import XCTest
+@testable import Home
 
 final class HomeServiceTests: XCTestCase {
 

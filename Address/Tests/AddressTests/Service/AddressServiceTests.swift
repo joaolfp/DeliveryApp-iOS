@@ -5,10 +5,10 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-@testable import Address
 import Networking
 import TestUtils
 import XCTest
+@testable import Address
 
 final class AddressServiceTests: XCTestCase {
 

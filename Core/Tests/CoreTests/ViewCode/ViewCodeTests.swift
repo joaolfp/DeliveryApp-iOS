@@ -5,8 +5,8 @@
 //  Created by João Lucas on 05/05/23.
 //
 
-@testable import Core
 import XCTest
+@testable import Core
 
 final class ViewCodeTests: XCTestCase {
 

@@ -6,10 +6,10 @@
 //
 
 import Core
-@testable import Home
 import Networking
 import TestUtils
 import XCTest
+@testable import Home
 
 final class HomeViewModelTests: XCTestCase {
 

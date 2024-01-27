@@ -5,10 +5,10 @@
 //  Created by João Lucas on 05/04/23.
 //
 
-@testable import Home
 import TestUtils
 import UIKit
 import XCTest
+@testable import Home
 
 final class HomeCoordinatorTests: XCTestCase {
 

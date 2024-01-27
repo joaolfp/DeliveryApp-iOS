@@ -5,10 +5,10 @@
 //  Created by João Lucas on 09/07/23.
 //
 
-@testable import DesignSystem
 import SnapshotTesting
 import UIKit
 import XCTest
+@testable import DesignSystem
 
 final class ErrorViewTests: XCTestCase {
 

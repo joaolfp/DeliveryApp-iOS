@@ -1,5 +1,5 @@
-@testable import Core
 import UIKit
+@testable import Core
 
 final class TestCollectionViewController: UICollectionViewController {
 

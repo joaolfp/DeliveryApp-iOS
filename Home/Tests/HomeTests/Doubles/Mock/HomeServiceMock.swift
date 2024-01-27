@@ -6,9 +6,9 @@
 //
 
 import Foundation
-@testable import Home
 import Networking
 import TestUtils
+@testable import Home
 
 final class HomeServiceMock: HomeServiceProtocol {
 

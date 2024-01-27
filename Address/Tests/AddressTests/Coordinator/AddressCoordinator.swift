@@ -5,10 +5,10 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-@testable import Address
 import TestUtils
 import UIKit
 import XCTest
+@testable import Address
 
 final class AddressCoordinatorTests: XCTestCase {
 

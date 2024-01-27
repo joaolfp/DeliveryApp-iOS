@@ -5,8 +5,8 @@
 //  Created by João Lucas on 17/11/23.
 //
 
-@testable import Persistence
 import XCTest
+@testable import Persistence
 
 final class KeychainTests: XCTestCase {
 

@@ -6,11 +6,11 @@
 //
 
 import Foundation
-@testable import Home
 import Networking
 import Persistence
 import TestUtils
 import ViewState
+@testable import Home
 
 final class HomeViewModelMock: HomeViewModelProtocol {
     var didSetAddress: ((String) -> Void)?

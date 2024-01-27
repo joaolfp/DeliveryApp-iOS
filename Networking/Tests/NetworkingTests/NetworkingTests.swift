@@ -1,5 +1,5 @@
-@testable import Networking
 import XCTest
+@testable import Networking
 
 struct Breed: Codable {
     var bool: Bool

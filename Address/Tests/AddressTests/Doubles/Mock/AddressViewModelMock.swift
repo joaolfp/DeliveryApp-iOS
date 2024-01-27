@@ -5,11 +5,11 @@
 //  Created by João Lucas on 01/10/23.
 //
 
-@testable import Address
 import Foundation
 import Networking
 import TestUtils
 import ViewState
+@testable import Address
 
 final class AddressViewModelMock: AddressViewModelProtocol {
     var viewState = ViewState<[AddressDTO], APIError>()

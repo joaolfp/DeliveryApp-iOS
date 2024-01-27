@@ -1,5 +1,5 @@
 //
-//  RestaurantCell.swift
+//  RestaurantsCell.swift
 //
 //
 //  Created by João Lucas on 24/03/23.

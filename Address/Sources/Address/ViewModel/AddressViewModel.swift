@@ -30,12 +30,12 @@ final class AddressViewModel: AddressViewModelProtocol {
 
     private func stateAddress() {
         service.getAddressList { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case let .success(address):
-                self.viewState.success(data: address)
+                viewState.success(data: address)
             case let .failure(error):
-                self.viewState.error(error: error)
+                viewState.error(error: error)
             }
         }
     }

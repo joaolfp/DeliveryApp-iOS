@@ -52,14 +52,13 @@ public final class LoadingContainerView: UIView {
     }
 
     private func updateView(from status: Status) {
-        let targetView: UIView
-        switch status {
+        let targetView: UIView = switch status {
         case .loading:
-            targetView = loadingView
+            loadingView
         case .showView:
-            targetView = containerView
+            containerView
         case .showError:
-            targetView = errorView
+            errorView
         }
 
         addSubview(targetView)

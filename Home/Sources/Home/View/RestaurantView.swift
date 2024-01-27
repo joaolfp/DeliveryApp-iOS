@@ -54,7 +54,7 @@ final class RestaurantView: UIView {
 extension RestaurantView {
 
     private func getHeightTableView() -> CGFloat {
-        return 80 * CGFloat(dataSource?.data.count ?? 0)
+        80 * CGFloat(dataSource?.data.count ?? 0)
     }
 }
 

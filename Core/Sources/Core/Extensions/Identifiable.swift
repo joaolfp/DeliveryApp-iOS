@@ -13,6 +13,6 @@ public protocol Identifiable: AnyObject {
 
 public extension Identifiable {
     static var reuseIdentifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
 }

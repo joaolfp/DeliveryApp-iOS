@@ -16,15 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        
+
         let launch = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.rootViewController = launch
         window?.makeKeyAndVisible()
-        
+
         let navigationController = UINavigationController()
         let coordinator = AppCoordinator(parentViewController: navigationController)
         coordinator.start {}
-        
+
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.window?.rootViewController = navigationController
         }

@@ -69,7 +69,7 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupThemeNavigationBar() {
-        guard let navigationController = self.navigationController else { return }
+        guard let navigationController else { return }
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.barTintColor = .lightGray
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]

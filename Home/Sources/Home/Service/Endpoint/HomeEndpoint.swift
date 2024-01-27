@@ -14,36 +14,36 @@ enum HomeEndpoint {
 
 extension HomeEndpoint: EndpointProtocol {
     var scheme: APIScheme {
-        return .https
+        .https
     }
 
     var host: String {
-        return "raw.githubusercontent.com"
+        "raw.githubusercontent.com"
     }
 
     var path: String {
         switch self {
         case .getRestaurantList:
-            return "/joaolfp/DeliveryApp-iOS/main/api/home_restaurant_list.json"
+            "/joaolfp/DeliveryApp-iOS/main/api/home_restaurant_list.json"
         }
     }
 
     var parameters: APIParameters? {
-        return nil
+        nil
     }
 
     var body: APIBody? {
-        return nil
+        nil
     }
 
     var method: APIMethod {
         switch self {
         case .getRestaurantList:
-            return .get
+            .get
         }
     }
 
     var headers: HTTPHeaders? {
-        return ["Content-type": "application/json"]
+        ["Content-type": "application/json"]
     }
 }

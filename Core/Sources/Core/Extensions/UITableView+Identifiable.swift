@@ -9,7 +9,7 @@ import UIKit
 
 public extension UITableView {
 
-    func registerCell<T: UITableViewCell>(cellType: T.Type) where T: Identifiable {
+    func registerCell(cellType: (some UITableViewCell & Identifiable).Type) {
         register(cellType.self, forCellReuseIdentifier: cellType.reuseIdentifier)
     }
 

@@ -15,5 +15,5 @@ public protocol CoordinatorProtocol: AnyObject {
 }
 
 public extension CoordinatorProtocol {
-    var parentCoordinator: CoordinatorProtocol? { return nil }
+    var parentCoordinator: CoordinatorProtocol? { nil }
 }

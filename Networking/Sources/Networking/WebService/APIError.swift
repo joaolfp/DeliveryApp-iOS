@@ -18,17 +18,17 @@ public enum APIError: Error {
     public var localizedDescription: String {
         switch self {
         case let .requestFailed(reason):
-            return "Request Failed: \(reason ?? "unknown")"
+            "Request Failed: \(reason ?? "unknown")"
         case .jsonParsingFailure:
-            return "JSON parsing failure"
+            "JSON parsing failure"
         case .jsonConversionFailure:
-            return "JSON conversion failure"
+            "JSON conversion failure"
         case .responseUnsuccessful:
-            return "Response unsuccessful"
+            "Response unsuccessful"
         case .invalidData:
-            return "Invalid data"
+            "Invalid data"
         case .requestCancelled:
-            return "Request cancelled"
+            "Request cancelled"
         }
     }
 }

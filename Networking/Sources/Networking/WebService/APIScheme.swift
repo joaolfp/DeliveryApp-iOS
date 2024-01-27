@@ -12,6 +12,6 @@ public enum APIScheme: String {
     case https
 
     public func toString() -> String {
-        return rawValue
+        rawValue
     }
 }

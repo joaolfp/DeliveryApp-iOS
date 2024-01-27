@@ -40,12 +40,12 @@ final class HomeViewModel: HomeViewModelProtocol {
 
     private func stateRestaurants() {
         service.getRestaurantsList { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case let .success(restaurants):
-                self.viewState.success(data: restaurants)
+                viewState.success(data: restaurants)
             case let .failure(error):
-                self.viewState.error(error: error)
+                viewState.error(error: error)
             }
         }
     }

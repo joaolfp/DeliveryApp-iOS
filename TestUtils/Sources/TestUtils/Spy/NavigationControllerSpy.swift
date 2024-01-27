@@ -36,7 +36,7 @@ public final class NavigationControllerSpy: UINavigationController {
     public var pushViewController: UIViewController?
 
     public var isInWindow: Bool {
-        return view.window != nil
+        view.window != nil
     }
 
     public init() {

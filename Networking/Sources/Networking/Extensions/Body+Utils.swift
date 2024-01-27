@@ -10,6 +10,6 @@ import Foundation
 public extension APIBody {
 
     var dataEncoded: Data? {
-        return try? JSONSerialization.data(withJSONObject: self, options: .sortedKeys)
+        try? JSONSerialization.data(withJSONObject: self, options: .sortedKeys)
     }
 }

@@ -15,7 +15,7 @@ final class TestCollectionViewController: UICollectionViewController {
     // MARK: <UICollectionViewDataSource>
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -15,6 +15,6 @@ public enum APIMethod: String {
     case delete = "DELETE"
 
     public func toString() -> String {
-        return rawValue
+        rawValue
     }
 }

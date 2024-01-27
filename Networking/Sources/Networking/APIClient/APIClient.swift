@@ -34,7 +34,7 @@ extension APIClient {
             case 200 ... 399:
                 self.validationData(data: data, decodingType: decodingType, completion: completion)
 
-                guard let data = data else { return }
+                guard let data else { return }
                 let logger = Logger()
                 logger.buildLogger(data: data, response: response)
             default:
@@ -49,11 +49,11 @@ extension APIClient {
         let task = decodingTask(with: request, decodingType: T.self) { json, error in
 
             DispatchQueue.main.async {
-                if let error = error {
+                if let error {
                     completion(.failure(error))
                     return
                 }
-                if let json = json {
+                if let json {
                     if let value = decode?(json) {
                         completion(.success(value))
                     } else {
@@ -74,7 +74,7 @@ extension APIClient {
     }
 
     private func validationData<T: Decodable>(data: Data?, decodingType: T.Type, completion: @escaping (T?, APIError?) -> Void) {
-        if let data = data {
+        if let data {
             jsonDecoder(completion: completion, decodingType: decodingType, data: data)
         } else {
             completion(nil, .invalidData)

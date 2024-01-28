@@ -11,17 +11,28 @@ import Coordinator
 
 final class AuthenticationViewController: UIViewController {
     
+    private lazy var viewModel: AuthenticationViewModel = {
+        let viewModel = AuthenticationViewModel()
+        viewModel.delegate = self
+        return viewModel
+    }()
+    
     var coordinator: CoordinatorProtocol?
     
     override func loadView() {
         let view = UIView()
         self.view = view
-        let authenticationView = AuthenticationView()
+        let authenticationView = AuthenticationView(viewModel: viewModel)
         self.addSwiftUIView(authenticationView, to: view)
     }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+extension AuthenticationViewController: AuthenticationViewModelDelegate {
+    func success() {
+        coordinator?.handle(event: AuthenticationCoordinatorEvent.goToHome)
+    }
+    
+    func failure() {
+        debugPrint("Not working authentication")
     }
 }

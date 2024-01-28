@@ -23,4 +23,19 @@ public final class AuthenticationCoordinator: BaseCoordinator {
         controller.coordinator = self
         parentViewController?.pushViewController(controller, animated: true)
     }
+    
+    override public func handle(event: CoordinatorEvent) {
+        if let authenticationEvent = event as? AuthenticationCoordinatorEvent {
+            handle(authenticationEvent)
+        }
+    }
+}
+
+private extension AuthenticationCoordinator {
+    func handle(_ event: AuthenticationCoordinatorEvent) {
+        switch event {
+        case .goToHome:
+            parentCoordinator?.handle(event: AuthenticationExternalCoordinatorEvent.goToHome)
+        }
+    }
 }

@@ -69,6 +69,8 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupThemeNavigationBar() {
+        navigationItem.setHidesBackButton(true, animated: true)
+        
         guard let navigationController else { return }
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.barTintColor = .lightGray

@@ -21,13 +21,17 @@ public class AppCoordinator: BaseCoordinator {
 
     override public func start(_ completion: @escaping () -> Void) {
         guard let navigationController = parentViewController else { return }
-        startHomeCoordinator(navigationController: navigationController)
+        startAuthenticationCoordinator(navigationController: navigationController)
         completion()
     }
 
     override public func handle(event: CoordinatorEvent) {
         if let homeEvent = event as? HomeExternalCoordinatorEvent {
             handle(homeEvent)
+        }
+        
+        if let authenticationEvent = event as? AuthenticationExternalCoordinatorEvent {
+            handle(authenticationEvent)
         }
     }
 }
@@ -67,6 +71,14 @@ private extension AppCoordinator {
         case .goToAddress:
             guard let navigationController = parentViewController else { return }
             startAddressCoordinator(navigationController: navigationController)
+        }
+    }
+    
+    func handle(_ event: AuthenticationExternalCoordinatorEvent) {
+        switch event {
+        case .goToHome:
+            guard let navigationController = parentViewController else { return }
+            startHomeCoordinator(navigationController: navigationController)
         }
     }
 }

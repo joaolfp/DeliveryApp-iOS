@@ -22,6 +22,9 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum UIAssets {
+  public enum Authentication {
+    public static let biometric = ImageAsset(name: "Authentication/biometric")
+  }
   public enum Error {
     public static let error = ImageAsset(name: "Error/error")
   }

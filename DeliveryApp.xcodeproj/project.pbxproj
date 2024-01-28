@@ -20,6 +20,7 @@
 		C5833A5E2B438D0800A4554F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5833A5D2B438D0800A4554F /* GoogleService-Info.plist */; };
 		C596C0F22AC9856400B8F7CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */; };
 		C59C03422B07F68700F63582 /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = C59C03412B07F68700F63582 /* Persistence */; };
+		C5A1C1092B6704BD00614A75 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = C5A1C1082B6704BD00614A75 /* Authentication */; };
 		C5C0606A2AC38A0300AADB21 /* Address in Frameworks */ = {isa = PBXBuildFile; productRef = C5C060692AC38A0300AADB21 /* Address */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		C5833A6A2B4393E800A4554F /* Analytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Analytics; sourceTree = "<group>"; };
 		C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C59C033F2B07F65900F63582 /* Persistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Persistence; sourceTree = "<group>"; };
+		C5A9B88A2B67040A007AFCD1 /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authentication; sourceTree = "<group>"; };
 		C5C060672AC389D700AADB21 /* Address */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Address; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 				C5C0606A2AC38A0300AADB21 /* Address in Frameworks */,
 				A6431BEA29CBF998004FD906 /* Home in Frameworks */,
 				C53E44922B16CEBC003AC71F /* Coordinator in Frameworks */,
+				C5A1C1092B6704BD00614A75 /* Authentication in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 		C5934D692AA359080019C3BC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				C5A9B88A2B67040A007AFCD1 /* Authentication */,
 				C5C060672AC389D700AADB21 /* Address */,
 				A6431BE229CBF8C9004FD906 /* Home */,
 			);
@@ -200,6 +204,7 @@
 				C59C03412B07F68700F63582 /* Persistence */,
 				C53E44912B16CEBC003AC71F /* Coordinator */,
 				C53A4B9E2B439AEF005FC728 /* Analytics */,
+				C5A1C1082B6704BD00614A75 /* Authentication */,
 			);
 			productName = DeliveryApp;
 			productReference = A6431BC329CBF45F004FD906 /* DeliveryApp.app */;
@@ -547,6 +552,10 @@
 		C59C03412B07F68700F63582 /* Persistence */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Persistence;
+		};
+		C5A1C1082B6704BD00614A75 /* Authentication */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Authentication;
 		};
 		C5C060692AC38A0300AADB21 /* Address */ = {
 			isa = XCSwiftPackageProductDependency;

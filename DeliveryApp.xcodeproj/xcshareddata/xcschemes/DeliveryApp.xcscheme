@@ -109,6 +109,16 @@
                ReferencedContainer = "container:Analytics">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AuthenticationTests"
+               BuildableName = "AuthenticationTests"
+               BlueprintName = "AuthenticationTests"
+               ReferencedContainer = "container:Authentication">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

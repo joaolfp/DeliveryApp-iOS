@@ -8,6 +8,7 @@
 import Address
 import Coordinator
 import Home
+import Authentication
 import UIKit
 
 public class AppCoordinator: BaseCoordinator {
@@ -32,6 +33,14 @@ public class AppCoordinator: BaseCoordinator {
 }
 
 private extension AppCoordinator {
+    
+    func startAuthenticationCoordinator(navigationController: UINavigationController) {
+        let coordinator = AuthenticationCoordinator(
+            parentCoordinator: self,
+            parentViewController: navigationController)
+        
+        coordinator.start {}
+    }
 
     func startHomeCoordinator(navigationController: UINavigationController) {
         let coordinator = HomeCoordinator(

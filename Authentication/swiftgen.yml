@@ -1,0 +1,5 @@
+strings:
+  inputs: Sources/Authentication/Localizable/pt-BR.lproj
+  outputs:
+    templateName: structured-swift5
+    output: Sources/Authentication/Generated/L10n.swift

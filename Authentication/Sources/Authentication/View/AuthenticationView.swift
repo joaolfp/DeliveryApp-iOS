@@ -18,7 +18,7 @@ struct AuthenticationView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Autenticação")
+            Text(L10n.authentication)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(.blue)
@@ -37,7 +37,7 @@ struct AuthenticationView: View {
                 Button {
                     viewModel.validate()
                 } label: {
-                    Text("Entrar")
+                    Text(L10n.enter)
                         .frame(width: UIScreen.main.bounds.width - 20, height: 50)
                         .background(Color.black)
                         .foregroundColor(.white)

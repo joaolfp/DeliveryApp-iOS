@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Authentication",
+    defaultLocalization: "pt-BR",
     platforms: [
         .iOS(.v13)
     ],
@@ -31,6 +32,9 @@ let package = Package(
                 "DesignSystem",
                 "MagicImages",
                 "Analytics"
+            ],
+            resources: [
+                .process("Localizable")
             ]
         ),
         .testTarget(

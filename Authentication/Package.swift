@@ -12,7 +12,8 @@ let package = Package(
     products: [
         .library(
             name: "Authentication",
-            targets: ["Authentication"]),
+            targets: ["Authentication"]
+        )
     ],
     dependencies: [
         .package(path: "./Coordinator"),

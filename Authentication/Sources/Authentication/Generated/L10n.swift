@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let authentication = L10n.tr("Localizable", "AUTHENTICATION", fallback: "Autenticação")
   /// Entrar
   internal static let enter = L10n.tr("Localizable", "ENTER", fallback: "Entrar")
+  /// Informe sua autenticação
+  internal static let enterYourAuthentication = L10n.tr("Localizable", "ENTER_YOUR_AUTHENTICATION", fallback: "Informe sua autenticação")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -23,7 +23,7 @@ final class AuthenticationViewModel {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Informe sua autenticação"
+            let reason = L10n.enterYourAuthentication
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, _ in
                 

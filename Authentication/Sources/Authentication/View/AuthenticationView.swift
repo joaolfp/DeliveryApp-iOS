@@ -39,8 +39,8 @@ struct AuthenticationView: View {
                 } label: {
                     Text(L10n.enter)
                         .frame(width: UIScreen.main.bounds.width - 20, height: 50)
-                        .background(Color.black)
-                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .foregroundColor(.black)
                         .cornerRadius(12)
                         .font(.system(.headline))
                 }

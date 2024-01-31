@@ -73,8 +73,13 @@ final class HomeViewController: UIViewController {
         
         guard let navigationController else { return }
         navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.barTintColor = .lightGray
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        navigationController.navigationItem.largeTitleDisplayMode = .always
+        navigationController.navigationBar.barTintColor = .white
+        
+        let app = UINavigationBarAppearance()
+        app.backgroundColor = .white
+        app.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController.navigationBar.scrollEdgeAppearance = app
     }
 }
 

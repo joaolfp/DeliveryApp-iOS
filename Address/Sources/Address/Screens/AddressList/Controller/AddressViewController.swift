@@ -86,8 +86,9 @@ extension AddressViewController: AddressViewDelegate {
         let address = "\(item.street), \(item.number)"
         Keychain().setValue(value: address, forKey: .address)
 
-        SetAnalyticsEvents.event("address_selected", parameters: ["value": "\(item.street), \(item.number)"])
-        SetCrashlyticsEvents.event("address_selected_\("\(item.street), \(item.number)")")
+        SetAnalyticsEvents.event(AnalyticsEvents.Address.addressSelected.rawValue,
+                                 parameters: ["value": "\(item.street), \(item.number)"])
+        SetCrashlyticsEvents.event("\(AnalyticsEvents.Address.addressSelected.rawValue) - \("\(item.street), \(item.number)")")
 
         coordinator?.handle(event: AddressCoordinatorEvent.popViewController(animated: true))
     }

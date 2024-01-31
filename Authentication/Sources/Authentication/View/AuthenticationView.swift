@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DesignSystem
+import Analytics
 
 struct AuthenticationView: View {
     
@@ -36,6 +37,8 @@ struct AuthenticationView: View {
                 
                 Button {
                     viewModel.validate()
+                    SetAnalyticsEvents.event(AnalyticsEvents.Authentication.button.rawValue)
+                    SetCrashlyticsEvents.event(AnalyticsEvents.Authentication.button.rawValue)
                 } label: {
                     Text(L10n.enter)
                         .frame(width: UIScreen.main.bounds.width - 20, height: 50)

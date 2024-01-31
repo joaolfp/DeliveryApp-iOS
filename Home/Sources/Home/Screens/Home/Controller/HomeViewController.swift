@@ -59,7 +59,7 @@ final class HomeViewController: UIViewController {
         fetchRestaurantsList()
         setupAddress()
 
-        SetAnalyticsEvents.event("home_view")
+        SetAnalyticsEvents.event(AnalyticsEvents.Home.view.rawValue)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -116,7 +116,7 @@ extension HomeViewController: HomeViewDelegate {
 
     func goToAddress() {
         coordinator?.handle(event: HomeCoordinatorEvent.goToAddress)
-        SetAnalyticsEvents.event("go_address")
-        SetCrashlyticsEvents.event("go_address")
+        SetAnalyticsEvents.event(AnalyticsEvents.Home.goAddress.rawValue)
+        SetCrashlyticsEvents.event(AnalyticsEvents.Home.goAddress.rawValue)
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import Core
 import Coordinator
+import Analytics
 
 final class AuthenticationViewController: UIViewController {
     
@@ -25,14 +26,22 @@ final class AuthenticationViewController: UIViewController {
         let authenticationView = AuthenticationView(viewModel: viewModel)
         self.addSwiftUIView(authenticationView, to: view)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        SetAnalyticsEvents.event(AnalyticsEvents.Authentication.view.rawValue)
+    }
 }
 
 extension AuthenticationViewController: AuthenticationViewModelDelegate {
     func success() {
         coordinator?.handle(event: AuthenticationCoordinatorEvent.goToHome)
+        SetAnalyticsEvents.event(AnalyticsEvents.Authentication.success.rawValue)
     }
     
     func failure() {
         debugPrint("Not working authentication")
+        SetAnalyticsEvents.event(AnalyticsEvents.Authentication.error.rawValue)
     }
 }

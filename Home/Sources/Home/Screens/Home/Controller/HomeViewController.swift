@@ -110,10 +110,13 @@ extension HomeViewController {
         containerView.status = .showView
         homeView.optionsView.setup(data: restaurants)
         homeView.restaurantView.setup(data: restaurants)
+        
+        SetAnalyticsEvents.event(AnalyticsEvents.Home.successService.rawValue)
     }
 
     private func onFailure(error: APIError) {
         containerView.status = .showError
+        SetAnalyticsEvents.event(AnalyticsEvents.Home.errorService.rawValue)
     }
 }
 

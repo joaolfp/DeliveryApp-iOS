@@ -19,11 +19,15 @@ public enum AnalyticsEvents {
     public enum Home: String {
         case view = "home_view"
         case goAddress = "go_address"
+        case successService = "home_success_service"
+        case errorService = "home_error_service"
     }
     
     public enum Address: String {
         case view = "address_view"
         case addressSelected = "address_selected"
+        case successService = "address_success_service"
+        case errorService = "address_error_service"
     }
     
 }

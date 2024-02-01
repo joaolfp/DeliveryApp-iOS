@@ -31,7 +31,7 @@ struct AuthenticationView: View {
                 Image(uiImage: UIAssets.Authentication.biometric.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width, height: 300)
+                    .frame(width: UIScreen.main.bounds.width, height: 200)
                 
                 Spacer()
                 

@@ -17,7 +17,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 * <b>Dependencies:</b> SPM
 * <b>Architecture:</b> MVVM
 * <b>Network:</b> URLSession
-* <b>Layout:</b> View Code (without Storyboard)
+* <b>Layout:</b> View Code (without Storyboard) & SwiftUI
 * <b>UnitTest:</b> XCTest
 * <b>Snapshot Test: </b> SnapshotTesting
 * <b>CI:</b> Github Action
@@ -27,6 +27,7 @@ Delivery App is a simple app that shows a list of available categories and resta
 ## App structure
 
 * <b>DeliveryApp:</b> Main module
+* <b>Authentication:</b> Validates FaceID or TouchID
 * <b>Home:</b> Main screen
 * <b>Address:</b> For the user to select the address
 * <b>Persistence:</b> Save local information

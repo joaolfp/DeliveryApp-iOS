@@ -70,12 +70,12 @@ final class HomeViewController: UIViewController {
 
     private func setupThemeNavigationBar() {
         navigationItem.setHidesBackButton(true, animated: true)
-        
+
         guard let navigationController else { return }
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationItem.largeTitleDisplayMode = .always
         navigationController.navigationBar.barTintColor = .white
-        
+
         let app = UINavigationBarAppearance()
         app.backgroundColor = .white
         app.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
@@ -110,7 +110,7 @@ extension HomeViewController {
         containerView.status = .showView
         homeView.optionsView.setup(data: restaurants)
         homeView.restaurantView.setup(data: restaurants)
-        
+
         SetAnalyticsEvents.event(AnalyticsEvents.Home.successService.rawValue)
     }
 

@@ -23,7 +23,7 @@ public final class AuthenticationCoordinator: BaseCoordinator {
         controller.coordinator = self
         parentViewController?.pushViewController(controller, animated: true)
     }
-    
+
     override public func handle(event: CoordinatorEvent) {
         if let authenticationEvent = event as? AuthenticationCoordinatorEvent {
             handle(authenticationEvent)

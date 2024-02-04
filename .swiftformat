@@ -2,6 +2,7 @@
 --exclude Home/Sources/Home/Generated
 --exclude Address/Sources/Address/Generated
 --exclude DesignSystem/Sources/DesignSystem/Generated
+--exclude Authentication/Sources/Authentication/Generated
 
 # Rules
 --disable blankLinesAtStartOfScope

@@ -6,9 +6,9 @@
 //
 
 import Address
+import Authentication
 import Coordinator
 import Home
-import Authentication
 import UIKit
 
 public class AppCoordinator: BaseCoordinator {
@@ -29,7 +29,7 @@ public class AppCoordinator: BaseCoordinator {
         if let homeEvent = event as? HomeExternalCoordinatorEvent {
             handle(homeEvent)
         }
-        
+
         if let authenticationEvent = event as? AuthenticationExternalCoordinatorEvent {
             handle(authenticationEvent)
         }
@@ -37,12 +37,13 @@ public class AppCoordinator: BaseCoordinator {
 }
 
 private extension AppCoordinator {
-    
+
     func startAuthenticationCoordinator(navigationController: UINavigationController) {
         let coordinator = AuthenticationCoordinator(
             parentCoordinator: self,
-            parentViewController: navigationController)
-        
+            parentViewController: navigationController
+        )
+
         coordinator.start {}
     }
 
@@ -73,7 +74,7 @@ private extension AppCoordinator {
             startAddressCoordinator(navigationController: navigationController)
         }
     }
-    
+
     func handle(_ event: AuthenticationExternalCoordinatorEvent) {
         switch event {
         case .goToHome:

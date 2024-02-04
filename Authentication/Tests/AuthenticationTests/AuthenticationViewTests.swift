@@ -1,6 +1,6 @@
 //
 //  AuthenticationViewTests.swift
-//  
+//
 //
 //  Created by João Lucas on 28/01/24.
 //

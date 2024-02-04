@@ -6,18 +6,18 @@
 //
 
 import Foundation
-import UIKit
 import SwiftUI
+import UIKit
 
 public extension UIViewController {
 
-    func addSwiftUIView<Content>(_ swiftUIView: Content, to view: UIView) where Content : View {
+    func addSwiftUIView(_ swiftUIView: some View, to view: UIView) {
         let hostingController = UIHostingController(rootView: swiftUIView)
 
         addChild(hostingController)
 
         view.addSubview(hostingController.view)
-        
+
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),

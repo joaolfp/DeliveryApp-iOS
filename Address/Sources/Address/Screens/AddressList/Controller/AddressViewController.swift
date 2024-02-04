@@ -73,7 +73,7 @@ extension AddressViewController {
     func onSuccess(list: [AddressDTO]) {
         containerView.status = .showView
         addressView.setup(data: list)
-        
+
         SetAnalyticsEvents.event(AnalyticsEvents.Address.successService.rawValue)
     }
 

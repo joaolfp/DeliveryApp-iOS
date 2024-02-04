@@ -22,7 +22,7 @@ let package = Package(
         .package(path: "./TestUtils"),
         .package(path: "./Analytics"),
         .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.4.0")),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.2")
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.3")
     ],
     targets: [
         .target(

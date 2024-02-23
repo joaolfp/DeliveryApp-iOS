@@ -42,8 +42,4 @@ extension HomeEndpoint: EndpointProtocol {
             .get
         }
     }
-
-    var headers: HTTPHeaders? {
-        ["Content-type": "application/json"]
-    }
 }

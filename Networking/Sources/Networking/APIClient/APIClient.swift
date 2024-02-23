@@ -10,9 +10,11 @@ import Foundation
 public final class APIClient: APIClientProtocol {
 
     private let session: URLSession
+    private let interceptor: RequestInterceptor
 
-    public init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared, interceptor: RequestInterceptor = RequestInterceptor()) {
         self.session = session
+        self.interceptor = interceptor
     }
 }
 
@@ -62,6 +64,8 @@ extension APIClient {
                 }
             }
         }
+        
+        _ = interceptor.intercept(request)
         task.resume()
     }
 

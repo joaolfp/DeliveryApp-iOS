@@ -18,7 +18,6 @@ public protocol EndpointProtocol {
     var parameters: APIParameters? { get }
     var body: APIBody? { get }
     var method: APIMethod { get }
-    var headers: HTTPHeaders? { get }
 }
 
 public extension EndpointProtocol {
@@ -36,7 +35,6 @@ public extension EndpointProtocol {
         var request = URLRequest(with: urlComponents.url)
         request.httpMethod = method.toString()
         request.httpBody = body?.dataEncoded
-        request.allHTTPHeaderFields = headers
         return request
     }
 }

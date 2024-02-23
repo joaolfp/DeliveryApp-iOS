@@ -12,7 +12,8 @@ public final class APIClient: APIClientProtocol {
     private let session: URLSession
     private let interceptor: RequestInterceptor
 
-    public init(session: URLSession = .shared, interceptor: RequestInterceptor = RequestInterceptor()) {
+    public init(session: URLSession = .shared, 
+                interceptor: RequestInterceptor = RequestInterceptor()) {
         self.session = session
         self.interceptor = interceptor
     }

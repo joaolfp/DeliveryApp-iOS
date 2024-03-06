@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias HTTPHeaders = [String: String]
+public typealias Headers = [String: String]
 public typealias APIParameters = [String: String]
 public typealias APIBody = [String: Any]
 
@@ -18,6 +18,7 @@ public protocol EndpointProtocol {
     var parameters: APIParameters? { get }
     var body: APIBody? { get }
     var method: APIMethod { get }
+    var headers: Headers? { get }
 }
 
 public extension EndpointProtocol {
@@ -35,6 +36,7 @@ public extension EndpointProtocol {
         var request = URLRequest(with: urlComponents.url)
         request.httpMethod = method.toString()
         request.httpBody = body?.dataEncoded
+        request.allHTTPHeaderFields = headers
         return request
     }
 }

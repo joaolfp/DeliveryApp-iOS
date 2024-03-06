@@ -14,7 +14,7 @@ public final class RequestInterceptor: Interceptor {
     public func intercept(_ request: URLRequest) -> URLRequest {
         var modifiedRequest = request
         
-        modifiedRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
+        modifiedRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return modifiedRequest
     }
 }

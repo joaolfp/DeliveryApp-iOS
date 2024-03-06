@@ -42,4 +42,8 @@ extension AddressEndpoint: EndpointProtocol {
             .get
         }
     }
+    
+    var headers: Headers? {
+        return nil
+    }
 }

@@ -48,8 +48,10 @@ extension APIClient {
     }
 
     public func request<T: Decodable>(_ request: URLRequest, decode: ((T) -> T)?, completion: @escaping (Result<T, APIError>) -> Void) {
+        
+        let interceptedRequest = interceptor.intercept(request)
 
-        let task = decodingTask(with: request, decodingType: T.self) { json, error in
+        let task = decodingTask(with: interceptedRequest, decodingType: T.self) { json, error in
 
             DispatchQueue.main.async {
                 if let error {
@@ -66,7 +68,6 @@ extension APIClient {
             }
         }
         
-        _ = interceptor.intercept(request)
         task.resume()
     }
 

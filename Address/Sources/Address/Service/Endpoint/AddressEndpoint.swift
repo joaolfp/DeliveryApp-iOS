@@ -13,33 +13,18 @@ enum AddressEndpoint {
 }
 
 extension AddressEndpoint: EndpointProtocol {
-    var scheme: APIScheme {
-        .https
-    }
-
-    var host: String {
-        "raw.githubusercontent.com"
-    }
 
     var path: String {
         switch self {
         case .getAddressList:
-            "/joaolfp/DeliveryApp-iOS/main/api/address.json"
+            return "/joaolfp/DeliveryApp-iOS/main/api/address.json"
         }
-    }
-
-    var parameters: APIParameters? {
-        nil
-    }
-
-    var body: APIBody? {
-        nil
     }
 
     var method: APIMethod {
         switch self {
         case .getAddressList:
-            .get
+            return .get
         }
     }
     

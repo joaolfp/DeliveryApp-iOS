@@ -40,3 +40,14 @@ public extension EndpointProtocol {
         return request
     }
 }
+
+public extension EndpointProtocol {
+    
+    var parameters: APIParameters? {
+        return nil
+    }
+    
+    var body: APIBody? {
+        return nil
+    }
+}

@@ -13,33 +13,18 @@ enum HomeEndpoint {
 }
 
 extension HomeEndpoint: EndpointProtocol {
-    var scheme: APIScheme {
-        .https
-    }
-
-    var host: String {
-        "raw.githubusercontent.com"
-    }
 
     var path: String {
         switch self {
         case .getRestaurantList:
-            "/joaolfp/DeliveryApp-iOS/main/api/home_restaurant_list.json"
+            return "/joaolfp/DeliveryApp-iOS/main/api/home_restaurant_list.json"
         }
-    }
-
-    var parameters: APIParameters? {
-        nil
-    }
-
-    var body: APIBody? {
-        nil
     }
 
     var method: APIMethod {
         switch self {
         case .getRestaurantList:
-            .get
+            return .get
         }
     }
     

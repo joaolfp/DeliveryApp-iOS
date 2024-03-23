@@ -14,10 +14,15 @@ let package = Package(
             targets: ["Core"]
         )
     ],
+    dependencies: [
+        .package(path: "./Networking")
+    ],
     targets: [
         .target(
             name: "Core",
-            dependencies: []
+            dependencies: [
+                "Networking"
+            ]
         ),
         .testTarget(
             name: "CoreTests",

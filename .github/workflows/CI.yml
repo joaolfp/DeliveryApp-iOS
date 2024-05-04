@@ -31,11 +31,11 @@ jobs:
       run: mint bootstrap
       shell: bash
 
-    - name: Build
-      run: make build
+    - name: Install xrun
+      run: cargo install xrun
 
     - name: Run tests
-      run: make test
+      run: xrun DeliveryApp.xcodeproj DeliveryApp 17.2 15
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.4

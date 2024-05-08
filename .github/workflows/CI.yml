@@ -35,7 +35,7 @@ jobs:
       run: cargo install xrun
 
     - name: Run tests
-      run: xrun DeliveryApp.xcodeproj DeliveryApp 17.2 15
+      run: xrun project DeliveryApp.xcodeproj DeliveryApp 17.2 15
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.4

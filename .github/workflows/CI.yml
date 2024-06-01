@@ -3,16 +3,14 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: macOS-13
-    env:
-      TERM: xterm-256color
+    runs-on: macOS-14
 
     steps:
     - uses: actions/checkout@v4
 
     - uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
-        xcode-version: 15.2
+        xcode-version: 15.4
         
     - name: Install Ruby
       run: bundle install
@@ -32,18 +30,13 @@ jobs:
       run: mint bootstrap
       shell: bash
 
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-        profile: minimal
-        override: true
-
     - name: Install xrun
-      run: cargo install xrun
+      run: |
+         brew tap heroesofcode/taps
+         brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project DeliveryApp.xcodeproj DeliveryApp 17.2 15
+      run: xrun project DeliveryApp.xcodeproj DeliveryApp 17.5 15
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.5

@@ -39,7 +39,7 @@ jobs:
       run: xrun project DeliveryApp.xcodeproj DeliveryApp 17.5 15 fail
 
     - name: Danger action
-      uses: MeilCli/danger-action@v6.0.15
+      uses: MeilCli/danger-action@v6.0.18
       if: github.event_name == 'pull_request'
       with:
         plugins_file: 'Gemfile'

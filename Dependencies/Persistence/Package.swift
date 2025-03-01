@@ -4,19 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "Coordinator",
+    name: "Persistence",
+    platforms: [
+        .iOS(.v16)
+    ],
     products: [
         .library(
-            name: "Coordinator",
-            targets: ["Coordinator"]
+            name: "Persistence",
+            targets: ["Persistence"]
         )
     ],
     targets: [
         .target(
-            name: "Coordinator"),
+            name: "Persistence"),
         .testTarget(
-            name: "CoordinatorTests",
-            dependencies: ["Coordinator"]
+            name: "PersistenceTests",
+            dependencies: ["Persistence"]
         )
     ]
 )

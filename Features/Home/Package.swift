@@ -4,25 +4,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "Address",
+    name: "Home",
     defaultLocalization: "pt-BR",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v16)
     ],
     products: [
         .library(
-            name: "Address",
-            targets: ["Address"]
+            name: "Home",
+            targets: ["Home"]
         )
     ],
     dependencies: [
-        .package(path: "./Coordinator"),
-        .package(path: "./Core"),
-        .package(path: "./DesignSystem"),
-        .package(path: "./Networking"),
-        .package(path: "./TestUtils"),
-        .package(path: "./Persistence"),
-        .package(path: "./Analytics"),
+        .package(path: "../Dependencies/Coordinator"),
+        .package(path: "../Dependencies/Core"),
+        .package(path: "../Dependencies/DesignSystem"),
+        .package(path: "../Dependencies/Networking"),
+        .package(path: "../Dependencies/TestUtils"),
+        .package(path: "../Dependencies/Persistence"),
+        .package(path: "../Dependencies/Analytics"),
         .package(url: "https://github.com/joaolfp/ViewState", .upToNextMajor(from: "1.6.0")),
         .package(url: "https://github.com/dogo/SketchKit", .upToNextMajor(from: "2.0.0")),
         .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.4.0")),
@@ -30,7 +30,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Address",
+            name: "Home",
             dependencies: [
                 "Coordinator",
                 "Core",
@@ -47,9 +47,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "AddressTests",
+            name: "HomeTests",
             dependencies: [
-                "Address",
+                "Home",
                 "TestUtils",
                 "ViewState",
                 "Persistence",

@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Analytics",
+    platforms: [
+        .iOS(.v16)
+    ],
     products: [
         .library(
             name: "Analytics",

@@ -7,7 +7,7 @@ let package = Package(
     name: "Authentication",
     defaultLocalization: "pt-BR",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v16)
     ],
     products: [
         .library(
@@ -16,11 +16,11 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "./Coordinator"),
-        .package(path: "./Core"),
-        .package(path: "./DesignSystem"),
-        .package(path: "./TestUtils"),
-        .package(path: "./Analytics"),
+        .package(path: "../Dependencies/Coordinator"),
+        .package(path: "../Dependencies/Core"),
+        .package(path: "../Dependencies/DesignSystem"),
+        .package(path: "../Dependencies/TestUtils"),
+        .package(path: "../Dependencies/Analytics"),
         .package(url: "https://github.com/heroesofcode/MagicImages", .upToNextMajor(from: "1.4.0")),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.4")
     ],

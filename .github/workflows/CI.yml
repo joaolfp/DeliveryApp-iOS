@@ -15,20 +15,10 @@ jobs:
     - name: Install Ruby
       run: bundle install
       
-    - name: Install Mint
-      run: brew install mint
-      shell: bash
-
-    - name: Cache Mint packages
-      uses: actions/cache@v4
+    - name: Mise install
+      uses: jdx/mise-action@v2
       with:
-        path: /usr/local/lib/mint/packages
-        key: ${{ runner.os }}-mint-${{ hashFiles('**/metadata.json') }}
-        restore-keys: ${{ runner.os }}-mint-
-     
-    - name: Install Mint Dependencies
-      run: mint bootstrap
-      shell: bash
+        experimental: true
 
     - name: Install xrun
       run: |

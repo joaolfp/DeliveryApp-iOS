@@ -68,14 +68,11 @@
 		A6431BBA29CBF45F004FD906 = {
 			isa = PBXGroup;
 			children = (
-				C5E636EA2B43A5D000C69268 /* Tracker */,
-				C5934D6D2AA3593C0019C3BC /* Styleguide */,
-				C5934D6C2AA359280019C3BC /* Core */,
-				C5934D6A2AA359110019C3BC /* Infra */,
-				C5934D692AA359080019C3BC /* Feature */,
+				C53DB0562D73631C00B1F14E /* Dependencies */,
+				C55281DE2D73630400B71C47 /* Features */,
 				A6431BC529CBF45F004FD906 /* DeliveryApp */,
-				A6431BC429CBF45F004FD906 /* Products */,
 				A6431BDD29CBF786004FD906 /* Frameworks */,
+				A6431BC429CBF45F004FD906 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,41 +121,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C5934D692AA359080019C3BC /* Feature */ = {
+		C53DB0562D73631C00B1F14E /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C59C033F2B07F65900F63582 /* Persistence */,
+				A6431BE329CBF900004FD906 /* Networking */,
+				C53E44902B16CE6C003AC71F /* Coordinator */,
+				A6431BE429CBF921004FD906 /* TestUtils */,
+				A6431BE129CBF898004FD906 /* Core */,
+				C5833A6A2B4393E800A4554F /* Analytics */,
+				A6431BE029CBF859004FD906 /* DesignSystem */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		C55281DE2D73630400B71C47 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				C5A9B88A2B67040A007AFCD1 /* Authentication */,
 				C5C060672AC389D700AADB21 /* Address */,
 				A6431BE229CBF8C9004FD906 /* Home */,
 			);
-			name = Feature;
-			sourceTree = "<group>";
-		};
-		C5934D6A2AA359110019C3BC /* Infra */ = {
-			isa = PBXGroup;
-			children = (
-				C59C033F2B07F65900F63582 /* Persistence */,
-				A6431BE329CBF900004FD906 /* Networking */,
-			);
-			name = Infra;
-			sourceTree = "<group>";
-		};
-		C5934D6C2AA359280019C3BC /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C53E44902B16CE6C003AC71F /* Coordinator */,
-				A6431BE429CBF921004FD906 /* TestUtils */,
-				A6431BE129CBF898004FD906 /* Core */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		C5934D6D2AA3593C0019C3BC /* Styleguide */ = {
-			isa = PBXGroup;
-			children = (
-				A6431BE029CBF859004FD906 /* DesignSystem */,
-			);
-			name = Styleguide;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		C596C0F02AC9855100B8F7CF /* Coordinator */ = {
@@ -167,14 +151,6 @@
 				C596C0F12AC9856400B8F7CF /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		C5E636EA2B43A5D000C69268 /* Tracker */ = {
-			isa = PBXGroup;
-			children = (
-				C5833A6A2B4393E800A4554F /* Analytics */,
-			);
-			name = Tracker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ `uname -m` == 'arm64' ] && [ -d /opt/homebrew/bin/ ]; then\n  export PATH=/opt/homebrew/bin:$PATH\nfi\n\nmint run swiftlint\n";
+			shellScript = "export PATH=\"$HOME/.local/share/mise/shims:$PATH\"\nswiftlint\n";
 		};
 		C521012E2B478BAC0005EAFA /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -450,6 +426,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeliveryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Delivery App";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "É necesario a utilização de FaceID ou TouchID para este app";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -457,7 +434,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +464,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeliveryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Delivery App";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "É necesario a utilização de FaceID ou TouchID para este app";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -494,7 +472,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

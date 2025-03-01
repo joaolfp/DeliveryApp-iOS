@@ -14,6 +14,6 @@ final class AuthenticationViewTests: XCTestCase {
 
     func testShouldValidateLayout() throws {
         let authenticationView = AuthenticationView(viewModel: AuthenticationViewModel())
-        assertSnapshot(of: authenticationView.view(), as: .image)
+        assertSnapshot(of: authenticationView.view(), as: .image, record: false)
     }
 }

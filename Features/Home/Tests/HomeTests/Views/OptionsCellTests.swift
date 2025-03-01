@@ -18,6 +18,6 @@ final class OptionsCellTests: XCTestCase {
         cell.backgroundColor = .white
         cell.setup(text: "Padaria")
 
-        assertSnapshot(of: cell, as: .image)
+        assertSnapshot(of: cell, as: .image, record: false)
     }
 }

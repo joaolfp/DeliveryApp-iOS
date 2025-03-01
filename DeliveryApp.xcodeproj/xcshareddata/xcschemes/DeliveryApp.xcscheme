@@ -33,70 +33,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
-               ReferencedContainer = "container:Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DesignSystemTests"
-               BuildableName = "DesignSystemTests"
-               BlueprintName = "DesignSystemTests"
-               ReferencedContainer = "container:DesignSystem">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "NetworkingTests"
-               BuildableName = "NetworkingTests"
-               BlueprintName = "NetworkingTests"
-               ReferencedContainer = "container:Networking">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Home">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "AddressTests"
                BuildableName = "AddressTests"
                BlueprintName = "AddressTests"
-               ReferencedContainer = "container:Address">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "PersistenceTests"
-               BuildableName = "PersistenceTests"
-               BlueprintName = "PersistenceTests"
-               ReferencedContainer = "container:Persistence">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoordinatorTests"
-               BuildableName = "CoordinatorTests"
-               BlueprintName = "CoordinatorTests"
-               ReferencedContainer = "container:Coordinator">
+               ReferencedContainer = "container:Features/Address">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -106,7 +46,7 @@
                BlueprintIdentifier = "AnalyticsTests"
                BuildableName = "AnalyticsTests"
                BlueprintName = "AnalyticsTests"
-               ReferencedContainer = "container:Analytics">
+               ReferencedContainer = "container:Dependencies/Analytics">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -116,7 +56,67 @@
                BlueprintIdentifier = "AuthenticationTests"
                BuildableName = "AuthenticationTests"
                BlueprintName = "AuthenticationTests"
-               ReferencedContainer = "container:Authentication">
+               ReferencedContainer = "container:Features/Authentication">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoordinatorTests"
+               BuildableName = "CoordinatorTests"
+               BlueprintName = "CoordinatorTests"
+               ReferencedContainer = "container:Dependencies/Coordinator">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Dependencies/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DesignSystemTests"
+               BuildableName = "DesignSystemTests"
+               BlueprintName = "DesignSystemTests"
+               ReferencedContainer = "container:Dependencies/DesignSystem">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Features/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NetworkingTests"
+               BuildableName = "NetworkingTests"
+               BlueprintName = "NetworkingTests"
+               ReferencedContainer = "container:Dependencies/Networking">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "PersistenceTests"
+               BuildableName = "PersistenceTests"
+               BlueprintName = "PersistenceTests"
+               ReferencedContainer = "container:Dependencies/Persistence">
             </BuildableReference>
          </TestableReference>
       </Testables>

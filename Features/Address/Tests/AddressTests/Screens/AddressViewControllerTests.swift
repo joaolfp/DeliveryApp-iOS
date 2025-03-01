@@ -32,20 +32,20 @@ final class AddressViewControllerTests: XCTestCase {
         sut = AddressViewController()
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 
     func testShouldValidateLayoutWithSuccess() {
         sut = AddressViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 
     func testValidateLayoutWithFailure() {
         sut = AddressViewController(viewModel: AddressViewModelMock(stateMock: .failure))
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 }

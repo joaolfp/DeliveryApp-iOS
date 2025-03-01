@@ -3,6 +3,8 @@
 
 import PackageDescription
 
+let github = "https://github.com/"
+
 let package = Package(
     name: "Analytics",
     platforms: [
@@ -15,7 +17,10 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.27.0")
+        .package(
+            url: "\(github)firebase/firebase-ios-sdk",
+            exact: "11.9.0"
+        )
     ],
     targets: [
         .target(

@@ -15,6 +15,6 @@ final class ErrorViewTests: XCTestCase {
     func testShouldValidateLayout() {
         let cgRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         let view = ErrorView(frame: cgRect, message: "Erro de conexão")
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image, record: false)
     }
 }

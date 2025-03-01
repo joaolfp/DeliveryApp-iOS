@@ -17,6 +17,6 @@ final class AddressCellTests: XCTestCase {
         let cell = AddressCell(frame: frame)
         cell.setup(street: "Rua Alba, 108", neighborhood: "Parque Jabaquara", action: nil)
 
-        assertSnapshot(of: cell, as: .image)
+        assertSnapshot(of: cell, as: .image, record: false)
     }
 }

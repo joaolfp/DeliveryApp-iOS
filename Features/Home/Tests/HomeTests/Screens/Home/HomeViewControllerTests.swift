@@ -32,21 +32,21 @@ final class HomeViewControllerTests: XCTestCase {
         sut = HomeViewController()
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 
     func testShouldValidateLayoutWithSuccess() {
         sut = HomeViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 
     func testValidateLayoutWithFailure() {
         sut = HomeViewController(viewModel: HomeViewModelMock(stateMock: .failure, statePersistence: .withValue))
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 
     func testShouldValidateLayoutWithoutAddress() {
@@ -54,6 +54,6 @@ final class HomeViewControllerTests: XCTestCase {
         sut = HomeViewController(viewModel: mock)
         let navigation = UINavigationController(rootViewController: sut)
 
-        assertSnapshot(of: navigation, as: .image)
+        assertSnapshot(of: navigation, as: .image, record: false)
     }
 }

@@ -19,6 +19,6 @@ final class RestaurantViewTests: XCTestCase {
         let restaurantDTO = RestaurantsDTO(name: "Bar do João", category: "Bar", deliveryTime: deliveryTime)
         view.setup(data: [restaurantDTO, restaurantDTO, restaurantDTO])
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image, record: false)
     }
 }

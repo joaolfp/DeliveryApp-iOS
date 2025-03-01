@@ -18,6 +18,6 @@ final class RestaurantCellTests: XCTestCase {
         cell.nameLabel.text = "Bar do alemão"
         cell.descriptionLabel.text = "Padaria . 38-48 min"
 
-        assertSnapshot(of: cell, as: .image)
+        assertSnapshot(of: cell, as: .image, record: false)
     }
 }

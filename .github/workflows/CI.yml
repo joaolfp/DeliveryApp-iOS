@@ -26,7 +26,7 @@ jobs:
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project DeliveryApp.xcodeproj DeliveryApp 17.5 15 fail
+      run: xrun project DeliveryApp.xcodeproj DeliveryApp 18.3 16 fail
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.21

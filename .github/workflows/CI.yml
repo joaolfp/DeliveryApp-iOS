@@ -26,7 +26,11 @@ jobs:
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project DeliveryApp.xcodeproj DeliveryApp 18.3.1 16 fail
+      run: |
+         set -o pipefail xcodebuild -project DeliveryApp.xcodeproj \
+         -scheme DeliveryApp \
+         -destination platform=iOS\ Simulator,OS=18..3,name=iPhone\ 16 \
+         clean test | xcpretty
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.21

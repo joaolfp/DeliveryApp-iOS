@@ -10,7 +10,7 @@ jobs:
 
     - uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
-        xcode-version: 16.2.0
+        xcode-version: 16.4.0
         
     - name: Install Ruby
       run: bundle install
@@ -26,7 +26,7 @@ jobs:
          brew install heroesofcode/taps/xrun
 
     - name: Run tests with xrun
-      run: xrun project DeliveryApp.xcodeproj DeliveryApp 18.2 16
+      run: xrun project DeliveryApp.xcodeproj DeliveryApp 18.5 16
 
     - name: Danger action
       uses: MeilCli/danger-action@v6.0.34

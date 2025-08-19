@@ -16,7 +16,7 @@ jobs:
       run: bundle install
       
     - name: Mise install
-      uses: jdx/mise-action@v2
+      uses: jdx/mise-action@v3
       with:
         experimental: true
 
